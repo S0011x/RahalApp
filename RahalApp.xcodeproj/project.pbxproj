@@ -1,0 +1,567 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6F21C9652BE8BF3200CF9FD0 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F21C9642BE8BF3200CF9FD0 /* UserAccount.swift */; };
+		6F21C9672BE8C40B00CF9FD0 /* UserInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F21C9662BE8C40B00CF9FD0 /* UserInformationView.swift */; };
+		6F21C9692BE8C44D00CF9FD0 /* SavedTripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F21C9682BE8C44D00CF9FD0 /* SavedTripsView.swift */; };
+		6F21C96B2BE8C45F00CF9FD0 /* FutureTripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F21C96A2BE8C45F00CF9FD0 /* FutureTripsView.swift */; };
+		6F21C96D2BE8C47300CF9FD0 /* ContactUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F21C96C2BE8C47300CF9FD0 /* ContactUsView.swift */; };
+		6F21C96F2BE8C80400CF9FD0 /* RestPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F21C96E2BE8C80400CF9FD0 /* RestPasswordView.swift */; };
+		6F21C9732BE8CDE900CF9FD0 /* HomeViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F21C9722BE8CDE900CF9FD0 /* HomeViews.swift */; };
+		6F295F792BE39BA2004FE416 /* createTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F295F782BE39BA2004FE416 /* createTrip.swift */; };
+		6F8AD1902BE7664E00191C20 /* AppleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8AD18F2BE7664E00191C20 /* AppleButtonView.swift */; };
+		6F8AD1922BE7667000191C20 /* AppleButtonLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8AD1912BE7667000191C20 /* AppleButtonLogic.swift */; };
+		6F8AD1952BE76D4100191C20 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8AD1942BE76D4100191C20 /* NotificationView.swift */; };
+		6F8AD1972BE76E2B00191C20 /* ForgetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8AD1962BE76E2B00191C20 /* ForgetPassword.swift */; };
+		6F8AD19B2BE77BBD00191C20 /* SelectDestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8AD19A2BE77BBD00191C20 /* SelectDestinationView.swift */; };
+		6F8AD19D2BE77BCF00191C20 /* SelectMeetSpotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8AD19C2BE77BCF00191C20 /* SelectMeetSpotView.swift */; };
+		6F9E5A082BDE4C49005BBECC /* RahalAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9E5A072BDE4C49005BBECC /* RahalAppApp.swift */; };
+		6F9E5A0F2BDE4C49005BBECC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F9E5A0E2BDE4C49005BBECC /* Preview Assets.xcassets */; };
+		6F9E5A232BDE4DF0005BBECC /* PrepardLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9E5A222BDE4DF0005BBECC /* PrepardLocationView.swift */; };
+		6F9E5A292BDE4E69005BBECC /* PageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9E5A282BDE4E69005BBECC /* PageIndicator.swift */; };
+		6F9E5A2B2BDE4E7B005BBECC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F9E5A2A2BDE4E7B005BBECC /* Assets.xcassets */; };
+		6F9E5A2D2BDE4EBD005BBECC /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9E5A2C2BDE4EBD005BBECC /* SplashView.swift */; };
+		6F9E5A302BDE4F55005BBECC /* ViewportHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9E5A2F2BDE4F55005BBECC /* ViewportHelper.swift */; };
+		6F9E5A322BDE4F5E005BBECC /* ActivityLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9E5A312BDE4F5E005BBECC /* ActivityLoader.swift */; };
+		6F9E5A342BDE4F89005BBECC /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9E5A332BDE4F89005BBECC /* Utilities.swift */; };
+		6F9E5A372BDE4FAF005BBECC /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9E5A362BDE4FAF005BBECC /* AppConstants.swift */; };
+		6F9E5A392BDE4FB5005BBECC /* StringScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9E5A382BDE4FB5005BBECC /* StringScheme.swift */; };
+		6F9E5A3B2BDE4FBA005BBECC /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9E5A3A2BDE4FBA005BBECC /* ColorConstants.swift */; };
+		6F9E5A3D2BDE4FC0005BBECC /* FontScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9E5A3C2BDE4FC0005BBECC /* FontScheme.swift */; };
+		6F9E5A402BDE502A005BBECC /* RoundedCornersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9E5A3F2BDE502A005BBECC /* RoundedCornersView.swift */; };
+		6F9E5A422BDE5054005BBECC /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9E5A412BDE5054005BBECC /* ViewExtension.swift */; };
+		6FB61D332BE8DCBE001A2B47 /* MyMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB61D322BE8DCBE001A2B47 /* MyMapView.swift */; };
+		6FBA78C72BDF89340028D7B1 /* OnBoardingClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBA78C62BDF89340028D7B1 /* OnBoardingClass.swift */; };
+		6FBA78C92BDF89950028D7B1 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBA78C82BDF89950028D7B1 /* OnBoardingView.swift */; };
+		6FBA78CD2BDF955B0028D7B1 /* ButtonWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBA78CC2BDF955B0028D7B1 /* ButtonWidget.swift */; };
+		6FBA78D02BDF98270028D7B1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBA78CF2BDF98270028D7B1 /* LoginView.swift */; };
+		6FBA78D22BDF983B0028D7B1 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBA78D12BDF983B0028D7B1 /* RegisterView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6F21C9642BE8BF3200CF9FD0 /* UserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
+		6F21C9662BE8C40B00CF9FD0 /* UserInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationView.swift; sourceTree = "<group>"; };
+		6F21C9682BE8C44D00CF9FD0 /* SavedTripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTripsView.swift; sourceTree = "<group>"; };
+		6F21C96A2BE8C45F00CF9FD0 /* FutureTripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureTripsView.swift; sourceTree = "<group>"; };
+		6F21C96C2BE8C47300CF9FD0 /* ContactUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsView.swift; sourceTree = "<group>"; };
+		6F21C96E2BE8C80400CF9FD0 /* RestPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestPasswordView.swift; sourceTree = "<group>"; };
+		6F21C9722BE8CDE900CF9FD0 /* HomeViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViews.swift; sourceTree = "<group>"; };
+		6F295F782BE39BA2004FE416 /* createTrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createTrip.swift; sourceTree = "<group>"; };
+		6F8AD18F2BE7664E00191C20 /* AppleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleButtonView.swift; sourceTree = "<group>"; };
+		6F8AD1912BE7667000191C20 /* AppleButtonLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleButtonLogic.swift; sourceTree = "<group>"; };
+		6F8AD1942BE76D4100191C20 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		6F8AD1962BE76E2B00191C20 /* ForgetPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPassword.swift; sourceTree = "<group>"; };
+		6F8AD19A2BE77BBD00191C20 /* SelectDestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDestinationView.swift; sourceTree = "<group>"; };
+		6F8AD19C2BE77BCF00191C20 /* SelectMeetSpotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMeetSpotView.swift; sourceTree = "<group>"; };
+		6F9E5A042BDE4C49005BBECC /* RahalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RahalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F9E5A072BDE4C49005BBECC /* RahalAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RahalAppApp.swift; sourceTree = "<group>"; };
+		6F9E5A0E2BDE4C49005BBECC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6F9E5A222BDE4DF0005BBECC /* PrepardLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepardLocationView.swift; sourceTree = "<group>"; };
+		6F9E5A282BDE4E69005BBECC /* PageIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageIndicator.swift; path = ../../../../trips/Jusapplication1/CustomViews/PageIndicator/PageIndicator.swift; sourceTree = "<group>"; };
+		6F9E5A2A2BDE4E7B005BBECC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../trips/Jusapplication1/Assets.xcassets; sourceTree = "<group>"; };
+		6F9E5A2C2BDE4EBD005BBECC /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		6F9E5A2F2BDE4F55005BBECC /* ViewportHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewportHelper.swift; sourceTree = "<group>"; };
+		6F9E5A312BDE4F5E005BBECC /* ActivityLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityLoader.swift; sourceTree = "<group>"; };
+		6F9E5A332BDE4F89005BBECC /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		6F9E5A362BDE4FAF005BBECC /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		6F9E5A382BDE4FB5005BBECC /* StringScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringScheme.swift; sourceTree = "<group>"; };
+		6F9E5A3A2BDE4FBA005BBECC /* ColorConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
+		6F9E5A3C2BDE4FC0005BBECC /* FontScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontScheme.swift; sourceTree = "<group>"; };
+		6F9E5A3F2BDE502A005BBECC /* RoundedCornersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornersView.swift; sourceTree = "<group>"; };
+		6F9E5A412BDE5054005BBECC /* ViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		6FB61D322BE8DCBE001A2B47 /* MyMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMapView.swift; sourceTree = "<group>"; };
+		6FBA78C62BDF89340028D7B1 /* OnBoardingClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingClass.swift; sourceTree = "<group>"; };
+		6FBA78C82BDF89950028D7B1 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
+		6FBA78CC2BDF955B0028D7B1 /* ButtonWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWidget.swift; sourceTree = "<group>"; };
+		6FBA78CF2BDF98270028D7B1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		6FBA78D12BDF983B0028D7B1 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6F9E5A012BDE4C49005BBECC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6F21C9632BE8BF2100CF9FD0 /* UserAccount */ = {
+			isa = PBXGroup;
+			children = (
+				6F21C9642BE8BF3200CF9FD0 /* UserAccount.swift */,
+				6F21C9662BE8C40B00CF9FD0 /* UserInformationView.swift */,
+				6F21C9682BE8C44D00CF9FD0 /* SavedTripsView.swift */,
+				6F21C96A2BE8C45F00CF9FD0 /* FutureTripsView.swift */,
+				6F21C96C2BE8C47300CF9FD0 /* ContactUsView.swift */,
+				6F21C96E2BE8C80400CF9FD0 /* RestPasswordView.swift */,
+			);
+			path = UserAccount;
+			sourceTree = "<group>";
+		};
+		6F21C9702BE8CDAE00CF9FD0 /* HomeViews */ = {
+			isa = PBXGroup;
+			children = (
+				6F21C9722BE8CDE900CF9FD0 /* HomeViews.swift */,
+			);
+			path = HomeViews;
+			sourceTree = "<group>";
+		};
+		6F295F772BE39B90004FE416 /* Trips */ = {
+			isa = PBXGroup;
+			children = (
+				6F295F782BE39BA2004FE416 /* createTrip.swift */,
+				6F8AD19A2BE77BBD00191C20 /* SelectDestinationView.swift */,
+				6F8AD19C2BE77BCF00191C20 /* SelectMeetSpotView.swift */,
+				6F9E5A222BDE4DF0005BBECC /* PrepardLocationView.swift */,
+				6FB61D322BE8DCBE001A2B47 /* MyMapView.swift */,
+			);
+			path = Trips;
+			sourceTree = "<group>";
+		};
+		6F8AD1932BE76D3000191C20 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				6F8AD1942BE76D4100191C20 /* NotificationView.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		6F9E59FB2BDE4C49005BBECC = {
+			isa = PBXGroup;
+			children = (
+				6F9E5A062BDE4C49005BBECC /* RahalApp */,
+				6F9E5A052BDE4C49005BBECC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6F9E5A052BDE4C49005BBECC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6F9E5A042BDE4C49005BBECC /* RahalApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6F9E5A062BDE4C49005BBECC /* RahalApp */ = {
+			isa = PBXGroup;
+			children = (
+				6F9E5A3E2BDE5019005BBECC /* Extentions */,
+				6F9E5A352BDE4FA5005BBECC /* Constants */,
+				6F9E5A2E2BDE4F32005BBECC /* Helper */,
+				6F9E5A152BDE4C96005BBECC /* Views */,
+				6F9E5A072BDE4C49005BBECC /* RahalAppApp.swift */,
+				6F9E5A2A2BDE4E7B005BBECC /* Assets.xcassets */,
+				6F9E5A0D2BDE4C49005BBECC /* Preview Content */,
+			);
+			path = RahalApp;
+			sourceTree = "<group>";
+		};
+		6F9E5A0D2BDE4C49005BBECC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				6F9E5A0E2BDE4C49005BBECC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6F9E5A152BDE4C96005BBECC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6F21C9702BE8CDAE00CF9FD0 /* HomeViews */,
+				6F21C9632BE8BF2100CF9FD0 /* UserAccount */,
+				6F8AD1932BE76D3000191C20 /* Notification */,
+				6F295F772BE39B90004FE416 /* Trips */,
+				6FBA78CE2BDF980A0028D7B1 /* Auth */,
+				6F9E5A1F2BDE4D98005BBECC /* OnBoardingView */,
+				6F9E5A1A2BDE4D61005BBECC /* SplashView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6F9E5A1A2BDE4D61005BBECC /* SplashView */ = {
+			isa = PBXGroup;
+			children = (
+				6F9E5A2C2BDE4EBD005BBECC /* SplashView.swift */,
+			);
+			path = SplashView;
+			sourceTree = "<group>";
+		};
+		6F9E5A1F2BDE4D98005BBECC /* OnBoardingView */ = {
+			isa = PBXGroup;
+			children = (
+				6F9E5A282BDE4E69005BBECC /* PageIndicator.swift */,
+				6FBA78C62BDF89340028D7B1 /* OnBoardingClass.swift */,
+				6FBA78C82BDF89950028D7B1 /* OnBoardingView.swift */,
+			);
+			path = OnBoardingView;
+			sourceTree = "<group>";
+		};
+		6F9E5A2E2BDE4F32005BBECC /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				6F9E5A332BDE4F89005BBECC /* Utilities.swift */,
+				6F9E5A312BDE4F5E005BBECC /* ActivityLoader.swift */,
+				6F9E5A2F2BDE4F55005BBECC /* ViewportHelper.swift */,
+				6FBA78CC2BDF955B0028D7B1 /* ButtonWidget.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		6F9E5A352BDE4FA5005BBECC /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				6F9E5A362BDE4FAF005BBECC /* AppConstants.swift */,
+				6F9E5A382BDE4FB5005BBECC /* StringScheme.swift */,
+				6F9E5A3A2BDE4FBA005BBECC /* ColorConstants.swift */,
+				6F9E5A3C2BDE4FC0005BBECC /* FontScheme.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		6F9E5A3E2BDE5019005BBECC /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				6F9E5A412BDE5054005BBECC /* ViewExtension.swift */,
+				6F9E5A3F2BDE502A005BBECC /* RoundedCornersView.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		6FBA78CE2BDF980A0028D7B1 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				6FBA78CF2BDF98270028D7B1 /* LoginView.swift */,
+				6FBA78D12BDF983B0028D7B1 /* RegisterView.swift */,
+				6F8AD18F2BE7664E00191C20 /* AppleButtonView.swift */,
+				6F8AD1912BE7667000191C20 /* AppleButtonLogic.swift */,
+				6F8AD1962BE76E2B00191C20 /* ForgetPassword.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6F9E5A032BDE4C49005BBECC /* RahalApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6F9E5A122BDE4C49005BBECC /* Build configuration list for PBXNativeTarget "RahalApp" */;
+			buildPhases = (
+				6F9E5A002BDE4C49005BBECC /* Sources */,
+				6F9E5A012BDE4C49005BBECC /* Frameworks */,
+				6F9E5A022BDE4C49005BBECC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RahalApp;
+			productName = RahalApp;
+			productReference = 6F9E5A042BDE4C49005BBECC /* RahalApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6F9E59FC2BDE4C49005BBECC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					6F9E5A032BDE4C49005BBECC = {
+						CreatedOnToolsVersion = 15.3;
+					};
+				};
+			};
+			buildConfigurationList = 6F9E59FF2BDE4C49005BBECC /* Build configuration list for PBXProject "RahalApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6F9E59FB2BDE4C49005BBECC;
+			productRefGroup = 6F9E5A052BDE4C49005BBECC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6F9E5A032BDE4C49005BBECC /* RahalApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6F9E5A022BDE4C49005BBECC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F9E5A2B2BDE4E7B005BBECC /* Assets.xcassets in Resources */,
+				6F9E5A0F2BDE4C49005BBECC /* Preview Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6F9E5A002BDE4C49005BBECC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F21C9692BE8C44D00CF9FD0 /* SavedTripsView.swift in Sources */,
+				6F21C9732BE8CDE900CF9FD0 /* HomeViews.swift in Sources */,
+				6FB61D332BE8DCBE001A2B47 /* MyMapView.swift in Sources */,
+				6F9E5A292BDE4E69005BBECC /* PageIndicator.swift in Sources */,
+				6F8AD19D2BE77BCF00191C20 /* SelectMeetSpotView.swift in Sources */,
+				6F21C9652BE8BF3200CF9FD0 /* UserAccount.swift in Sources */,
+				6F8AD1922BE7667000191C20 /* AppleButtonLogic.swift in Sources */,
+				6FBA78C72BDF89340028D7B1 /* OnBoardingClass.swift in Sources */,
+				6F21C96B2BE8C45F00CF9FD0 /* FutureTripsView.swift in Sources */,
+				6F9E5A392BDE4FB5005BBECC /* StringScheme.swift in Sources */,
+				6F21C96D2BE8C47300CF9FD0 /* ContactUsView.swift in Sources */,
+				6F8AD19B2BE77BBD00191C20 /* SelectDestinationView.swift in Sources */,
+				6F8AD1952BE76D4100191C20 /* NotificationView.swift in Sources */,
+				6FBA78CD2BDF955B0028D7B1 /* ButtonWidget.swift in Sources */,
+				6F9E5A342BDE4F89005BBECC /* Utilities.swift in Sources */,
+				6F9E5A302BDE4F55005BBECC /* ViewportHelper.swift in Sources */,
+				6F9E5A322BDE4F5E005BBECC /* ActivityLoader.swift in Sources */,
+				6F8AD1902BE7664E00191C20 /* AppleButtonView.swift in Sources */,
+				6FBA78D22BDF983B0028D7B1 /* RegisterView.swift in Sources */,
+				6F9E5A372BDE4FAF005BBECC /* AppConstants.swift in Sources */,
+				6F9E5A3B2BDE4FBA005BBECC /* ColorConstants.swift in Sources */,
+				6F9E5A082BDE4C49005BBECC /* RahalAppApp.swift in Sources */,
+				6F9E5A402BDE502A005BBECC /* RoundedCornersView.swift in Sources */,
+				6FBA78D02BDF98270028D7B1 /* LoginView.swift in Sources */,
+				6F8AD1972BE76E2B00191C20 /* ForgetPassword.swift in Sources */,
+				6F9E5A3D2BDE4FC0005BBECC /* FontScheme.swift in Sources */,
+				6F9E5A422BDE5054005BBECC /* ViewExtension.swift in Sources */,
+				6FBA78C92BDF89950028D7B1 /* OnBoardingView.swift in Sources */,
+				6F21C9672BE8C40B00CF9FD0 /* UserInformationView.swift in Sources */,
+				6F9E5A232BDE4DF0005BBECC /* PrepardLocationView.swift in Sources */,
+				6F21C96F2BE8C80400CF9FD0 /* RestPasswordView.swift in Sources */,
+				6F295F792BE39BA2004FE416 /* createTrip.swift in Sources */,
+				6F9E5A2D2BDE4EBD005BBECC /* SplashView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		6F9E5A102BDE4C49005BBECC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6F9E5A112BDE4C49005BBECC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6F9E5A132BDE4C49005BBECC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RahalApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 932HV6TJ62;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "نحتاج الوصول الى موقعك";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "نحتاج الوصول الى موقعك ";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = twq.RahalApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6F9E5A142BDE4C49005BBECC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RahalApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 932HV6TJ62;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "نحتاج الوصول الى موقعك";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "نحتاج الوصول الى موقعك ";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = twq.RahalApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6F9E59FF2BDE4C49005BBECC /* Build configuration list for PBXProject "RahalApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F9E5A102BDE4C49005BBECC /* Debug */,
+				6F9E5A112BDE4C49005BBECC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6F9E5A122BDE4C49005BBECC /* Build configuration list for PBXNativeTarget "RahalApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F9E5A132BDE4C49005BBECC /* Debug */,
+				6F9E5A142BDE4C49005BBECC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6F9E59FC2BDE4C49005BBECC /* Project object */;
+}
