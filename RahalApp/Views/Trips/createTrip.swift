@@ -19,7 +19,7 @@ struct CreateTrip: View {
     @State private var startDate = Date.now
     @State private var endDate = Date.now
 
-
+//test
     var body: some View {
         ScrollView{
             VStack(alignment:.trailing ){
