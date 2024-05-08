@@ -11,10 +11,15 @@ import MapKit
 struct SelectMeetSpotView: View {
     @Environment(\.presentationMode) var presentationMode
     
+    @State var pickupLocation = /*CLLocationCoordinate2D(latitude: 24.8613, longitude: 46.7255)*/ CLLocationCoordinate2D(latitude: 42.6619, longitude: 21.1501)
+    
+  @State var dropOffLocation  = /*CLLocationCoordinate2D(latitude: 24.8414, longitude: 46.7333)*/
+                                                      CLLocationCoordinate2D(latitude: 42.6619, longitude: 21.1701)
+    
     var body: some View {
         ZStack{
-            Map(interactionModes: [.rotate, .zoom])
-                .mapStyle(.standard)
+            
+            MyMapView(requestLocation: $pickupLocation, destinationLocation: $dropOffLocation).edgesIgnoringSafeArea(.all)
             
             VStack{
                 

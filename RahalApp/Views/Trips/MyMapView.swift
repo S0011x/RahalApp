@@ -40,7 +40,7 @@ struct MyMapView: UIViewRepresentable {
         let directionRequest = MKDirections.Request()
         directionRequest.source = MKMapItem(placemark: requestPlacemark)
         directionRequest.destination = MKMapItem(placemark: destinationPlacemark)
-        directionRequest.transportType = .automobile
+        directionRequest.transportType = .any
         
       let directions = MKDirections (request: directionRequest)
         

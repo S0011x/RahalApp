@@ -42,6 +42,8 @@
 		6FBA78D02BDF98270028D7B1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBA78CF2BDF98270028D7B1 /* LoginView.swift */; };
 		6FBA78D22BDF983B0028D7B1 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBA78D12BDF983B0028D7B1 /* RegisterView.swift */; };
 		6FE409D42BEB62C80054B08E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FE409D32BEB62C80054B08E /* Assets.xcassets */; };
+		6FE409D62BEB64AB0054B08E /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE409D52BEB64AB0054B08E /* SearchViewModel.swift */; };
+		6FE409D82BEB65010054B08E /* MaoViewForSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE409D72BEB65010054B08E /* MaoViewForSearch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +83,8 @@
 		6FBA78CF2BDF98270028D7B1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		6FBA78D12BDF983B0028D7B1 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		6FE409D32BEB62C80054B08E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6FE409D52BEB64AB0054B08E /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		6FE409D72BEB65010054B08E /* MaoViewForSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaoViewForSearch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +127,8 @@
 				6F8AD19C2BE77BCF00191C20 /* SelectMeetSpotView.swift */,
 				6F9E5A222BDE4DF0005BBECC /* PrepardLocationView.swift */,
 				6FB61D322BE8DCBE001A2B47 /* MyMapView.swift */,
+				6FE409D52BEB64AB0054B08E /* SearchViewModel.swift */,
+				6FE409D72BEB65010054B08E /* MaoViewForSearch.swift */,
 			);
 			path = Trips;
 			sourceTree = "<group>";
@@ -325,6 +331,7 @@
 				6F8AD19D2BE77BCF00191C20 /* SelectMeetSpotView.swift in Sources */,
 				6F21C9652BE8BF3200CF9FD0 /* UserAccount.swift in Sources */,
 				6F8AD1922BE7667000191C20 /* AppleButtonLogic.swift in Sources */,
+				6FE409D82BEB65010054B08E /* MaoViewForSearch.swift in Sources */,
 				6FBA78C72BDF89340028D7B1 /* OnBoardingClass.swift in Sources */,
 				6F21C96B2BE8C45F00CF9FD0 /* FutureTripsView.swift in Sources */,
 				6F9E5A392BDE4FB5005BBECC /* StringScheme.swift in Sources */,
@@ -332,6 +339,7 @@
 				6F8AD19B2BE77BBD00191C20 /* SelectDestinationView.swift in Sources */,
 				6F8AD1952BE76D4100191C20 /* NotificationView.swift in Sources */,
 				6FBA78CD2BDF955B0028D7B1 /* ButtonWidget.swift in Sources */,
+				6FE409D62BEB64AB0054B08E /* SearchViewModel.swift in Sources */,
 				6F9E5A342BDE4F89005BBECC /* Utilities.swift in Sources */,
 				6F9E5A302BDE4F55005BBECC /* ViewportHelper.swift in Sources */,
 				6F9E5A322BDE4F5E005BBECC /* ActivityLoader.swift in Sources */,
