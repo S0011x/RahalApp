@@ -25,7 +25,6 @@
 		6F9E5A0F2BDE4C49005BBECC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F9E5A0E2BDE4C49005BBECC /* Preview Assets.xcassets */; };
 		6F9E5A232BDE4DF0005BBECC /* PrepardLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9E5A222BDE4DF0005BBECC /* PrepardLocationView.swift */; };
 		6F9E5A292BDE4E69005BBECC /* PageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9E5A282BDE4E69005BBECC /* PageIndicator.swift */; };
-		6F9E5A2B2BDE4E7B005BBECC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F9E5A2A2BDE4E7B005BBECC /* Assets.xcassets */; };
 		6F9E5A2D2BDE4EBD005BBECC /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9E5A2C2BDE4EBD005BBECC /* SplashView.swift */; };
 		6F9E5A302BDE4F55005BBECC /* ViewportHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9E5A2F2BDE4F55005BBECC /* ViewportHelper.swift */; };
 		6F9E5A322BDE4F5E005BBECC /* ActivityLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9E5A312BDE4F5E005BBECC /* ActivityLoader.swift */; };
@@ -42,6 +41,7 @@
 		6FBA78CD2BDF955B0028D7B1 /* ButtonWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBA78CC2BDF955B0028D7B1 /* ButtonWidget.swift */; };
 		6FBA78D02BDF98270028D7B1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBA78CF2BDF98270028D7B1 /* LoginView.swift */; };
 		6FBA78D22BDF983B0028D7B1 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBA78D12BDF983B0028D7B1 /* RegisterView.swift */; };
+		6FE409D42BEB62C80054B08E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FE409D32BEB62C80054B08E /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,7 +64,6 @@
 		6F9E5A0E2BDE4C49005BBECC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6F9E5A222BDE4DF0005BBECC /* PrepardLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepardLocationView.swift; sourceTree = "<group>"; };
 		6F9E5A282BDE4E69005BBECC /* PageIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageIndicator.swift; path = ../../../../trips/Jusapplication1/CustomViews/PageIndicator/PageIndicator.swift; sourceTree = "<group>"; };
-		6F9E5A2A2BDE4E7B005BBECC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../trips/Jusapplication1/Assets.xcassets; sourceTree = "<group>"; };
 		6F9E5A2C2BDE4EBD005BBECC /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		6F9E5A2F2BDE4F55005BBECC /* ViewportHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewportHelper.swift; sourceTree = "<group>"; };
 		6F9E5A312BDE4F5E005BBECC /* ActivityLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityLoader.swift; sourceTree = "<group>"; };
@@ -81,6 +80,7 @@
 		6FBA78CC2BDF955B0028D7B1 /* ButtonWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWidget.swift; sourceTree = "<group>"; };
 		6FBA78CF2BDF98270028D7B1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		6FBA78D12BDF983B0028D7B1 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		6FE409D32BEB62C80054B08E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,7 +159,7 @@
 				6F9E5A2E2BDE4F32005BBECC /* Helper */,
 				6F9E5A152BDE4C96005BBECC /* Views */,
 				6F9E5A072BDE4C49005BBECC /* RahalAppApp.swift */,
-				6F9E5A2A2BDE4E7B005BBECC /* Assets.xcassets */,
+				6FE409D32BEB62C80054B08E /* Assets.xcassets */,
 				6F9E5A0D2BDE4C49005BBECC /* Preview Content */,
 			);
 			path = RahalApp;
@@ -306,7 +306,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F9E5A2B2BDE4E7B005BBECC /* Assets.xcassets in Resources */,
+				6FE409D42BEB62C80054B08E /* Assets.xcassets in Resources */,
 				6F9E5A0F2BDE4C49005BBECC /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
