@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		189B6AD02BF0AAB600AC3578 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B6ACF2BF0AAB600AC3578 /* NotificationService.swift */; };
+		189B6AD42BF0AAB600AC3578 /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 189B6ACD2BF0AAB600AC3578 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		189B6ADD2BF0B12C00AC3578 /* OneSignalExtension in Frameworks */ = {isa = PBXBuildFile; productRef = 189B6ADC2BF0B12C00AC3578 /* OneSignalExtension */; };
+		189B6ADF2BF0B13000AC3578 /* OneSignalFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 189B6ADE2BF0B13000AC3578 /* OneSignalFramework */; };
+		189B6AE12BF0B13400AC3578 /* OneSignalInAppMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 189B6AE02BF0B13400AC3578 /* OneSignalInAppMessages */; };
+		189B6AE32BF0B13800AC3578 /* OneSignalLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 189B6AE22BF0B13800AC3578 /* OneSignalLocation */; };
 		6F21C9652BE8BF3200CF9FD0 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F21C9642BE8BF3200CF9FD0 /* UserAccount.swift */; };
 		6F21C9672BE8C40B00CF9FD0 /* UserInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F21C9662BE8C40B00CF9FD0 /* UserInformationView.swift */; };
 		6F21C9692BE8C44D00CF9FD0 /* SavedTripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F21C9682BE8C44D00CF9FD0 /* SavedTripsView.swift */; };
@@ -48,7 +54,37 @@
 		6FE409D82BEB65010054B08E /* MaoViewForSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE409D72BEB65010054B08E /* MaoViewForSearch.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		189B6AD22BF0AAB600AC3578 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6F9E59FC2BDE4C49005BBECC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 189B6ACC2BF0AAB600AC3578;
+			remoteInfo = OneSignalNotificationServiceExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		189B6AD82BF0AAB600AC3578 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				189B6AD42BF0AAB600AC3578 /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		189B6AC72BF0AA7B00AC3578 /* RahalApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RahalApp.entitlements; sourceTree = "<group>"; };
+		189B6AC82BF0AA8500AC3578 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		189B6ACD2BF0AAB600AC3578 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		189B6ACF2BF0AAB600AC3578 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		189B6AD12BF0AAB600AC3578 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		189B6AD92BF0AB0800AC3578 /* OneSignalNotificationServiceExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OneSignalNotificationServiceExtension.entitlements; sourceTree = "<group>"; };
 		6F21C9642BE8BF3200CF9FD0 /* UserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		6F21C9662BE8C40B00CF9FD0 /* UserInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationView.swift; sourceTree = "<group>"; };
 		6F21C9682BE8C44D00CF9FD0 /* SavedTripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTripsView.swift; sourceTree = "<group>"; };
@@ -92,16 +128,44 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6F9E5A012BDE4C49005BBECC /* Frameworks */ = {
+		189B6ACA2BF0AAB600AC3578 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6F9E5A012BDE4C49005BBECC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				189B6AE12BF0B13400AC3578 /* OneSignalInAppMessages in Frameworks */,
+				189B6ADF2BF0B13000AC3578 /* OneSignalFramework in Frameworks */,
+				189B6AE32BF0B13800AC3578 /* OneSignalLocation in Frameworks */,
+				189B6ADD2BF0B12C00AC3578 /* OneSignalExtension in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		189B6ACE2BF0AAB600AC3578 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				189B6AD92BF0AB0800AC3578 /* OneSignalNotificationServiceExtension.entitlements */,
+				189B6ACF2BF0AAB600AC3578 /* NotificationService.swift */,
+				189B6AD12BF0AAB600AC3578 /* Info.plist */,
+			);
+			path = OneSignalNotificationServiceExtension;
+			sourceTree = "<group>";
+		};
+		189B6ADB2BF0B12C00AC3578 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6F21C9632BE8BF2100CF9FD0 /* UserAccount */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,7 +215,9 @@
 			isa = PBXGroup;
 			children = (
 				6F9E5A062BDE4C49005BBECC /* RahalApp */,
+				189B6ACE2BF0AAB600AC3578 /* OneSignalNotificationServiceExtension */,
 				6F9E5A052BDE4C49005BBECC /* Products */,
+				189B6ADB2BF0B12C00AC3578 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				6F9E5A042BDE4C49005BBECC /* RahalApp.app */,
+				189B6ACD2BF0AAB600AC3578 /* OneSignalNotificationServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -166,6 +233,8 @@
 		6F9E5A062BDE4C49005BBECC /* RahalApp */ = {
 			isa = PBXGroup;
 			children = (
+				189B6AC82BF0AA8500AC3578 /* Info.plist */,
+				189B6AC72BF0AA7B00AC3578 /* RahalApp.entitlements */,
 				6F9E5A3E2BDE5019005BBECC /* Extentions */,
 				6F9E5A352BDE4FA5005BBECC /* Constants */,
 				6F9E5A2E2BDE4F32005BBECC /* Helper */,
@@ -263,6 +332,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		189B6ACC2BF0AAB600AC3578 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 189B6AD52BF0AAB600AC3578 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
+			buildPhases = (
+				189B6AC92BF0AAB600AC3578 /* Sources */,
+				189B6ACA2BF0AAB600AC3578 /* Frameworks */,
+				189B6ACB2BF0AAB600AC3578 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneSignalNotificationServiceExtension;
+			productName = OneSignalNotificationServiceExtension;
+			productReference = 189B6ACD2BF0AAB600AC3578 /* OneSignalNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		6F9E5A032BDE4C49005BBECC /* RahalApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6F9E5A122BDE4C49005BBECC /* Build configuration list for PBXNativeTarget "RahalApp" */;
@@ -270,12 +356,20 @@
 				6F9E5A002BDE4C49005BBECC /* Sources */,
 				6F9E5A012BDE4C49005BBECC /* Frameworks */,
 				6F9E5A022BDE4C49005BBECC /* Resources */,
+				189B6AD82BF0AAB600AC3578 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				189B6AD32BF0AAB600AC3578 /* PBXTargetDependency */,
 			);
 			name = RahalApp;
+			packageProductDependencies = (
+				189B6ADC2BF0B12C00AC3578 /* OneSignalExtension */,
+				189B6ADE2BF0B13000AC3578 /* OneSignalFramework */,
+				189B6AE02BF0B13400AC3578 /* OneSignalInAppMessages */,
+				189B6AE22BF0B13800AC3578 /* OneSignalLocation */,
+			);
 			productName = RahalApp;
 			productReference = 6F9E5A042BDE4C49005BBECC /* RahalApp.app */;
 			productType = "com.apple.product-type.application";
@@ -290,6 +384,9 @@
 				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
+					189B6ACC2BF0AAB600AC3578 = {
+						CreatedOnToolsVersion = 15.3;
+					};
 					6F9E5A032BDE4C49005BBECC = {
 						CreatedOnToolsVersion = 15.3;
 					};
@@ -304,16 +401,27 @@
 				Base,
 			);
 			mainGroup = 6F9E59FB2BDE4C49005BBECC;
+			packageReferences = (
+				189B6ADA2BF0AC0900AC3578 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */,
+			);
 			productRefGroup = 6F9E5A052BDE4C49005BBECC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				6F9E5A032BDE4C49005BBECC /* RahalApp */,
+				189B6ACC2BF0AAB600AC3578 /* OneSignalNotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		189B6ACB2BF0AAB600AC3578 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6F9E5A022BDE4C49005BBECC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -326,6 +434,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		189B6AC92BF0AAB600AC3578 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				189B6AD02BF0AAB600AC3578 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6F9E5A002BDE4C49005BBECC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -372,7 +488,69 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		189B6AD32BF0AAB600AC3578 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 189B6ACC2BF0AAB600AC3578 /* OneSignalNotificationServiceExtension */;
+			targetProxy = 189B6AD22BF0AAB600AC3578 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		189B6AD62BF0AAB600AC3578 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZM4ARX928Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = twq.RahalAppm.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		189B6AD72BF0AAB600AC3578 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZM4ARX928Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = twq.RahalAppm.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		6F9E5A102BDE4C49005BBECC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -495,14 +673,17 @@
 		6F9E5A132BDE4C49005BBECC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RahalApp/RahalApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RahalApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 932HV6TJ62;
+				DEVELOPMENT_TEAM = ZM4ARX928Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RahalApp/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "نحتاج الوصول الى موقعك";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "نحتاج الوصول الى موقعك ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -516,7 +697,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = twq.RahalApp;
+				PRODUCT_BUNDLE_IDENTIFIER = twq.RahalAppm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -527,14 +708,17 @@
 		6F9E5A142BDE4C49005BBECC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RahalApp/RahalApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RahalApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 932HV6TJ62;
+				DEVELOPMENT_TEAM = ZM4ARX928Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RahalApp/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "نحتاج الوصول الى موقعك";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "نحتاج الوصول الى موقعك ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -548,7 +732,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = twq.RahalApp;
+				PRODUCT_BUNDLE_IDENTIFIER = twq.RahalAppm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -559,6 +743,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		189B6AD52BF0AAB600AC3578 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				189B6AD62BF0AAB600AC3578 /* Debug */,
+				189B6AD72BF0AAB600AC3578 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		6F9E59FF2BDE4C49005BBECC /* Build configuration list for PBXProject "RahalApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -578,6 +771,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		189B6ADA2BF0AC0900AC3578 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OneSignal/OneSignal-XCFramework";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		189B6ADC2BF0B12C00AC3578 /* OneSignalExtension */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 189B6ADA2BF0AC0900AC3578 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignalExtension;
+		};
+		189B6ADE2BF0B13000AC3578 /* OneSignalFramework */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 189B6ADA2BF0AC0900AC3578 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignalFramework;
+		};
+		189B6AE02BF0B13400AC3578 /* OneSignalInAppMessages */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 189B6ADA2BF0AC0900AC3578 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignalInAppMessages;
+		};
+		189B6AE22BF0B13800AC3578 /* OneSignalLocation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 189B6ADA2BF0AC0900AC3578 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignalLocation;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6F9E59FC2BDE4C49005BBECC /* Project object */;
 }
