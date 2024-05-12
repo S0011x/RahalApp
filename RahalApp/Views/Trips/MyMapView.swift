@@ -56,7 +56,6 @@ struct MyMapView: UIViewRepresentable {
             let rect = route.polyline.boundingMapRect
             uiView.setRegion(MKCoordinateRegion(rect), animated: true)
             
-            
             uiView.setVisibleMapRect(rect, edgePadding: .init(top: 10, left: 50, bottom: 300, right: 50), animated: true)
         }
         
@@ -79,6 +78,8 @@ class WrappableMapView : MKMapView, MKMapViewDelegate{
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+            let lat = mapView.camera.centerCoordinate.latitude
+            let lng = mapView.camera.centerCoordinate.longitude
             
             if annotation is MKUserLocation {
                 return nil

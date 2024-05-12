@@ -21,6 +21,7 @@ struct SelectMeetSpotView: View {
             
             MyMapView(requestLocation: $pickupLocation, destinationLocation: $dropOffLocation).edgesIgnoringSafeArea(.all)
             
+            
             VStack{
                 
                 VStack{

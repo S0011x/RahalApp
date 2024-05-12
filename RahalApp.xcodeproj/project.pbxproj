@@ -16,6 +16,8 @@
 		6F21C9732BE8CDE900CF9FD0 /* HomeViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F21C9722BE8CDE900CF9FD0 /* HomeViews.swift */; };
 		6F295F792BE39BA2004FE416 /* createTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F295F782BE39BA2004FE416 /* createTrip.swift */; };
 		6F82C3C42BF0A525000B8164 /* PageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F82C3C32BF0A525000B8164 /* PageIndicator.swift */; };
+		6F82C3C62BF0A963000B8164 /* meetSpotsManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F82C3C52BF0A963000B8164 /* meetSpotsManger.swift */; };
+		6F82C3C82BF0BFDA000B8164 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F82C3C72BF0BFDA000B8164 /* ViewController.swift */; };
 		6F8AD1902BE7664E00191C20 /* AppleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8AD18F2BE7664E00191C20 /* AppleButtonView.swift */; };
 		6F8AD1922BE7667000191C20 /* AppleButtonLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8AD1912BE7667000191C20 /* AppleButtonLogic.swift */; };
 		6F8AD1952BE76D4100191C20 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8AD1942BE76D4100191C20 /* NotificationView.swift */; };
@@ -56,6 +58,8 @@
 		6F21C9722BE8CDE900CF9FD0 /* HomeViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViews.swift; sourceTree = "<group>"; };
 		6F295F782BE39BA2004FE416 /* createTrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createTrip.swift; sourceTree = "<group>"; };
 		6F82C3C32BF0A525000B8164 /* PageIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageIndicator.swift; sourceTree = "<group>"; };
+		6F82C3C52BF0A963000B8164 /* meetSpotsManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meetSpotsManger.swift; sourceTree = "<group>"; };
+		6F82C3C72BF0BFDA000B8164 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6F8AD18F2BE7664E00191C20 /* AppleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleButtonView.swift; sourceTree = "<group>"; };
 		6F8AD1912BE7667000191C20 /* AppleButtonLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleButtonLogic.swift; sourceTree = "<group>"; };
 		6F8AD1942BE76D4100191C20 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 				6FB61D322BE8DCBE001A2B47 /* MyMapView.swift */,
 				6FE409D52BEB64AB0054B08E /* SearchViewModel.swift */,
 				6FE409D72BEB65010054B08E /* MaoViewForSearch.swift */,
+				6F82C3C52BF0A963000B8164 /* meetSpotsManger.swift */,
+				6F82C3C72BF0BFDA000B8164 /* ViewController.swift */,
 			);
 			path = Trips;
 			sourceTree = "<group>";
@@ -338,9 +344,11 @@
 				6F8AD19B2BE77BBD00191C20 /* SelectDestinationView.swift in Sources */,
 				6F8AD1952BE76D4100191C20 /* NotificationView.swift in Sources */,
 				6FBA78CD2BDF955B0028D7B1 /* ButtonWidget.swift in Sources */,
+				6F82C3C62BF0A963000B8164 /* meetSpotsManger.swift in Sources */,
 				6FE409D62BEB64AB0054B08E /* SearchViewModel.swift in Sources */,
 				6F82C3C42BF0A525000B8164 /* PageIndicator.swift in Sources */,
 				6F9E5A342BDE4F89005BBECC /* Utilities.swift in Sources */,
+				6F82C3C82BF0BFDA000B8164 /* ViewController.swift in Sources */,
 				6F9E5A302BDE4F55005BBECC /* ViewportHelper.swift in Sources */,
 				6F9E5A322BDE4F5E005BBECC /* ActivityLoader.swift in Sources */,
 				6F8AD1902BE7664E00191C20 /* AppleButtonView.swift in Sources */,
