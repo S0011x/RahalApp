@@ -65,7 +65,7 @@ struct HomeViews: View {
                                             if(code == ""){
                                                 Button("حسنا", action: submit)
                                             }else{
-                                                NavigationLink(destination: PrepardLocationView()) {
+                                                NavigationLink(destination: PrepardLocationView(pickupLocation: CLLocationCoordinate2D(latitude: 24.8613, longitude: 46.7255), dropOffLocation: CLLocationCoordinate2D(latitude: 24.8414, longitude: 46.7333) )) {
                                                     Text("حسنا").foregroundColor(.blue)
                                                 }
                                             }

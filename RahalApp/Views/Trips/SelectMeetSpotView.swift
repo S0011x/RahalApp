@@ -11,10 +11,10 @@ import MapKit
 struct SelectMeetSpotView: View {
     @Environment(\.presentationMode) var presentationMode
     
-    @State var pickupLocation = /*CLLocationCoordinate2D(latitude: 24.8613, longitude: 46.7255)*/ CLLocationCoordinate2D(latitude: 42.6619, longitude: 21.1501)
+    @State var pickupLocation: CLLocationCoordinate2D
     
-  @State var dropOffLocation  = /*CLLocationCoordinate2D(latitude: 24.8414, longitude: 46.7333)*/
-                                                      CLLocationCoordinate2D(latitude: 42.6619, longitude: 21.1701)
+    @State var dropOffLocation: CLLocationCoordinate2D
+                                                      
     
     var body: some View {
         ZStack{
@@ -43,7 +43,7 @@ struct SelectMeetSpotView: View {
                         .cornerRadius(8)
                     
                     Spacer()
-                    NavigationLink(destination: PrepardLocationView()) {
+                    NavigationLink(destination: PrepardLocationView( pickupLocation: pickupLocation, dropOffLocation: dropOffLocation )) {
                         ButtonWidget(text: "التالي")
                     }
                 }
@@ -52,5 +52,5 @@ struct SelectMeetSpotView: View {
     }
 }
 #Preview {
-    SelectMeetSpotView()
+    SelectMeetSpotView(pickupLocation:  CLLocationCoordinate2D(latitude: 42.6619, longitude: 21.1501), dropOffLocation: CLLocationCoordinate2D(latitude: 42.6619, longitude: 21.1701))
 }

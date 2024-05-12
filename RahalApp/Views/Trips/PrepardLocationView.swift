@@ -6,10 +6,13 @@ struct PrepardLocationView: View {
     // Location Manager....
     @State var locationManager = CLLocationManager()
     
+    @State var pickupLocation: CLLocationCoordinate2D
+    @State var dropOffLocation: CLLocationCoordinate2D
+    
     var body: some View {
             ZStack(alignment: .center) {
-                Map(interactionModes: [.rotate, .zoom])
-                    .mapStyle(.standard)
+                
+                MyMapView(requestLocation: $pickupLocation, destinationLocation: $dropOffLocation).edgesIgnoringSafeArea(.all)
                 
                 
                 VStack{
@@ -66,7 +69,7 @@ struct PrepardLocationView: View {
 
 struct PrepardLocationView_Previews: PreviewProvider {
     static var previews: some View {
-        PrepardLocationView()
+        PrepardLocationView(pickupLocation:  CLLocationCoordinate2D(latitude: 42.6619, longitude: 21.1501), dropOffLocation: CLLocationCoordinate2D(latitude: 42.6619, longitude: 21.1701))
     }
 }
 

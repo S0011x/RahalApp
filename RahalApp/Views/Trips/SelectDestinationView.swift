@@ -20,8 +20,7 @@ struct SelectDestinationView: View {
     
     
     @State var pickupLocation =  CLLocationCoordinate2D(latitude: 0, longitude: 0)
-    
-  @State var dropOffLocation  = CLLocationCoordinate2D(latitude: 0, longitude: 0)
+    @State var dropOffLocation  = CLLocationCoordinate2D(latitude: 0, longitude: 0)
     
     var body: some View {
         ZStack{
@@ -105,6 +104,9 @@ struct SelectDestinationView: View {
                                         mapDataPickUp.selectPlace(place: place)
                                         
                                         pickupLocation =  CLLocationCoordinate2D(latitude: mapDataPickUp.mapView.region.center.latitude, longitude: mapDataPickUp.mapView.region.center.longitude)
+                                        
+                                        print(pickupLocation)
+
                                   
                                     }
                                 
@@ -136,6 +138,8 @@ struct SelectDestinationView: View {
                                         mapDataDestenation.selectPlace(place: place)
                                         destenationText = place.placemark.name ?? ""
                                         dropOffLocation = CLLocationCoordinate2D(latitude: mapDataDestenation.mapView.region.center.latitude, longitude: mapDataDestenation.mapView.region.center.longitude)
+                                        
+                                        print(dropOffLocation)
                                     }
                                 
                                 Divider()
@@ -148,7 +152,8 @@ struct SelectDestinationView: View {
                 
                 
                 Spacer()
-                NavigationLink(destination: SelectMeetSpotView()) {
+                NavigationLink(destination: SelectMeetSpotView(
+         pickupLocation: pickupLocation, dropOffLocation: dropOffLocation)) {
                     ButtonWidget(text: "التالي")
                 }
             }

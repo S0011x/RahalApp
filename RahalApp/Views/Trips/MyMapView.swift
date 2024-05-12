@@ -63,7 +63,7 @@ struct MyMapView: UIViewRepresentable {
    }
     
     func setMapRegion(_ region: CLLocationCoordinate2D) {
-        mapView.region =  MKCoordinateRegion(center: region, latitudinalMeters: 10000, longitudinalMeters: 10000)
+        mapView.region =  MKCoordinateRegion(center: region, latitudinalMeters: 6000, longitudinalMeters: 6000)
         
     }
     
