@@ -140,7 +140,7 @@ struct MapView: UIViewRepresentable {
                   annotationView?.image = UIImage (named: "pickup")
                   
               case "dropoff":
-                  annotationView?.image = UIImage (named: "dropoff") 
+                  annotationView?.image = UIImage (named: "dropoff")
               case "pin":
                   annotationView?.image = UIImage (named: "img_group_22")
               default:
