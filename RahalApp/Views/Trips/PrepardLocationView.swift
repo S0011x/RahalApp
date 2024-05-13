@@ -1,5 +1,7 @@
 import SwiftUI
 import MapKit
+import Network
+
 struct PrepardLocationView: View {
     @State private var messagetwooneText: String = ""
     //@StateObject var mapData = MapViewModel()
@@ -9,6 +11,35 @@ struct PrepardLocationView: View {
     @State var pickupLocation: CLLocationCoordinate2D
     @State var dropOffLocation: CLLocationCoordinate2D
     
+//    @State var ConnectionStatus: String
+   
+    @State private var wifiImage: Image = Image(systemName: "wifi")
+    @State private var wifiColor: Color = .white
+
+    func CheckNetwoekConection() {
+        let monitor = NWPathMonitor()
+        let queue = DispatchQueue(label: "NetworkMonitor")
+        monitor.start(queue: queue)
+
+        monitor.pathUpdateHandler = { path in
+            DispatchQueue.main.async {
+                if path.status == .satisfied {
+                    print("Internet connection is available.")
+                    wifiImage = Image(systemName: "wifi")
+                    wifiColor = .blueGray600
+                } else if path.status == .unsatisfied {
+                    print("Internet connection is not strong.")
+                    wifiImage = Image(systemName: "wifi.exclamationmark")
+                    wifiColor = .gray
+                } else {
+                    print("Internet connection is not available.")
+                    wifiImage = Image(systemName: "wifi.slash")
+                    wifiColor = .red
+                }
+            }
+        }
+    }
+    
     var body: some View {
             ZStack(alignment: .center) {
                 
@@ -17,16 +48,23 @@ struct PrepardLocationView: View {
                 
                 VStack{
                     HeaderView
+                    
                      Spacer()
                     HStack {
+                        
+                        //show members to the leader
                         widgetBox(text: StringConstants.kLbl3)
                         widgetBox(text: StringConstants.kLbl5)
                         
                         imageBox(image: "img_sos_circle_fill")
                     }.frame(width:350, alignment: .trailing)
+                } .onAppear {
+                    CheckNetwoekConection()
                 }
         }.hideNavigationBar()
+        
     }
+        
     
     func widgetBox(text: String) -> some View{
         return  HStack(spacing: 0) {
@@ -76,15 +114,49 @@ struct PrepardLocationView_Previews: PreviewProvider {
 
 extension PrepardLocationView {
     private var HeaderView: some View{
+        
+        
+        
+        
         VStack(alignment: .trailing, spacing: 0) {
             HStack(alignment:.top){
                 
-                NavigationLink(destination:HomeViews() ,label: {
-                    Image("close")
+                ZStack {
+                    Rectangle()
+                        .foregroundColor(.whiteA700)
+                        .frame(width: 45, height: 45)
+                        .cornerRadius(8)
+                    
+                    NavigationLink(destination:HomeViews() ,label: {
+//                        Image("close")
+                        Image(systemName: "xmark.circle")
+                            .resizable()
+                            .frame(width: getRelativeWidth(34), height: getRelativeWidth(34),
+                                   alignment: .center)
+                            .foregroundColor(wifiColor)
+                    })
+                }
+                
+                Spacer()
+                
+                ZStack {
+                    Rectangle()
+                        .foregroundColor(.whiteA700)
+                        .frame(width: 45, height: 45)
+                        .cornerRadius(8)
+                    
+                    wifiImage
                         .resizable()
-                        .frame(width: getRelativeWidth(35), height: getRelativeWidth(35),
-                               alignment: .center)
-                })
+                        .frame(width: getRelativeWidth(30), height: getRelativeWidth(24))
+                        .foregroundColor(wifiColor)
+                }
+//
+//                wifiImage
+//                    .resizable()
+//                    .frame(width: 55, height: 45)
+//                    .foregroundColor(wifiColor)
+//                    .cornerRadius(12)
+//                    .background
                 
                 Spacer()
                 ZStack{
@@ -102,14 +174,19 @@ extension PrepardLocationView {
                         })
                         
                         NavigationLink(destination: UserAccountView(), label: {
-                            Image("zoom")
+//                            Image("zoom")
+                            Image(systemName: "square.arrowtriangle.4.outward")
                                 .resizable()
                                 .frame(width: getRelativeWidth(34.0), height: getRelativeWidth(34.0),
                                        alignment: .center)
+                                .foregroundColor(.blueGray600)
                         })
                         
                         NavigationLink(destination: NotificationView() , label: {
                             Image("more")
+//                                .toolbar {
+//
+//                                }
                         })
                         
                     }

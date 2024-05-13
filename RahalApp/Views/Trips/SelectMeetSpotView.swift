@@ -14,6 +14,9 @@ struct SelectMeetSpotView: View {
     @State var pickupLocation: CLLocationCoordinate2D
     
     @State var dropOffLocation: CLLocationCoordinate2D
+    
+    
+    
                                                       
     
     var body: some View {
