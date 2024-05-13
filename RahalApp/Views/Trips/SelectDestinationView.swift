@@ -22,6 +22,10 @@ struct SelectDestinationView: View {
     @State var pickupLocation =  CLLocationCoordinate2D(latitude: 0, longitude: 0)
     @State var dropOffLocation  = CLLocationCoordinate2D(latitude: 0, longitude: 0)
     
+    @State var anotionOne: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 42.6619, longitude: 21.1701)
+    @State var anotionTwo: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 42.6619, longitude: 21.1701)
+    @State var anotionTHree: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 42.6619, longitude: 21.1701)
+
     var body: some View {
         ZStack{
             // MapView...
@@ -33,7 +37,7 @@ struct SelectDestinationView: View {
             }
             
             if(pickupLocation.latitude != 0 && dropOffLocation.latitude != 0 && pickupLocation.longitude != 0 && dropOffLocation.longitude != 0  ){
-                MyMapView(requestLocation: $pickupLocation  , destinationLocation: $dropOffLocation ).edgesIgnoringSafeArea(.all)
+                MapView(pickupLocation: $pickupLocation , dropOffLocation: $dropOffLocation, annotationOne: $anotionOne , annotationTwo: $anotionTwo ,annotationThree: $anotionTHree).edgesIgnoringSafeArea(.all)
                 }
             
             VStack{

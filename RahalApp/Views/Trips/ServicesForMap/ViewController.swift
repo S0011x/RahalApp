@@ -13,7 +13,7 @@ class ViewController: UIViewController {
         map.overrideUserInterfaceStyle = .dark
         return map
     }()
-override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
@@ -133,9 +133,9 @@ extension ViewController : MKMapViewDelegate {
         //SET CUSTOM ANNOTATION IMAGES
         switch annotation.title {
         case "end":
-            annotationView?.image = UIImage(named: "pinEnd")
+            annotationView?.image = UIImage(named: "dropoff")
         case "start":
-            annotationView?.image = UIImage(named: "pinStart")
+            annotationView?.image = UIImage(named: "pickup")
         default:
             break
         }
