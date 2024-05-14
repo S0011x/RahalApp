@@ -12,6 +12,7 @@ import OneSignalFramework
 
 @main
 struct RahalAppApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @AppStorage("isOnboarding") var isOnboarding: Bool = true
 
     var body: some Scene {
@@ -28,7 +29,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
        OneSignal.Debug.setLogLevel(.LL_VERBOSE)
         
        // OneSignal initialization
-       OneSignal.initialize("a1f9489d-25d3-4e5f-8f62-7bcc0ef497f4", withLaunchOptions: launchOptions)
+       OneSignal.initialize("96d7df2d-aedc-47be-8986-d920234c5a50", withLaunchOptions: launchOptions)
 
        // requestPermission will show the native iOS notification permission prompt.
        // We recommend removing the following code and instead using an In-App Message to prompt for notification permission
