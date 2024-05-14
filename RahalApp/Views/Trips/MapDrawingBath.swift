@@ -50,7 +50,6 @@ struct MapView: UIViewRepresentable {
         animated: true)
     }
     
-      
     return mapView
   }
 
@@ -102,11 +101,26 @@ struct MapView: UIViewRepresentable {
               return
           }
           
-          let route = response.routes[0]
-          uiView.addOverlay(route.polyline, level: .aboveRoads)
+         // let route = response.routes[0]
+         // uiView.addOverlay(route.polyline, level: .aboveRoads)
           
-          let rect = route.polyline.boundingMapRect
-          uiView.setRegion(MKCoordinateRegion(rect), animated: true)
+         // let rect = route.polyline.boundingMapRect
+         // uiView.setRegion(MKCoordinateRegion(rect), animated: true)
+          
+          
+          let route = response.routes[0]
+              uiView.addOverlay(route.polyline, level: .aboveRoads)
+              
+              let rect = route.polyline.boundingMapRect
+              let region = MKCoordinateRegion(rect)
+              
+              // Ensure zoom levels are within limits
+              let limitedRegion = MKCoordinateRegion(
+                  center: region.center,
+                  span: MKCoordinateSpan(latitudeDelta:1000 , longitudeDelta: 1000)
+              )
+              
+              uiView.setRegion(limitedRegion, animated: true)
           
           uiView.setVisibleMapRect(rect, edgePadding: .init(top: 10, left: 50, bottom: 300, right: 50), animated: true)
       }
