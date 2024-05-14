@@ -141,7 +141,10 @@ struct SelectDestinationView: View {
                                         
                                         mapDataDestenation.selectPlace(place: place)
                                         destenationText = place.placemark.name ?? ""
-                                        dropOffLocation = CLLocationCoordinate2D(latitude: mapDataDestenation.mapView.region.center.latitude, longitude: mapDataDestenation.mapView.region.center.longitude)
+
+                                        if let lat = place.placemark.location?.coordinate.latitude, let long = place.placemark.location?.coordinate.longitude {
+                                            dropOffLocation = CLLocationCoordinate2D(latitude: lat, longitude: long)
+                                        }
                                         
                                         print(dropOffLocation)
                                     }
