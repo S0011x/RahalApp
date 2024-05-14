@@ -17,6 +17,7 @@ struct MapView: UIViewRepresentable {
     @Binding var annotationOne : CLLocationCoordinate2D
     @Binding var annotationTwo : CLLocationCoordinate2D
     @Binding var annotationThree : CLLocationCoordinate2D
+   // @State var drop : CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
 
   func makeCoordinator() -> MapViewCoordinator {
     return MapViewCoordinator()
@@ -91,7 +92,7 @@ struct MapView: UIViewRepresentable {
       let directionRequest = MKDirections.Request()
       directionRequest.source = MKMapItem(placemark: requestPlacemark)
       directionRequest.destination = MKMapItem(placemark: destinationPlacemark)
-      directionRequest.transportType = .any
+      directionRequest.transportType = .automobile
       
     let directions = MKDirections (request: directionRequest)
       

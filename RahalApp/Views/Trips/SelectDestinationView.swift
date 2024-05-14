@@ -17,7 +17,7 @@ struct SelectDestinationView: View {
     @State var destenationText = ""
     // Location Manager....
     @State var locationManager = CLLocationManager()
-    
+
     
     @State var pickupLocation =  CLLocationCoordinate2D(latitude: 0, longitude: 0)
     @State var dropOffLocation  = CLLocationCoordinate2D(latitude: 0, longitude: 0)
@@ -166,7 +166,9 @@ struct SelectDestinationView: View {
         .onAppear(perform: {
             // Setting Delegate...
             locationManager.delegate = mapDataPickUp
+            locationManager.delegate = mapDataDestenation
             locationManager.requestWhenInUseAuthorization()
+            
         })
         // Permission Denied Alert...
         .alert(isPresented: $mapDataPickUp.permissionDenied, content: {

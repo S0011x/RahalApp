@@ -21,9 +21,10 @@
 		6F21C96F2BE8C80400CF9FD0 /* RestPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F21C96E2BE8C80400CF9FD0 /* RestPasswordView.swift */; };
 		6F21C9732BE8CDE900CF9FD0 /* HomeViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F21C9722BE8CDE900CF9FD0 /* HomeViews.swift */; };
 		6F295F792BE39BA2004FE416 /* createTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F295F782BE39BA2004FE416 /* createTrip.swift */; };
+		6F3A09372BF20A83006F42B3 /* MyMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3A09362BF20A83006F42B3 /* MyMapView.swift */; };
+		6F3A09392BF20AB4006F42B3 /* MapDrawingBath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3A09382BF20AB4006F42B3 /* MapDrawingBath.swift */; };
+		6F3A093B2BF2192D006F42B3 /* NewSearchForDestenation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3A093A2BF2192D006F42B3 /* NewSearchForDestenation.swift */; };
 		6F82C3C42BF0A525000B8164 /* PageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F82C3C32BF0A525000B8164 /* PageIndicator.swift */; };
-		6F82C3C62BF0A963000B8164 /* meetSpotsManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F82C3C52BF0A963000B8164 /* meetSpotsManger.swift */; };
-		6F82C3C82BF0BFDA000B8164 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F82C3C72BF0BFDA000B8164 /* ViewController.swift */; };
 		6F8AD1902BE7664E00191C20 /* AppleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8AD18F2BE7664E00191C20 /* AppleButtonView.swift */; };
 		6F8AD1922BE7667000191C20 /* AppleButtonLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8AD1912BE7667000191C20 /* AppleButtonLogic.swift */; };
 		6F8AD1952BE76D4100191C20 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8AD1942BE76D4100191C20 /* NotificationView.swift */; };
@@ -43,7 +44,6 @@
 		6F9E5A3D2BDE4FC0005BBECC /* FontScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9E5A3C2BDE4FC0005BBECC /* FontScheme.swift */; };
 		6F9E5A402BDE502A005BBECC /* RoundedCornersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9E5A3F2BDE502A005BBECC /* RoundedCornersView.swift */; };
 		6F9E5A422BDE5054005BBECC /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9E5A412BDE5054005BBECC /* ViewExtension.swift */; };
-		6FB61D332BE8DCBE001A2B47 /* MyMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB61D322BE8DCBE001A2B47 /* MyMapView.swift */; };
 		6FBA78C72BDF89340028D7B1 /* OnBoardingClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBA78C62BDF89340028D7B1 /* OnBoardingClass.swift */; };
 		6FBA78C92BDF89950028D7B1 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBA78C82BDF89950028D7B1 /* OnBoardingView.swift */; };
 		6FBA78CD2BDF955B0028D7B1 /* ButtonWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBA78CC2BDF955B0028D7B1 /* ButtonWidget.swift */; };
@@ -93,9 +93,10 @@
 		6F21C96E2BE8C80400CF9FD0 /* RestPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestPasswordView.swift; sourceTree = "<group>"; };
 		6F21C9722BE8CDE900CF9FD0 /* HomeViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViews.swift; sourceTree = "<group>"; };
 		6F295F782BE39BA2004FE416 /* createTrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createTrip.swift; sourceTree = "<group>"; };
+		6F3A09362BF20A83006F42B3 /* MyMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMapView.swift; sourceTree = "<group>"; };
+		6F3A09382BF20AB4006F42B3 /* MapDrawingBath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDrawingBath.swift; sourceTree = "<group>"; };
+		6F3A093A2BF2192D006F42B3 /* NewSearchForDestenation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSearchForDestenation.swift; sourceTree = "<group>"; };
 		6F82C3C32BF0A525000B8164 /* PageIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageIndicator.swift; sourceTree = "<group>"; };
-		6F82C3C52BF0A963000B8164 /* meetSpotsManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meetSpotsManger.swift; sourceTree = "<group>"; };
-		6F82C3C72BF0BFDA000B8164 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6F8AD18F2BE7664E00191C20 /* AppleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleButtonView.swift; sourceTree = "<group>"; };
 		6F8AD1912BE7667000191C20 /* AppleButtonLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleButtonLogic.swift; sourceTree = "<group>"; };
 		6F8AD1942BE76D4100191C20 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
@@ -116,7 +117,6 @@
 		6F9E5A3C2BDE4FC0005BBECC /* FontScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontScheme.swift; sourceTree = "<group>"; };
 		6F9E5A3F2BDE502A005BBECC /* RoundedCornersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornersView.swift; sourceTree = "<group>"; };
 		6F9E5A412BDE5054005BBECC /* ViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
-		6FB61D322BE8DCBE001A2B47 /* MyMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMapView.swift; sourceTree = "<group>"; };
 		6FBA78C62BDF89340028D7B1 /* OnBoardingClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingClass.swift; sourceTree = "<group>"; };
 		6FBA78C82BDF89950028D7B1 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		6FBA78CC2BDF955B0028D7B1 /* ButtonWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWidget.swift; sourceTree = "<group>"; };
@@ -194,11 +194,11 @@
 				6F8AD19A2BE77BBD00191C20 /* SelectDestinationView.swift */,
 				6F8AD19C2BE77BCF00191C20 /* SelectMeetSpotView.swift */,
 				6F9E5A222BDE4DF0005BBECC /* PrepardLocationView.swift */,
-				6FB61D322BE8DCBE001A2B47 /* MyMapView.swift */,
 				6FE409D52BEB64AB0054B08E /* SearchViewModel.swift */,
 				6FE409D72BEB65010054B08E /* MaoViewForSearch.swift */,
-				6F82C3C52BF0A963000B8164 /* meetSpotsManger.swift */,
-				6F82C3C72BF0BFDA000B8164 /* ViewController.swift */,
+				6F3A09362BF20A83006F42B3 /* MyMapView.swift */,
+				6F3A09382BF20AB4006F42B3 /* MapDrawingBath.swift */,
+				6F3A093A2BF2192D006F42B3 /* NewSearchForDestenation.swift */,
 			);
 			path = Trips;
 			sourceTree = "<group>";
@@ -448,7 +448,6 @@
 			files = (
 				6F21C9692BE8C44D00CF9FD0 /* SavedTripsView.swift in Sources */,
 				6F21C9732BE8CDE900CF9FD0 /* HomeViews.swift in Sources */,
-				6FB61D332BE8DCBE001A2B47 /* MyMapView.swift in Sources */,
 				6F8AD19D2BE77BCF00191C20 /* SelectMeetSpotView.swift in Sources */,
 				6F21C9652BE8BF3200CF9FD0 /* UserAccount.swift in Sources */,
 				6F8AD1922BE7667000191C20 /* AppleButtonLogic.swift in Sources */,
@@ -460,12 +459,11 @@
 				6F8AD19B2BE77BBD00191C20 /* SelectDestinationView.swift in Sources */,
 				6F8AD1952BE76D4100191C20 /* NotificationView.swift in Sources */,
 				6FBA78CD2BDF955B0028D7B1 /* ButtonWidget.swift in Sources */,
-				6F82C3C62BF0A963000B8164 /* meetSpotsManger.swift in Sources */,
 				6FE409D62BEB64AB0054B08E /* SearchViewModel.swift in Sources */,
 				6F82C3C42BF0A525000B8164 /* PageIndicator.swift in Sources */,
 				6F9E5A342BDE4F89005BBECC /* Utilities.swift in Sources */,
-				6F82C3C82BF0BFDA000B8164 /* ViewController.swift in Sources */,
 				6F9E5A302BDE4F55005BBECC /* ViewportHelper.swift in Sources */,
+				6F3A09372BF20A83006F42B3 /* MyMapView.swift in Sources */,
 				6F9E5A322BDE4F5E005BBECC /* ActivityLoader.swift in Sources */,
 				6F8AD1902BE7664E00191C20 /* AppleButtonView.swift in Sources */,
 				6FBA78D22BDF983B0028D7B1 /* RegisterView.swift in Sources */,
@@ -474,12 +472,14 @@
 				6F9E5A082BDE4C49005BBECC /* RahalAppApp.swift in Sources */,
 				6F9E5A402BDE502A005BBECC /* RoundedCornersView.swift in Sources */,
 				6FBA78D02BDF98270028D7B1 /* LoginView.swift in Sources */,
+				6F3A093B2BF2192D006F42B3 /* NewSearchForDestenation.swift in Sources */,
 				6F8AD1972BE76E2B00191C20 /* ForgetPassword.swift in Sources */,
 				6F9E5A3D2BDE4FC0005BBECC /* FontScheme.swift in Sources */,
 				6F9E5A422BDE5054005BBECC /* ViewExtension.swift in Sources */,
 				6FBA78C92BDF89950028D7B1 /* OnBoardingView.swift in Sources */,
 				6F21C9672BE8C40B00CF9FD0 /* UserInformationView.swift in Sources */,
 				6F9E5A232BDE4DF0005BBECC /* PrepardLocationView.swift in Sources */,
+				6F3A09392BF20AB4006F42B3 /* MapDrawingBath.swift in Sources */,
 				6F21C96F2BE8C80400CF9FD0 /* RestPasswordView.swift in Sources */,
 				6F295F792BE39BA2004FE416 /* createTrip.swift in Sources */,
 				6F9E5A2D2BDE4EBD005BBECC /* SplashView.swift in Sources */,
@@ -503,7 +503,7 @@
 				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZM4ARX928Z;
+				DEVELOPMENT_TEAM = 932HV6TJ62;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
@@ -515,7 +515,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = twq.RahalAppm.OneSignalNotificationServiceExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = twq.RahalApp.juman.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -530,7 +530,7 @@
 				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZM4ARX928Z;
+				DEVELOPMENT_TEAM = 932HV6TJ62;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
@@ -542,7 +542,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = twq.RahalAppm.OneSignalNotificationServiceExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = twq.RahalApp.juman.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -680,7 +680,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RahalApp/Preview Content\"";
-				DEVELOPMENT_TEAM = ZM4ARX928Z;
+				DEVELOPMENT_TEAM = 932HV6TJ62;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RahalApp/Info.plist;
@@ -697,7 +697,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = twq.RahalAppm;
+				PRODUCT_BUNDLE_IDENTIFIER = twq.RahalApp.juman;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -715,7 +715,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RahalApp/Preview Content\"";
-				DEVELOPMENT_TEAM = ZM4ARX928Z;
+				DEVELOPMENT_TEAM = 932HV6TJ62;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RahalApp/Info.plist;
@@ -732,7 +732,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = twq.RahalAppm;
+				PRODUCT_BUNDLE_IDENTIFIER = twq.RahalApp.juman;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
