@@ -23,6 +23,9 @@ struct PrepardLocationView: View {
     @State private var isShowingAlert = false
     @State private var isNavigateToAnotherView = false
     
+    //Hide
+    @State private var hideElements = false
+    
 
     func CheckNetwoekConection() {
         let monitor = NWPathMonitor()
@@ -53,21 +56,44 @@ struct PrepardLocationView: View {
                 
                 MyMapView(requestLocation: $pickupLocation, destinationLocation: $dropOffLocation,meetSpots: $meetSpots).edgesIgnoringSafeArea(.all)
                 
-                
-                VStack{
-                    HeaderView
-                    
-                     Spacer()
-                    HStack {
+                if !hideElements {
+                    VStack{
+                        HeaderView
                         
-                        //show members to the leader
-                        widgetBox(text: StringConstants.kLbl3)
-                        widgetBox(text: StringConstants.kLbl5)
+                        Spacer()
+                        HStack {
+                            
+                            //show members to the leader
+                            widgetBox(text: StringConstants.kLbl3)
+                            widgetBox(text: StringConstants.kLbl5)
+                            
+                            imageBox(image: "img_sos_circle_fill")
+                        }.frame(width:350, alignment: .trailing)
+                    } .onAppear {
+                        CheckNetwoekConection()
+                    }
+                } else {
+                    Button {
+                        hideElements.toggle()
+                    }  label: {
+                        ZStack {
+                            
+                            Rectangle()
+                                .foregroundColor(.whiteA700)
+                                .frame(width: 60, height: 60)
+                                .cornerRadius(8)
+                            
+                            
+                            Image(systemName: "square.arrowtriangle.4.outward")
+                                .resizable()
+                                .frame(width: getRelativeWidth(45), height: getRelativeWidth(45),
+                                       alignment: .center)
+                                .foregroundColor(Color.red)
+                        }.frame(width:340,alignment: .topTrailing)
+                            .padding(.bottom , 700)
+
                         
-                        imageBox(image: "img_sos_circle_fill")
-                    }.frame(width:350, alignment: .trailing)
-                } .onAppear {
-                    CheckNetwoekConection()
+                    }
                 }
         }.hideNavigationBar()
         
@@ -193,7 +219,9 @@ extension PrepardLocationView {
                                 .foregroundColor(ColorConstants.IconColor)
                         })
                         
-                        NavigationLink(destination: UserAccountView(), label: {
+                        Button {
+                            hideElements.toggle()
+                        }  label: {
                            
                             Image(systemName: "square.arrowtriangle.4.outward")
                                 .resizable()
@@ -201,7 +229,7 @@ extension PrepardLocationView {
                                        alignment: .center)
                                 .foregroundColor(ColorConstants.IconColor)
                             
-                        })
+                        }
                         
                         NavigationLink(destination: NotificationView() , label: {
 
