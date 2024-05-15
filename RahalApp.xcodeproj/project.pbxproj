@@ -11,6 +11,7 @@
 		1819EC072BF34E2D00643259 /* OneSignalFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 1819EC062BF34E2D00643259 /* OneSignalFramework */; };
 		1819EC092BF34E2D00643259 /* OneSignalInAppMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 1819EC082BF34E2D00643259 /* OneSignalInAppMessages */; };
 		1819EC0B2BF34E2D00643259 /* OneSignalLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 1819EC0A2BF34E2D00643259 /* OneSignalLocation */; };
+		185299852BF4ABA600D02939 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185299842BF4ABA600D02939 /* test.swift */; };
 		189B6AD02BF0AAB600AC3578 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B6ACF2BF0AAB600AC3578 /* NotificationService.swift */; };
 		189B6AD42BF0AAB600AC3578 /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 189B6ACD2BF0AAB600AC3578 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6F21C9652BE8BF3200CF9FD0 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F21C9642BE8BF3200CF9FD0 /* UserAccount.swift */; };
@@ -79,6 +80,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		185299842BF4ABA600D02939 /* test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		189B6AC72BF0AA7B00AC3578 /* RahalApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RahalApp.entitlements; sourceTree = "<group>"; };
 		189B6AC82BF0AA8500AC3578 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		189B6ACD2BF0AAB600AC3578 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,6 +192,7 @@
 		6F295F772BE39B90004FE416 /* Trips */ = {
 			isa = PBXGroup;
 			children = (
+				185299842BF4ABA600D02939 /* test.swift */,
 				6F295F782BE39BA2004FE416 /* createTrip.swift */,
 				6F8AD19A2BE77BBD00191C20 /* SelectDestinationView.swift */,
 				6F8AD19C2BE77BCF00191C20 /* SelectMeetSpotView.swift */,
@@ -455,6 +458,7 @@
 				6F8AD1922BE7667000191C20 /* AppleButtonLogic.swift in Sources */,
 				6FE409D82BEB65010054B08E /* MaoViewForSearch.swift in Sources */,
 				6FBA78C72BDF89340028D7B1 /* OnBoardingClass.swift in Sources */,
+				185299852BF4ABA600D02939 /* test.swift in Sources */,
 				6F21C96B2BE8C45F00CF9FD0 /* FutureTripsView.swift in Sources */,
 				6F9E5A392BDE4FB5005BBECC /* StringScheme.swift in Sources */,
 				6F21C96D2BE8C47300CF9FD0 /* ContactUsView.swift in Sources */,
