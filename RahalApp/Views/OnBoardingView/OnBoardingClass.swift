@@ -33,7 +33,7 @@ struct OnBoardingClass: View {
                                 Text(StringConstants.kLbl7)
                                     .font(FontScheme.kSFArabicLight(size: getRelativeHeight(24.0)))
                                     .fontWeight(.regular)
-                                    .foregroundColor(ColorConstants.WhiteA700)
+                                    .foregroundColor(Color.white)
                                     .minimumScaleFactor(0.5)
                                     .multilineTextAlignment(.leading)
                                     .frame(width: getRelativeWidth(54.0), height: getRelativeHeight(32.0),
