@@ -14,7 +14,7 @@ struct ButtonWidget: View {
                 Text(text)
                     .fontWeight(.heavy)
                     
-                    .foregroundColor(ColorConstants.WhiteA700)
+                    .foregroundColor(Color.white)
                     .multilineTextAlignment(.center)
                     .frame(width: getRelativeWidth(300),
                            height: getRelativeHeight(43.0), alignment: .center)
