@@ -31,7 +31,7 @@ struct NotificationView: View {
     
     func notifyWidget(time:String,name:String,des:String) -> some View{
         return ZStack{
-            Color(.white)
+            Color(.whiteA700)
             HStack{
                 Text(time)
                 Spacer()

@@ -26,7 +26,7 @@ struct PrepardLocationView: View {
                 if path.status == .satisfied {
                     print("Internet connection is available.")
                     wifiImage = Image(systemName: "wifi")
-                    wifiColor = .blueGray600
+                    wifiColor = ColorConstants.IconColor
                 } else if path.status == .unsatisfied {
                     print("Internet connection is not strong.")
                     wifiImage = Image(systemName: "wifi.exclamationmark")
@@ -74,19 +74,19 @@ struct PrepardLocationView: View {
                 .fontWeight(.semibold)
                 .padding(.horizontal, getRelativeWidth(8.0))
                 .padding(.vertical, getRelativeHeight(7.0))
-                .foregroundColor(ColorConstants.BlueGray600)
+                .foregroundColor(ColorConstants.IconColor)
                 .minimumScaleFactor(0.5)
                 .multilineTextAlignment(.leading)
                 .frame(width: getRelativeWidth(91.0),
                        height: getRelativeHeight(36.0), alignment: .center)
                 .background(RoundedCorners(topLeft: 18.0, topRight: 18.0,
                                            bottomLeft: 18.0, bottomRight: 18.0)
-                    .fill(ColorConstants.Gray10001))
+                    .fill(ColorConstants.WhiteA700))
         }.frame(width: getRelativeWidth(91.0), height: getRelativeHeight(36.0),
                   alignment: .center)
            .background(RoundedCorners(topLeft: 18.0, topRight: 18.0, bottomLeft: 18.0,
                                       bottomRight: 18.0)
-               .fill(ColorConstants.Gray10001))
+               .fill(ColorConstants.WhiteA700))
     }
     
     func imageBox(image: String) -> some View{
@@ -100,7 +100,7 @@ struct PrepardLocationView: View {
                 .padding(.vertical, getRelativeHeight(7.0))
                  .background(RoundedCorners(topLeft: 18.0, topRight: 18.0,
                                            bottomLeft: 18.0, bottomRight: 18.0)
-                    .fill(ColorConstants.Gray100))
+                    .fill(ColorConstants.WhiteA700))
         }
     }
 }
@@ -128,12 +128,11 @@ extension PrepardLocationView {
                         .cornerRadius(8)
                     
                     NavigationLink(destination:HomeViews() ,label: {
-//                        Image("close")
                         Image(systemName: "xmark.circle")
                             .resizable()
                             .frame(width: getRelativeWidth(34), height: getRelativeWidth(34),
                                    alignment: .center)
-                            .foregroundColor(wifiColor)
+                            .foregroundColor(ColorConstants.IconColor)
                     })
                 }
                 
@@ -162,24 +161,32 @@ extension PrepardLocationView {
                 ZStack{
                     Color(.whiteA700)
                     VStack {
-                        NavigationLink(destination: UserAccountView(), label: {
-                            Image("img_person_circle_1")
+                        NavigationLink(destination: UserInformationView(), label: {
+                            
+                            Image(systemName: "person.crop.circle")
                                 .resizable()
                                 .frame(width: getRelativeWidth(34.0), height: getRelativeWidth(34.0),
                                        alignment: .center)
+                                .foregroundColor(ColorConstants.IconColor)
                         })
                         
                         NavigationLink(destination: NotificationView() , label: {
-                            Image("img_group_22")
+                           
+                            Image(systemName: "bell.fill")
+                                .resizable()
+                                .frame(width: getRelativeWidth(34.0), height: getRelativeWidth(34.0),
+                                       alignment: .center)
+                                .foregroundColor(ColorConstants.IconColor)
                         })
                         
                         NavigationLink(destination: UserAccountView(), label: {
-//                            Image("zoom")
+                           
                             Image(systemName: "square.arrowtriangle.4.outward")
                                 .resizable()
                                 .frame(width: getRelativeWidth(34.0), height: getRelativeWidth(34.0),
                                        alignment: .center)
-                                .foregroundColor(.blueGray600)
+                                .foregroundColor(ColorConstants.IconColor)
+                            
                         })
                         
                         NavigationLink(destination: NotificationView() , label: {
