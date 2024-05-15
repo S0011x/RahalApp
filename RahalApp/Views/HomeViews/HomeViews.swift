@@ -53,7 +53,7 @@ struct HomeViews: View {
                                 ButtonWidget(text:StringConstants.kLbl )
                             } )
                             
-                            NavigationLink(destination: CreateTrip(), label: {
+                            NavigationLink(destination: CreateTripCRUD(), label: {
                                 Button(action: {
                                     showingAlert.toggle()
                                 }, label: {
@@ -65,9 +65,10 @@ struct HomeViews: View {
                                             if(code == ""){
                                                 Button("حسنا", action: submit)
                                             }else{
-                                                NavigationLink(destination: PrepardLocationView(pickupLocation: CLLocationCoordinate2D(latitude: 24.8613, longitude: 46.7255), dropOffLocation: CLLocationCoordinate2D(latitude: 24.8414, longitude: 46.7333),meetSpots: [] )) {
+//                                                NavigationLink(destination: PrepardLocationView(pickupLocation: CLLocationCoordinate2D(latitude: 24.8613, longitude: 46.7255), dropOffLocation: CLLocationCoordinate2D(latitude: 24.8414, longitude: 46.7333), meetSpots: [1,2] )) {
+//
                                                     Text("حسنا").foregroundColor(.blue)
-                                                }
+//                                                }
                                             }
                                            
                                            
