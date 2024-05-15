@@ -4,9 +4,17 @@
 <dict>
 	<key>aps-environment</key>
 	<string>development</string>
+	<key>com.apple.developer.icloud-container-identifiers</key>
+	<array>
+		<string>iCloud.com.macrochallange.test.TripManagement</string>
+	</array>
+	<key>com.apple.developer.icloud-services</key>
+	<array>
+		<string>CloudKit</string>
+	</array>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.twq.RahalAppm.onesignal</string>
+		<string>group.twq.RahalAppS.onesignal</string>
 	</array>
 </dict>
 </plist>
