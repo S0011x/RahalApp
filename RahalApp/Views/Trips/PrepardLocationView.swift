@@ -10,8 +10,8 @@ struct PrepardLocationView: View {
     
     @State var pickupLocation: CLLocationCoordinate2D
     @State var dropOffLocation: CLLocationCoordinate2D
-    
-//    @State var ConnectionStatus: String
+    @State var meetSpots: [CLLocationCoordinate2D]
+
    
     @State private var wifiImage: Image = Image(systemName: "wifi")
     @State private var wifiColor: Color = .white
@@ -43,7 +43,7 @@ struct PrepardLocationView: View {
     var body: some View {
             ZStack(alignment: .center) {
                 
-                MyMapView(requestLocation: $pickupLocation, destinationLocation: $dropOffLocation).edgesIgnoringSafeArea(.all)
+                MyMapView(requestLocation: $pickupLocation, destinationLocation: $dropOffLocation,meetSpots: $meetSpots).edgesIgnoringSafeArea(.all)
                 
                 
                 VStack{
@@ -107,7 +107,7 @@ struct PrepardLocationView: View {
 
 struct PrepardLocationView_Previews: PreviewProvider {
     static var previews: some View {
-        PrepardLocationView(pickupLocation:  CLLocationCoordinate2D(latitude: 42.6619, longitude: 21.1501), dropOffLocation: CLLocationCoordinate2D(latitude: 42.6619, longitude: 21.1701))
+        PrepardLocationView(pickupLocation:  CLLocationCoordinate2D(latitude: 42.6619, longitude: 21.1501), dropOffLocation: CLLocationCoordinate2D(latitude: 42.6619, longitude: 21.1701), meetSpots: [ CLLocationCoordinate2D(latitude: 42.6619, longitude: 21.1701)])
     }
 }
 

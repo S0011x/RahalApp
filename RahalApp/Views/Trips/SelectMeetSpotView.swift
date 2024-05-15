@@ -15,20 +15,21 @@ struct SelectMeetSpotView: View {
     
     @State var dropOffLocation: CLLocationCoordinate2D
     
+    @State private var meetSpots: [CLLocationCoordinate2D] = []
     
     
                                                       
     
     var body: some View {
         ZStack{
-            
-            MyMapView(requestLocation: $pickupLocation, destinationLocation: $dropOffLocation).edgesIgnoringSafeArea(.all)
+            MyMapView(requestLocation: $pickupLocation, destinationLocation: $dropOffLocation,meetSpots: $meetSpots).edgesIgnoringSafeArea(.all)
             
             
             VStack{
                 
                 VStack{
                     
+                   
                     Button {
                         presentationMode.wrappedValue.dismiss()
                         
@@ -47,7 +48,11 @@ struct SelectMeetSpotView: View {
                         .cornerRadius(8)
                     
                     Spacer()
-                    NavigationLink(destination: PrepardLocationView( pickupLocation: pickupLocation, dropOffLocation: dropOffLocation )) {
+                    Button("Clear Selection") {
+                                   // Clear selected meet spots
+                                   meetSpots.removeAll()
+                               }
+                    NavigationLink(destination: PrepardLocationView( pickupLocation: pickupLocation, dropOffLocation: dropOffLocation,meetSpots: meetSpots )) {
                         ButtonWidget(text: "التالي")
                     }
                 }

@@ -14,9 +14,7 @@ struct MapView: UIViewRepresentable {
 
     @Binding var pickupLocation: CLLocationCoordinate2D
     @Binding var dropOffLocation: CLLocationCoordinate2D
-    @Binding var annotationOne : CLLocationCoordinate2D
-    @Binding var annotationTwo : CLLocationCoordinate2D
-    @Binding var annotationThree : CLLocationCoordinate2D
+
    // @State var drop : CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
 
   func makeCoordinator() -> MapViewCoordinator {
@@ -66,23 +64,6 @@ struct MapView: UIViewRepresentable {
       destinationAnnotation.title = "dropoff"
       uiView.addAnnotation(destinationAnnotation)
       
-      //drow first Pin
-      let annoOne = MKPointAnnotation()
-      annoOne.coordinate = annotationOne
-      annoOne.title = "pin"
-      uiView.addAnnotation(annoOne)
-      
-      //drow first Pin
-      let annoTwo = MKPointAnnotation()
-      annoTwo.coordinate = annotationTwo
-      annoTwo.title = "pin"
-      uiView.addAnnotation(annoTwo)
-      
-      //drow first Pin
-      let annoThree = MKPointAnnotation()
-      annoThree.coordinate = annotationThree
-      annoThree.title = "pin"
-      uiView.addAnnotation(annoThree)
       
       //Draw Path
       let requestPlacemark = MKPlacemark(coordinate: pickupLocation)
