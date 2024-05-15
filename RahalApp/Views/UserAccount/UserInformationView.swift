@@ -20,13 +20,24 @@ struct UserInformationView: View {
                 FirstNameView
                 LastNameView
                 EmailView
+                
                 NavigationLink(destination: RestPasswordView(), label: {
-                    Text("اعادة تعيين كلمة المرور؟").foregroundColor(.blue).frame(width: 300, alignment: .trailing).padding(.top)
+                    Text("تواصل معنا")
+                        .foregroundColor(.blue).frame(width: 300, alignment: .trailing).padding(.top)
+                })
+                NavigationLink(destination: RestPasswordView(), label: {
+                    Text("حذف الحساب")
+                        .foregroundColor(.blue).frame(width: 300, alignment: .trailing).padding(.top)
                 })
                 
+                
+//                NavigationLink(destination: RestPasswordView(), label: {
+//                    Text("اعادة تعيين كلمة المرور؟").foregroundColor(.blue).frame(width: 300, alignment: .trailing).padding(.top)
+//                })
+//
                
                 Spacer()
-                ButtonWidget(text: "حفظ")
+//                ButtonWidget(text: "حفظ")
                 
             }.padding(.top,30)
         }.navigationTitle("معلومات الحساب")
@@ -40,9 +51,18 @@ struct UserInformationView: View {
 extension UserInformationView {
     private var HeaderView: some View{
         HStack{
-            Text("جمان يوسف").fontWeight(.heavy)
-            Image("img_person_circle_1")
-        }.frame(width: 340,height:45, alignment: .trailing)
+            Text("جمان يوسف").fontWeight(.bold)
+                .font(FontScheme.kSFArabicBold(size: 24.0))
+                
+                
+            Image(systemName: "person.crop.circle")
+                .resizable()
+                .foregroundColor(ColorConstants.IconColor)
+                .frame(width: 55.0, height: 55.0)
+            
+            
+        }.frame(width: 340,height:100, alignment: .trailing)
+            .padding(.trailing , 35)
     }
     
     private var FirstNameView: some View{
