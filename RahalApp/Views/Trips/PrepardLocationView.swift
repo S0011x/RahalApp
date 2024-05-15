@@ -1,6 +1,7 @@
 import SwiftUI
 import MapKit
 import Network
+import OneSignalFramework
 
 struct PrepardLocationView: View {
     @State private var messagetwooneText: String = ""
@@ -56,6 +57,7 @@ struct PrepardLocationView: View {
                 
                 MyMapView(requestLocation: $pickupLocation, destinationLocation: $dropOffLocation,meetSpots: $meetSpots).edgesIgnoringSafeArea(.all)
                 
+                
                 if !hideElements {
                     VStack{
                         HeaderView
@@ -64,8 +66,10 @@ struct PrepardLocationView: View {
                         HStack {
                             
                             //show members to the leader
-                            widgetBox(text: StringConstants.kLbl3)
+//                            widgetBox(text: StringConstants.kLbl3)
                             widgetBox(text: StringConstants.kLbl5)
+                            widgetBox(text: "أنا هنا")
+                            widgetBox(text: "أحتاج ماء")
                             
                             imageBox(image: "img_sos_circle_fill")
                         }.frame(width:350, alignment: .trailing)
@@ -102,6 +106,10 @@ struct PrepardLocationView: View {
     
     func widgetBox(text: String) -> some View{
         return  HStack(spacing: 0) {
+            
+            
+            
+            
             Text(text)
                 .font(FontScheme
                     .kSFArabicSemibold(size: getRelativeHeight(16.0)))
