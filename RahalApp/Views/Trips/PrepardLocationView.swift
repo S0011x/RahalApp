@@ -15,6 +15,14 @@ struct PrepardLocationView: View {
    
     @State private var wifiImage: Image = Image(systemName: "wifi")
     @State private var wifiColor: Color = .white
+    
+    
+    //Close and Meniu
+    @State private var selectedOption: String? = nil
+    @State private var isShareSheetPresented = false
+    @State private var isShowingAlert = false
+    @State private var isNavigateToAnotherView = false
+    
 
     func CheckNetwoekConection() {
         let monitor = NWPathMonitor()
@@ -121,20 +129,26 @@ extension PrepardLocationView {
         VStack(alignment: .trailing, spacing: 0) {
             HStack(alignment:.top){
                 
-                ZStack {
-                    Rectangle()
-                        .foregroundColor(.whiteA700)
-                        .frame(width: 45, height: 45)
-                        .cornerRadius(8)
-                    
-                    NavigationLink(destination:HomeViews() ,label: {
-                        Image(systemName: "xmark.circle")
-                            .resizable()
-                            .frame(width: getRelativeWidth(34), height: getRelativeWidth(34),
-                                   alignment: .center)
-                            .foregroundColor(ColorConstants.IconColor)
-                    })
+                VStack {
+   
+                    Button(action: {
+                        isShowingAlert = true
+                    }) {
+                        ZStack {
+                            Rectangle()
+                                .foregroundColor(.whiteA700)
+                                .frame(width: 45, height: 45)
+                                .cornerRadius(8)
+                            Image(systemName: "xmark.circle")
+                                .resizable()
+                                .frame(width: getRelativeWidth(34), height: getRelativeWidth(34),
+                                       alignment: .center)
+                                .foregroundColor(ColorConstants.IconColor)
+                        }
+                    }
+
                 }
+                
                 
                 Spacer()
                 
@@ -190,10 +204,35 @@ extension PrepardLocationView {
                         })
                         
                         NavigationLink(destination: NotificationView() , label: {
-                            Image("more")
-//                                .toolbar {
-//
-//                                }
+
+                            Menu {
+                                NavigationLink(destination: CreateTrip(), tag: "Option 1", selection: $selectedOption) {
+                                     Label("تعديل", systemImage: "pencil") .accentColor(ColorConstants.IconColor)
+                                 }
+                                 
+                               
+                                 Button(action: {
+                                     selectedOption = "Option 2"
+                                 
+                                     isShareSheetPresented = true
+                                 }) {
+                                     Label("مشاركة", systemImage: "square.and.arrow.up.fill") .accentColor(ColorConstants.IconColor)
+                                   
+                                 }
+                             } label: {
+                                 Image(systemName: "ellipsis.circle")
+                                     .resizable()
+                                     .frame(width: getRelativeWidth(34.0), height: getRelativeWidth(34.0),
+                                            alignment: .center)
+                                     .foregroundColor(ColorConstants.IconColor)
+                             }
+                             .sheet(isPresented: $isShareSheetPresented, onDismiss: {
+                                         // Reset selectedOption if needed
+                                     }) {
+                                         if let selectedOption = selectedOption {
+                                             ShareSheet(activityItems: [selectedOption])
+                                         }
+                                     }
                         })
                         
                     }
@@ -202,7 +241,39 @@ extension PrepardLocationView {
                 .cornerRadius(12)
             }.frame(width:340)
         }.frame(width:340,alignment: .trailing)
+        
+        
+            .alert(isPresented: $isShowingAlert) {
+                Alert(
+                    title: Text("هل تود إغلاق الرحلة؟"),
+                    message: Text("في حال إغلاق الرحلة ستغلق عند جميع الأعضاء ولن تتمكن من فتحها مجددًا"),
+                    primaryButton: .cancel(Text("إلغاء")),
+                    secondaryButton: .default(Text("إغلاق"), action: {
+                        isNavigateToAnotherView = true
+                    })
+                )
+            }
+            .fullScreenCover(isPresented: $isNavigateToAnotherView, content: {
+                HomeViews()
+            })
+//            .sheet(isPresented: $isNavigateToAnotherView) {
+//                HomeViews()
+//            }
     }
     
     
+}
+
+
+struct ShareSheet: UIViewControllerRepresentable {
+    let activityItems: [Any]
+    
+    func makeUIViewController(context: Context) -> UIActivityViewController {
+        let activityViewController = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        return activityViewController
+    }
+    
+    func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {
+        // No update needed
+    }
 }
