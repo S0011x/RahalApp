@@ -19,65 +19,93 @@ struct HomeViews: View {
                      })
 
                     
-                    VStack(alignment: .trailing, spacing: 0) {
-                        VStack {
-                            NavigationLink(destination: RegisterView(), label: {
-                                Image("img_person_circle_1")
-                                    .resizable()
-                                    .frame(width: getRelativeWidth(34.0), height: getRelativeWidth(34.0),
-                                           alignment: .center)
-                                    .scaledToFit()
-                                    .clipped()
-                                    .padding(.top, getRelativeHeight(4.0))
-                            })
-                            
-                            NavigationLink(destination: NotificationView() , label: {
-                                Image("img_group_22")
-                            })
-                            
-                        }.padding(.top, 80)
-                        
-                        
-                        
-                        VStack {
-                            Spacer(minLength: 0)
-                            NavigationLink(destination: {
-                                if( viewModel.checkLocationAuthorizationBool()){
-                                    CreateTrip()
-                                }else{
-                                    VStack(alignment: .center){
-                                        Text("يجب السماح للوصول إلى موقعك")
-                                    }
+                    VStack() {
+                        HStack(alignment:.top) {
+                            ZStack{
+                                Color(.whiteA700)
+                                VStack {
+                                    NavigationLink(destination: RegisterView(), label: {
+                                        Image(systemName: "person.crop.circle")
+                                            .resizable()
+                                            .frame(width: getRelativeWidth(34.0), height: getRelativeWidth(34.0),
+                                                   alignment: .center)
+                                            .foregroundColor(ColorConstants.IconColor)
+                                            .scaledToFit()
+                                            .clipped()
+                                            .padding(.top, getRelativeHeight(4.0))
+                                        
+                                    })
+                                    
+                                    NavigationLink(destination: NotificationView() , label: {
+                                        
+                                        Image(systemName: "bell.fill")
+                                            .resizable()
+                                            .frame(width: getRelativeWidth(34.0), height: getRelativeWidth(34.0),
+                                                   alignment: .center)
+                                            .foregroundColor(ColorConstants.IconColor)
+                                            .scaledToFit()
+                                            .clipped()
+                                            .padding(.top, getRelativeHeight(4.0))
+                                    })
+                                    
                                 }
-                            }, label: {
-                                ButtonWidget(text:StringConstants.kLbl )
-                            } )
+                                //                            .padding(.top, 80)
+                            }    .frame(width:50,height: 110)
+                                .cornerRadius(12)
+                                .padding(.top, 60)
+                                .padding(.leading, 280)
+                        }
+                        
+                        Spacer()
+                        
+                        
+                        ZStack {
+                            Rectangle()
                             
-                            NavigationLink(destination: CreateTripCRUD(), label: {
-                                Button(action: {
-                                    showingAlert.toggle()
-                                }, label: {
-                                    ButtonWidget(text: "انضم إلى رحلة" )
-                                })
-                                        .alert("ادخل الكود المرسل", isPresented: $showingAlert) {
-                                            TextField("", text: $code)
-                                            Button("اغلاق", action: submit)
-                                            if(code == ""){
-                                                Button("حسنا", action: submit)
-                                            }else{
-//                                                NavigationLink(destination: PrepardLocationView(pickupLocation: CLLocationCoordinate2D(latitude: 24.8613, longitude: 46.7255), dropOffLocation: CLLocationCoordinate2D(latitude: 24.8414, longitude: 46.7333), meetSpots: [1,2] )) {
-//
-                                                    Text("حسنا").foregroundColor(.blue)
-//                                                }
-                                            }
-                                           
-                                           
-                                        } message: {
-                                            Text("")
+                                .foregroundColor(.whiteA700)
+                                .frame(width: 400, height: 180)
+                                .cornerRadius(35)
+                                .padding(.top, 500)
+                            VStack {
+                                Spacer(minLength: 0)
+                                NavigationLink(destination: {
+                                    if( viewModel.checkLocationAuthorizationBool()){
+                                        CreateTripCRUD()
+                                    }else{
+                                        VStack(alignment: .center){
+                                            Text("يجب السماح للوصول إلى موقعك")
                                         }
-                            })
-                            
-                        }.padding(.bottom, 50)
+                                    }
+                                }, label: {
+                                    ButtonWidget(text:StringConstants.kLbl )
+                                } )
+                                
+                                NavigationLink(destination: CreateTripCRUD(), label: {
+                                    Button(action: {
+                                        showingAlert.toggle()
+                                    }, label: {
+                                        ButtonWidget(text: "انضم إلى رحلة" )
+                                    })
+                                    .alert("ادخل الكود المرسل", isPresented: $showingAlert) {
+                                        TextField("", text: $code)
+                                        Button("اغلاق", action: submit)
+                                        if(code == ""){
+                                            Button("حسنا", action: submit)
+                                        }else{
+                                            //                                                NavigationLink(destination: PrepardLocationView(pickupLocation: CLLocationCoordinate2D(latitude: 24.8613, longitude: 46.7255), dropOffLocation: CLLocationCoordinate2D(latitude: 24.8414, longitude: 46.7333), meetSpots: [1,2] )) {
+                                            //
+                                            Text("حسنا").foregroundColor(.blue)
+                                            //                                                }
+                                        }
+                                        
+                                        
+                                    } message: {
+                                        Text("")
+                                    }
+                                })
+                                
+                            }.padding(.bottom, 60)
+                        }
                         
                     }
                     
