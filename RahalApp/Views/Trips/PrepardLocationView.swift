@@ -41,7 +41,7 @@ struct PrepardLocationView: View {
                 } else if path.status == .unsatisfied {
                     print("Internet connection is not strong.")
                     wifiImage = Image(systemName: "wifi.exclamationmark")
-                    wifiColor = .gray
+                    wifiColor = .red
                 } else {
                     print("Internet connection is not available.")
                     wifiImage = Image(systemName: "wifi.slash")

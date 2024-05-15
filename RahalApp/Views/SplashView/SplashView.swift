@@ -24,6 +24,9 @@ struct SplashView: View {
                         .clipped()
                 }
                 
+                //GIF Splash
+//                GifView(gifName: "Splash")
+                
             }
             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             .background(ColorConstants.BlueGray600)
@@ -46,6 +49,40 @@ struct SplashView: View {
                  }
                  
              }
+    }
+}
+
+struct GifView: UIViewRepresentable {
+    func updateUIView(_ uiView: UIImageView, context: Context) {
+        
+    }
+    
+    let gifName: String
+    
+    func makeUIView(context: Context) -> UIImageView {
+        let imageView = UIImageView()
+        //                    imageView.contentMode = .scaleAspectFit
+        
+        if let gifURL = Bundle.main.url(forResource: gifName, withExtension: "gif"),
+           let gifData = try? Data(contentsOf: gifURL) {
+            let imageSource = CGImageSourceCreateWithData(gifData as CFData, nil)
+            var images = [UIImage]()
+            
+            if let imageSource = imageSource {
+                let count = CGImageSourceGetCount(imageSource)
+                for i in 0..<count {
+                    if let cgImage = CGImageSourceCreateImageAtIndex(imageSource, i, nil) {
+                        images.append(UIImage(cgImage: cgImage))
+                    }
+                }
+            }
+            
+            imageView.animationImages = images
+            imageView.animationDuration = TimeInterval(images.count) * 0.1
+            imageView.startAnimating()
+        }
+        
+        return imageView
     }
 }
 
