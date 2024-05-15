@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "OnBoardingBK.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -9,7 +10,6 @@
       "scale" : "2x"
     },
     {
-      "filename" : "img_rectangle_369.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
