@@ -40,6 +40,7 @@ class TripCRUDViewModel: ObservableObject {
     }
   //  Int(phoneNumberText)
     func addButtonPressed() -> String {
+        print("Hi function")
 //       guard text.isEmpty, tripDetailsText.isEmpty,  phoneNumberText == 10  else {
 ////           if !text.isEmpty {}
 //          // , endDate >= startDate
@@ -48,6 +49,7 @@ class TripCRUDViewModel: ObservableObject {
         
         let uniqueCode = generateUniqueCode()
         let newTrip = addItem(TripName: text, code: uniqueCode, tripDetails: tripDetailsText, phoneNumber: phoneNumberText, level: level, startDate: startDate, endDate: endDate)
+        print(newTrip["TripName"],"🚗")
         
         newTripCode = uniqueCode
         
@@ -78,8 +80,8 @@ class TripCRUDViewModel: ObservableObject {
     private func saveItem(record: CKRecord) {
         CKContainer.init(identifier: "iCloud.com.macrochallange.test.TripManagement")
             .publicCloudDatabase.save(record) { [weak self] returnedRecord, returnedError in
-            print("Records:\(String(describing: returnedRecord))")
-            print("Errors:\(String(describing: returnedError))")
+            print("Records:\(String(describing: returnedRecord)) ⛺️")
+            print("Errors:\(String(describing: returnedError)) ⛺️")
         }
     }
 
@@ -122,31 +124,37 @@ class TripCRUDViewModel: ObservableObject {
 struct CreateTripCRUD: View {
     @StateObject private var vm = TripCRUDViewModel()
     @State private var navigateToTrip = false
+    @State private var navigateToSelectDestinationView = false
+
     let levels = ["سهل", "متوسط", "صعب"]
 
     var body: some View {
-        ScrollView{
-            VStack(alignment:.trailing ){
-                TripNameView
-                Spacer(minLength: 15)
-                tripDetailsView
-                Spacer(minLength: 15)
-                tripLevelView
-                Spacer(minLength: 15)
-                startTrip
-                Spacer(minLength: 15)
-                endTrip
-                Spacer(minLength: 15)
-                phoneNumberView
-                Spacer(minLength: 15)
-                addButton
-                
+        NavigationStack{
+            ScrollView{
+                VStack(alignment:.trailing ){
+                    TripNameView
+                    Spacer(minLength: 15)
+                    tripDetailsView
+                    Spacer(minLength: 15)
+                    tripLevelView
+                    Spacer(minLength: 15)
+                    startTrip
+                    Spacer(minLength: 15)
+                    endTrip
+                    Spacer(minLength: 15)
+                    phoneNumberView
+                    Spacer(minLength: 15)
+                    addButton
+                    
+                }
+                .navigationDestination(isPresented: $navigateToSelectDestinationView) {
+                    SelectDestinationView()
+                }
             }
+            .frame(width: 1000)
+            .background(Color("background"))
+            .navigationTitle("معلومات الرحلة")
         }
-        .frame(width: 1000)
-        .background(Color("background"))
-        .navigationTitle("معلومات الرحلة")
-        
     }
     private var TripNameView: some View {
         VStack(alignment: .trailing){
@@ -257,12 +265,13 @@ struct CreateTripCRUD: View {
         Button(action: {
             let result = vm.addButtonPressed()
             print(result)
-            
+            navigateToSelectDestinationView.toggle()
             DispatchQueue.main.async {
                 if vm.newTripCode != "" {
                     vm.fetchTrip(withCode: vm.newTripCode) { tripModel in
                         if let tripModel = tripModel {
                             vm.trips.append(tripModel)
+                            
                         } else {
                             print("Not Found")
                         }
@@ -270,9 +279,9 @@ struct CreateTripCRUD: View {
                 }
             }
         }, label: {
-            NavigationLink(destination: SelectDestinationView()) {
+           // NavigationLink(destination: SelectDestinationView()) {
                 ButtonWidget(text: "التالي")
-            }
+            //}
         })
     }
 }
