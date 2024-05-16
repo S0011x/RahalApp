@@ -70,8 +70,8 @@ struct HomeViews: View {
                                 Spacer(minLength: 0)
                                 NavigationLink(destination: {
                                     if( viewModel.checkLocationAuthorizationBool()){
-//                                        CreateTripCRUD()
-                                        CreateTrip()
+                                        CreateTripCRUD()
+//                                        CreateTrip()
                                     }else{
                                         VStack(alignment: .center){
                                             Text("يجب السماح للوصول إلى موقعك")

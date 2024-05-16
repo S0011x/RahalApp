@@ -4,8 +4,7 @@
 <dict>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.wq.RahalAppmm.OneSignal</string>
-		<string>group.wq.RahalAppm.OneSignal</string>
+		<string>group.twq.RahalAppSuha.onesignal</string>
 	</array>
 </dict>
 </plist>

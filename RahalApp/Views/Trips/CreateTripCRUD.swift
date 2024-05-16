@@ -25,7 +25,7 @@ struct CreateTrip1: Hashable {
 class TripCRUDViewModel: ObservableObject {
     @Published var text: String = ""
     @Published var tripDetailsText: String = ""
-    @Published var phoneNumberText: String = ""
+    @Published var phoneNumberText: Int = 0
     @Published var level: String = "متوسط"  // Default level
     @Published var startDate: Date = Date()
     @Published var endDate: Date = Date()
@@ -38,13 +38,16 @@ class TripCRUDViewModel: ObservableObject {
     init() {
         // Initialize if needed
     }
-
+  //  Int(phoneNumberText)
     func addButtonPressed() -> String {
-        guard !text.isEmpty, !tripDetailsText.isEmpty, let phoneNumber = Int(phoneNumberText), endDate >= startDate else {
-            return "Please fill all fields and ensure end date is after start date"
-        }
+//       guard text.isEmpty, tripDetailsText.isEmpty,  phoneNumberText == 10  else {
+////           if !text.isEmpty {}
+//          // , endDate >= startDate
+//            return "Please fill all fields and ensure end date is after start date"
+//        }
+        
         let uniqueCode = generateUniqueCode()
-        let newTrip = addItem(TripName: text, code: uniqueCode, tripDetails: tripDetailsText, phoneNumber: phoneNumber, level: level, startDate: startDate, endDate: endDate)
+        let newTrip = addItem(TripName: text, code: uniqueCode, tripDetails: tripDetailsText, phoneNumber: phoneNumberText, level: level, startDate: startDate, endDate: endDate)
         
         newTripCode = uniqueCode
         
@@ -143,6 +146,7 @@ struct CreateTripCRUD: View {
         .frame(width: 1000)
         .background(Color("background"))
         .navigationTitle("معلومات الرحلة")
+        
     }
     private var TripNameView: some View {
         VStack(alignment: .trailing){
@@ -150,7 +154,6 @@ struct CreateTripCRUD: View {
             TextField("", text: $vm.text)
             
                 .frame(width: 300, height: 35)
-            
                 .background(Color("WhiteA700"))
                 .overlay(
                     RoundedRectangle(cornerRadius: 4)
@@ -189,7 +192,7 @@ struct CreateTripCRUD: View {
     private var phoneNumberView: some View {
         VStack(alignment: .trailing){
             Text("رقم الهاتف للتواصل")
-            TextField("", text: $vm.phoneNumberText)
+            TextField("", value: $vm.phoneNumberText, format: .number)
                 .keyboardType(.numberPad)
                 .frame(width: 300, height: 35)
             
@@ -280,3 +283,5 @@ struct CreateTripCRUD_Previews: PreviewProvider {
         CreateTripCRUD()
     }
 }
+
+
