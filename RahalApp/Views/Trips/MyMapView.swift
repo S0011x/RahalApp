@@ -36,6 +36,7 @@ struct MyMapView: UIViewRepresentable {
         directionRequest.destination = MKMapItem(placemark: destinationPlacemark)
         directionRequest.transportType = .any
         
+        
       let directions = MKDirections (request: directionRequest)
         
         directions.calculate { response, error in

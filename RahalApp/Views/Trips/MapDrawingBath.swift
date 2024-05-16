@@ -98,7 +98,7 @@ struct MapView: UIViewRepresentable {
               // Ensure zoom levels are within limits
               let limitedRegion = MKCoordinateRegion(
                   center: region.center,
-                  span: MKCoordinateSpan(latitudeDelta:1000 , longitudeDelta: 1000)
+                  span: MKCoordinateSpan(latitudeDelta:500 , longitudeDelta: 500)
               )
               
               uiView.setRegion(limitedRegion, animated: true)
