@@ -197,13 +197,7 @@ extension PrepardLocationView {
                         .frame(width: getRelativeWidth(30), height: getRelativeWidth(24))
                         .foregroundColor(wifiColor)
                 }
-//
-//                wifiImage
-//                    .resizable()
-//                    .frame(width: 55, height: 45)
-//                    .foregroundColor(wifiColor)
-//                    .cornerRadius(12)
-//                    .background
+
                 
                 Spacer()
                 ZStack{
@@ -239,7 +233,6 @@ extension PrepardLocationView {
                             
                         }
                         
-                        NavigationLink(destination: NotificationView() , label: {
 
                             Menu {
                                 NavigationLink(destination: CreateTrip(), tag: "Option 1", selection: $selectedOption) {
@@ -269,7 +262,6 @@ extension PrepardLocationView {
                                              ShareSheet(activityItems: [selectedOption])
                                          }
                                      }
-                        })
                         
                     }
                 }
