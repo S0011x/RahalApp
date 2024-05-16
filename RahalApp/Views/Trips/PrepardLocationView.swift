@@ -289,19 +289,12 @@ extension PrepardLocationView {
                     secondaryButton:   .cancel(Text("إلغاء"))
                 )
             }
-//            .fullScreenCover(isPresented: $isNavigateToAnotherView, content: {
-//                HomeViews()
-//            })
         
             .navigationDestination(isPresented: $isNavigateToAnotherView) {
                 HomeViews()
 
             }
 
-        
-//            .sheet(isPresented: $isNavigateToAnotherView) {
-//                HomeViews()
-//            }
     }
     
     

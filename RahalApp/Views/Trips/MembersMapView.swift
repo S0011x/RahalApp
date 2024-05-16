@@ -25,9 +25,10 @@ struct MembersMapView: View {
     @State private var wifiColor: Color = .white
     
     
-    //Close and Meniu
+    //Close and Menu
     @State private var selectedOption: String? = nil
- //  @State private var isShareSheetPresented = false
+    
+    //@State private var isShareSheetPresented = false
     @State private var isShowingAlert = false
     @State private var isNavigateToAnotherView = false
     
@@ -37,7 +38,9 @@ struct MembersMapView: View {
     //info
     @State private var isShowingSheet = false
     
-    @State private var phoneNumber = "123456789"
+    
+    //Pone call
+    @State private var phoneNumber = "0552849952"
     
 
     func CheckNetwoekConection() {
@@ -281,32 +284,6 @@ extension MembersMapView {
                         }
                         
                         
-                        
-//                        NavigationLink(destination: NotificationView() , label: {
-//
-//                            Menu {
-//                                NavigationLink(destination: CreateTrip(), tag: "Option 1", selection: $selectedOption) {
-//                                     Label("تعديل", systemImage: "pencil") .accentColor(ColorConstants.IconColor)
-//                                 }
-//                                 
-//                               
-//                                 Button(action: {
-//                                     selectedOption = "Option 2"
-//                                 
-//                                    
-//                                 }) {
-//                                     Label("مشاركة", systemImage: "square.and.arrow.up.fill") .accentColor(ColorConstants.IconColor)
-//                                   
-//                                 }
-//                             } label: {
-//                                 Image(systemName: "ellipsis.circle")
-//                                     .resizable()
-//                                     .frame(width: getRelativeWidth(34.0), height: getRelativeWidth(34.0),
-//                                            alignment: .center)
-//                                     .foregroundColor(ColorConstants.IconColor)
-//                             }
-//                        })
-                        
                     }
                 }
                 .frame(width:50,height: 220)
@@ -318,7 +295,7 @@ extension MembersMapView {
         
             .alert(isPresented: $isShowingAlert) {
                 Alert(
-                    title: Text("هل تودالخروج من الرحلة؟"),
+                    title: Text("هل تود الخروج من الرحلة؟"),
                     primaryButton:.default(Text("إغلاق"), action: {
                         isNavigateToAnotherView = true
                     }),

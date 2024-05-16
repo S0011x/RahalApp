@@ -114,26 +114,6 @@ struct HomeViews: View {
                                                           }
                                                           
                                                       })
-                                                 
-                              
-                                        
-                                              
-                                        
-//                                        Alert(
-//                                            title: Text("هل تود إغلاق الرحلة؟"),
-//                                            message: Text("في حال إغلاق الرحلة ستغلق عند جميع الأعضاء ولن تتمكن من فتحها مجددًا"),
-//                                            primaryButton: .cancel(Text("إلغاء")),
-//                                            secondaryButton: .default(Text("إغلاق"), action: {
-//                                                navigateToSelectDestinationView = true
-//                                            }),
-//                                            content: {
-//                                                VStack {
-//                                                    TextField("Enter Text", text: $code)
-//                                                        .textFieldStyle(RoundedBorderTextFieldStyle())
-//                                                }
-//                                                .padding()
-//                                            }
-//                                        )
                                         
                                     }  message: {
                                             Text("")
@@ -154,40 +134,7 @@ struct HomeViews: View {
                                     MembersMapView(pickupLocation:  CLLocationCoordinate2D(latitude: 42.6619, longitude: 21.1501), dropOffLocation: CLLocationCoordinate2D(latitude: 42.6619, longitude: 21.1701), meetSpots: [ CLLocationCoordinate2D(latitude: 42.6619, longitude: 21.1701)])
 
                                 }
-                                
-                                //                                    Button(action: {
-                                //                                        showingAlert.toggle()
-                                //                                    }, label: {
-                                //                                        ButtonWidget(text: "انضم إلى رحلة" )
-                                //                                    })
-                                
-                                
-                                
-                                
-//                                               , label: {
-//                                    Button(action: {
-//                                        showingAlert.toggle()
-//                                    }, label: {
-//                                        ButtonWidget(text: "انضم إلى رحلة" )
-//                                    })
-//                                    .alert("ادخل الكود المرسل", isPresented: $showingAlert) {
-//                                        
-//                                            TextField("", text: $code)
-//                                            Button("اغلاق", action: submit)
-//                                            if(code == ""){
-//                                                Button("حسنا", action: submit)
-//                                            }else{
-//                                                //                                                NavigationLink(destination: PrepardLocationView(pickupLocation: CLLocationCoordinate2D(latitude: 24.8613, longitude: 46.7255), dropOffLocation: CLLocationCoordinate2D(latitude: 24.8414, longitude: 46.7333), meetSpots: [1,2] )) {
-//                                                //
-//                                                Text("حسنا").foregroundColor(.blue)
-//                                                //                                                }
-//                                            }
-//                                        
-//                                        
-//                                    } message: {
-//                                        Text("")
-//                                    }
-//                                })
+                            
                                 
                             }.padding(.bottom, 60)
                         }
