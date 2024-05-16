@@ -8,7 +8,7 @@
 import SwiftUI
 import MapKit
 import Network
-import OneSignalFramework
+import CloudKit
 
 struct MembersMapView: View {
     @State private var messagetwooneText: String = ""
@@ -41,6 +41,10 @@ struct MembersMapView: View {
     
     //Pone call
     @State private var phoneNumber = "0552849952"
+    
+    //NotificationViewModel
+    var notificationViewModel = NotificationViewModel()
+   
     
 
     func CheckNetwoekConection() {
@@ -75,19 +79,20 @@ struct MembersMapView: View {
                 
                 if !hideElements {
                     VStack{
+                        
                         HeaderView
                         
                         Spacer()
-                        HStack {
-                            
-                            //show members to the leader
-//                            widgetBox(text: StringConstants.kLbl3)
-                            widgetBox(text: StringConstants.kLbl5)
-                            widgetBox(text: "أنا هنا")
-                            widgetBox(text: "أحتاج ماء")
-                            
-                            imageBox(image: "img_sos_circle_fill")
-                        }.frame(width:350, alignment: .trailing)
+
+                        ScrollView (.horizontal) {
+                            HStack {
+                                widgetBox(text: StringConstants.kLbl5)
+                                widgetBox(text: "أنا هنا")
+                                widgetBox(text: "أحتاج ماء")
+                                widgetBox(text: "أحتاج استراحة")
+                                widgetBox(text: "لقد علقت")
+                            }.frame(width:500, alignment: .trailing)
+                        }
                     } .onAppear {
                         CheckNetwoekConection()
                     }
@@ -117,14 +122,22 @@ struct MembersMapView: View {
         }.hideNavigationBar()
         
     }
-        
+
+    
+    
+    
+    
     
     func widgetBox(text: String) -> some View{
+        
+        var text = text
+        
         return  HStack(spacing: 0) {
             
-            
-            
-            
+            Button {
+                notificationViewModel.addItem(name: text)
+            } label: {
+
             Text(text)
                 .font(FontScheme
                     .kSFArabicSemibold(size: getRelativeHeight(16.0)))
@@ -138,13 +151,16 @@ struct MembersMapView: View {
                        height: getRelativeHeight(36.0), alignment: .center)
                 .background(RoundedCorners(topLeft: 18.0, topRight: 18.0,
                                            bottomLeft: 18.0, bottomRight: 18.0)
-                    .fill(ColorConstants.WhiteA700))
-        }.frame(width: getRelativeWidth(91.0), height: getRelativeHeight(36.0),
+                    .fill(ColorConstants.WhiteA700))}.frame(width: getRelativeWidth(91.0), height: getRelativeHeight(36.0),
                   alignment: .center)
-           .background(RoundedCorners(topLeft: 18.0, topRight: 18.0, bottomLeft: 18.0,
+                    .background(RoundedCorners(topLeft: 18.0, topRight: 18.0, bottomLeft: 18.0,
                                       bottomRight: 18.0)
-               .fill(ColorConstants.WhiteA700))
+                        .fill(ColorConstants.WhiteA700))
+        
+        
+        }
     }
+    
     
     func imageBox(image: String) -> some View{
         return  HStack(spacing: 0) {
@@ -160,6 +176,8 @@ struct MembersMapView: View {
                     .fill(ColorConstants.WhiteA700))
         }
     }
+    
+    
 }
 
 struct MembersMapView_Previews: PreviewProvider {
