@@ -1,9 +1,16 @@
+//
+//  MembersMapView.swift
+//  RahalApp
+//
+//  Created by Sahora on 16/05/2024.
+//
+
 import SwiftUI
 import MapKit
 import Network
 import OneSignalFramework
 
-struct PrepardLocationView: View {
+struct MembersMapView: View {
     @State private var messagetwooneText: String = ""
     //@StateObject var mapData = MapViewModel()
     // Location Manager....
@@ -20,12 +27,17 @@ struct PrepardLocationView: View {
     
     //Close and Meniu
     @State private var selectedOption: String? = nil
-    @State private var isShareSheetPresented = false
+ //  @State private var isShareSheetPresented = false
     @State private var isShowingAlert = false
     @State private var isNavigateToAnotherView = false
     
     //Hide
     @State private var hideElements = false
+    
+    //info
+    @State private var isShowingSheet = false
+    
+    @State private var phoneNumber = "123456789"
     
 
     func CheckNetwoekConection() {
@@ -147,14 +159,14 @@ struct PrepardLocationView: View {
     }
 }
 
-struct PrepardLocationView_Previews: PreviewProvider {
+struct MembersMapView_Previews: PreviewProvider {
     static var previews: some View {
-        PrepardLocationView(pickupLocation:  CLLocationCoordinate2D(latitude: 42.6619, longitude: 21.1501), dropOffLocation: CLLocationCoordinate2D(latitude: 42.6619, longitude: 21.1701), meetSpots: [ CLLocationCoordinate2D(latitude: 42.6619, longitude: 21.1701)])
+        MembersMapView(pickupLocation:  CLLocationCoordinate2D(latitude: 42.6619, longitude: 21.1501), dropOffLocation: CLLocationCoordinate2D(latitude: 42.6619, longitude: 21.1701), meetSpots: [ CLLocationCoordinate2D(latitude: 42.6619, longitude: 21.1701)])
     }
 }
 
 
-extension PrepardLocationView {
+extension MembersMapView {
     private var HeaderView: some View{
         
         
@@ -239,84 +251,115 @@ extension PrepardLocationView {
                             
                         }
                         
-                        NavigationLink(destination: NotificationView() , label: {
-
-                            Menu {
-                                NavigationLink(destination: CreateTrip(), tag: "Option 1", selection: $selectedOption) {
-                                     Label("تعديل", systemImage: "pencil") .accentColor(ColorConstants.IconColor)
-                                 }
-                                 
-                               
-                                 Button(action: {
-                                     selectedOption = "Option 2"
-                                 
-                                     isShareSheetPresented = true
-                                 }) {
-                                     Label("مشاركة", systemImage: "square.and.arrow.up.fill") .accentColor(ColorConstants.IconColor)
-                                   
-                                 }
-                             } label: {
-                                 Image(systemName: "ellipsis.circle")
-                                     .resizable()
-                                     .frame(width: getRelativeWidth(34.0), height: getRelativeWidth(34.0),
-                                            alignment: .center)
-                                     .foregroundColor(ColorConstants.IconColor)
-                             }
-                             .sheet(isPresented: $isShareSheetPresented, onDismiss: {
-                                         // Reset selectedOption if needed
-                                     }) {
-                                         if let selectedOption = selectedOption {
-                                             ShareSheet(activityItems: [selectedOption])
-                                         }
+                        
+                        //Info
+                        Button {
+                            isShowingSheet.toggle()
+                        }  label: {
+                           
+                            Image(systemName: "info.square.fill")
+                                .resizable()
+                                .frame(width: getRelativeWidth(34.0), height: getRelativeWidth(34.0),
+                                       alignment: .center)
+                                .foregroundColor(ColorConstants.IconColor)
+                            
+                        }
+                        
+                        //Call
+                        Button {
+                            if let phoneURL = URL(string: "tel:\(phoneNumber)") {
+                                         UIApplication.shared.open(phoneURL)
                                      }
-                        })
+                        }  label: {
+                           
+                            Image(systemName: "phone.fill")
+                                .resizable()
+                                .frame(width: getRelativeWidth(34.0), height: getRelativeWidth(34.0),
+                                       alignment: .center)
+                                .foregroundColor(ColorConstants.IconColor)
+                            
+                        }
+                        
+                        
+                        
+//                        NavigationLink(destination: NotificationView() , label: {
+//
+//                            Menu {
+//                                NavigationLink(destination: CreateTrip(), tag: "Option 1", selection: $selectedOption) {
+//                                     Label("تعديل", systemImage: "pencil") .accentColor(ColorConstants.IconColor)
+//                                 }
+//                                 
+//                               
+//                                 Button(action: {
+//                                     selectedOption = "Option 2"
+//                                 
+//                                    
+//                                 }) {
+//                                     Label("مشاركة", systemImage: "square.and.arrow.up.fill") .accentColor(ColorConstants.IconColor)
+//                                   
+//                                 }
+//                             } label: {
+//                                 Image(systemName: "ellipsis.circle")
+//                                     .resizable()
+//                                     .frame(width: getRelativeWidth(34.0), height: getRelativeWidth(34.0),
+//                                            alignment: .center)
+//                                     .foregroundColor(ColorConstants.IconColor)
+//                             }
+//                        })
                         
                     }
                 }
-                .frame(width:50,height: 180)
+                .frame(width:50,height: 220)
                 .cornerRadius(12)
             }.frame(width:340)
         }.frame(width:340,alignment: .trailing)
         
         
+        
             .alert(isPresented: $isShowingAlert) {
                 Alert(
-                    title: Text("هل تود إغلاق الرحلة؟"),
-                    message: Text("في حال إغلاق الرحلة ستغلق عند جميع الأعضاء ولن تتمكن من فتحها مجددًا"),
+                    title: Text("هل تودالخروج من الرحلة؟"),
                     primaryButton:.default(Text("إغلاق"), action: {
                         isNavigateToAnotherView = true
                     }),
                     secondaryButton:   .cancel(Text("إلغاء"))
                 )
             }
-//            .fullScreenCover(isPresented: $isNavigateToAnotherView, content: {
-//                HomeViews()
-//            })
-        
-            .navigationDestination(isPresented: $isNavigateToAnotherView) {
+          
+            //close
+            .fullScreenCover(isPresented: $isNavigateToAnotherView, content: {
                 HomeViews()
-
-            }
-
+            })
         
-//            .sheet(isPresented: $isNavigateToAnotherView) {
-//                HomeViews()
-//            }
+            //info
+            .sheet(isPresented:  $isShowingSheet) {
+                VStack {
+                    Text("Information")
+                        .font(.title)
+                    Text("This is some information.")
+                }
+            
+            }
+//            .frame(width: getRelativeWidth(200), height: getRelativeHeight(400)) // Adjust the size of the sheet content as per your needs
+//            .background(Color.white)
+//            .edgesIgnoringSafeArea(.all)
+        
     }
     
     
 }
 
 
-struct ShareSheet: UIViewControllerRepresentable {
-    let activityItems: [Any]
-    
-    func makeUIViewController(context: Context) -> UIActivityViewController {
-        let activityViewController = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
-        return activityViewController
-    }
-    
-    func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {
-        // No update needed
-    }
-}
+//
+//struct ShareSheetMembers: UIViewControllerRepresentable {
+//    let activityItems: [Any]
+//    
+//    func makeUIViewController(context: Context) -> UIActivityViewController {
+//        let activityViewController = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+//        return activityViewController
+//    }
+//    
+//    func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {
+//        // No update needed
+//    }
+//}

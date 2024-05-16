@@ -14,6 +14,7 @@
 		185299852BF4ABA600D02939 /* CreateTripCRUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185299842BF4ABA600D02939 /* CreateTripCRUD.swift */; };
 		189B6AD02BF0AAB600AC3578 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B6ACF2BF0AAB600AC3578 /* NotificationService.swift */; };
 		189B6AD42BF0AAB600AC3578 /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 189B6ACD2BF0AAB600AC3578 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		18BE9E492BF6897900204231 /* MembersMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BE9E482BF6897900204231 /* MembersMapView.swift */; };
 		6F21C9652BE8BF3200CF9FD0 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F21C9642BE8BF3200CF9FD0 /* UserAccount.swift */; };
 		6F21C9672BE8C40B00CF9FD0 /* UserInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F21C9662BE8C40B00CF9FD0 /* UserInformationView.swift */; };
 		6F21C9692BE8C44D00CF9FD0 /* SavedTripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F21C9682BE8C44D00CF9FD0 /* SavedTripsView.swift */; };
@@ -88,6 +89,7 @@
 		189B6ACF2BF0AAB600AC3578 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		189B6AD12BF0AAB600AC3578 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		189B6AD92BF0AB0800AC3578 /* OneSignalNotificationServiceExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OneSignalNotificationServiceExtension.entitlements; sourceTree = "<group>"; };
+		18BE9E482BF6897900204231 /* MembersMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersMapView.swift; sourceTree = "<group>"; };
 		6F21C9642BE8BF3200CF9FD0 /* UserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		6F21C9662BE8C40B00CF9FD0 /* UserInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationView.swift; sourceTree = "<group>"; };
 		6F21C9682BE8C44D00CF9FD0 /* SavedTripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTripsView.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				6F3A09382BF20AB4006F42B3 /* MapDrawingBath.swift */,
 				6F3A093A2BF2192D006F42B3 /* NewSearchForDestenation.swift */,
 				6F3A093E2BF49A8D006F42B3 /* meetSpotsSelectNewClass.swift */,
+				18BE9E482BF6897900204231 /* MembersMapView.swift */,
 			);
 			path = Trips;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 				6F21C9692BE8C44D00CF9FD0 /* SavedTripsView.swift in Sources */,
 				6F21C9732BE8CDE900CF9FD0 /* HomeViews.swift in Sources */,
 				6F8AD19D2BE77BCF00191C20 /* SelectMeetSpotView.swift in Sources */,
+				18BE9E492BF6897900204231 /* MembersMapView.swift in Sources */,
 				6F21C9652BE8BF3200CF9FD0 /* UserAccount.swift in Sources */,
 				6F8AD1922BE7667000191C20 /* AppleButtonLogic.swift in Sources */,
 				6FE409D82BEB65010054B08E /* MaoViewForSearch.swift in Sources */,
