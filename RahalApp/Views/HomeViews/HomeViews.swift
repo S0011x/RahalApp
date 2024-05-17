@@ -1,11 +1,13 @@
 import SwiftUI
 import MapKit
+import AuthenticationServices
 
 struct HomeViews: View {
     //Home
     @StateObject var viewModel = HomeViewsModel()
+
     @State private var showingAlert = false
-      @State private var code = ""
+    @State private var code = ""
     
     
     @State private var isShowingAlert = false
@@ -13,7 +15,12 @@ struct HomeViews: View {
     @State private var navigateToSelectDestinationView = false
     
     
+    @ObservedObject var loginViewModel = LoginViewModel()
+    
     var body: some View {
+        @State  var isSigninigIn = loginViewModel.isSigninigIn
+//        Text("\(isSigninigIn)")
+        
         NavigationStack{
             VStack {
                 ZStack{
@@ -30,15 +37,17 @@ struct HomeViews: View {
                             ZStack{
                                 Color(.whiteA700)
                                 VStack {
-                                    NavigationLink(destination: RegisterView(), label: {
-                                        Image(systemName: "person.crop.circle")
-                                            .resizable()
-                                            .frame(width: getRelativeWidth(34.0), height: getRelativeWidth(34.0),
-                                                   alignment: .center)
-                                            .foregroundColor(ColorConstants.IconColor)
-                                            .scaledToFit()
-                                            .clipped()
-                                            .padding(.top, getRelativeHeight(4.0))
+                                    NavigationLink(
+                                        destination: isSigninigIn ? AnyView(UserInformationView()) : AnyView(LoginView()),
+                                        label: {
+                                            Image(systemName: "person.crop.circle")
+                                                .resizable()
+                                                .frame(width: getRelativeWidth(34.0), height: getRelativeWidth(34.0),
+                                                       alignment: .center)
+                                                .foregroundColor(ColorConstants.IconColor)
+                                                .scaledToFit()
+                                                .clipped()
+                                                .padding(.top, getRelativeHeight(4.0))
                                         
                                     })
                                     
@@ -160,6 +169,23 @@ struct HomeViews_Previews: PreviewProvider {
     }
 }
 
+//check Signing in
+//func checkAppleSignInStatus() -> Bool {
+//    let appleIDProvider = ASAuthorizationAppleIDProvider()
+//    let appleIDCredential = appleIDProvider.getCredentialState(forUserID: "userIdentifier")
+//    
+//    switch appleIDCredential {
+//    case .authorized:
+//        // User is authorized (signed in) with Apple ID
+//        return true
+//    case .revoked, .notFound:
+//        // User is either revoked the authorization or not signed in with Apple ID
+//        return false
+//    default:
+//        // Unknown state
+//        return false
+//    }
+//}
 
 final class HomeViewsModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     var locationManager: CLLocationManager?

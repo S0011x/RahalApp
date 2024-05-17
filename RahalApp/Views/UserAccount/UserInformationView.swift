@@ -8,18 +8,28 @@
 import SwiftUI
 
 struct UserInformationView: View {
-    @State private var firstName = "جمان"
-    @State private var lastName = "يوسف"
-    @State private var email = "juman@hotmail.com"
+    
+    @State var loginViewModel = LoginViewModel()
+    
+//    @State  var firstName = ""
+//    @State  var lastName = ""
+//    @State  var email = ""
+   
     
     var body: some View {
+        
+        
+        @State  var email = loginViewModel.email
+        @State  var firstName = loginViewModel.firstName
+        @State  var lastName = loginViewModel.lastName
+        
         ZStack{
             Color(.background).ignoresSafeArea()
             VStack{
                 HeaderView
-                FirstNameView
-                LastNameView
-                EmailView
+                FirstNameView(firstName: firstName)
+                LastNameView(lastName: lastName)
+                EmailView(email: email)
                 
                 NavigationLink(destination: RestPasswordView(), label: {
                     Text("تواصل معنا")
@@ -65,10 +75,14 @@ extension UserInformationView {
             .padding(.trailing , 35)
     }
     
-    private var FirstNameView: some View{
-        VStack(alignment: .trailing){
+    func FirstNameView (firstName: String) -> some View {
+        
+        @State var firstName = firstName
+        
+        return VStack(alignment: .trailing){
             Text("الأسم الأول").foregroundColor( Color(.black900))
             TextField("", text: $firstName)
+                .disabled(true)
                 .multilineTextAlignment(.trailing)
                     .padding()
                 .frame(width: 300, height: 35)
@@ -82,11 +96,15 @@ extension UserInformationView {
         }
     }
     
-    private var LastNameView: some View{
-        VStack(alignment: .trailing){
+    func LastNameView (lastName:String) -> some View {
+       
+        @State var lastName = lastName
+
+        return VStack(alignment: .trailing){
             Text("الأسم الأخير").foregroundColor( Color(.black900))
             
             TextField("", text: $lastName)
+                .disabled(true)
                 .multilineTextAlignment(.trailing)
                     .padding()
             
@@ -101,11 +119,17 @@ extension UserInformationView {
         }
     }
     
-    private var EmailView: some View{
-        VStack(alignment: .trailing){
+    
+    func EmailView (email: String) -> some View{
+
+       @State var email = email
+    
+        return VStack(alignment: .trailing){
             Text("البريد الالكتروني").foregroundColor( Color(.black900))
             
-            TextField("", text: $email)                 .multilineTextAlignment(.trailing)
+            TextField("", text: $email)
+                .disabled(true)
+                .multilineTextAlignment(.trailing)
                 .padding()
                 .frame(width: 300, height: 35,alignment: .trailing)
             
