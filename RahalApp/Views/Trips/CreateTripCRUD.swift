@@ -160,19 +160,19 @@ struct CreateTripCRUD: View {
     var body: some View {
         NavigationStack{
             ScrollView{
-                VStack(alignment:.trailing ){
+                VStack(alignment:.center ){
                     TripNameView
-                    Spacer(minLength: 15)
+                    Spacer(minLength: 20)
                     tripDetailsView
-                    Spacer(minLength: 15)
-                    tripLevelView
-                    Spacer(minLength: 15)
-                    startTrip
-                    Spacer(minLength: 15)
-                    endTrip
-                    Spacer(minLength: 15)
+                    Spacer(minLength: 20)
                     phoneNumberView
-                    Spacer(minLength: 15)
+                    Spacer(minLength: 20)
+                    tripLevelView
+                    Spacer(minLength: 20)
+                    startTrip
+                    Spacer(minLength: 20)
+                    endTrip
+                    Spacer(minLength: 20)
                     addButton
                     
                 }
@@ -182,23 +182,26 @@ struct CreateTripCRUD: View {
             }
             .frame(width: 1000)
             .background(Color("background"))
+            .navigationTitle("معلومات الرحلة")
         }.alert(isPresented: $showErrorAlert) {
             Alert(title: Text("Validation Error"), message: Text(errorMessage), dismissButton: .default(Text("OK")))
         }
     }
+    
+    
+    
     private var TripNameView: some View {
         VStack(alignment: .trailing){
             Text("اسم الرحلة")
             TextField("", text: $vm.text)
-            
                 .frame(width: 300, height: 35)
                 .background(Color("WhiteA700"))
-                .overlay(
-                    RoundedRectangle(cornerRadius: 4)
-                        .stroke(
-                             Color("WhiteA700"))
-                        .frame(width: 300, height: 35))
-        }
+//                .overlay(
+//                    RoundedRectangle(cornerRadius: 50)
+//                        .stroke(
+//                             Color("WhiteA700"))
+//                        .frame(width: 300, height: 35))
+            }
             
     }
     
@@ -233,7 +236,6 @@ struct CreateTripCRUD: View {
             TextField("", value: $vm.phoneNumberText, format: .number)
                 .keyboardType(.numberPad)
                 .frame(width: 300, height: 35)
-            
                 .background(Color("WhiteA700"))
                 .overlay(
                     RoundedRectangle(cornerRadius: 4)
@@ -250,6 +252,8 @@ struct CreateTripCRUD: View {
     private var tripLevelView: some View {
         VStack(alignment: .trailing){
             Text("مستوى صعوبة الرحلة")
+                .frame(width: 300, height: 35 , alignment: .trailing)
+                .padding(.trailing)
             Picker("", selection: $vm.level) {
                 ForEach(levels, id: \.self) {
                     Text($0)
@@ -258,16 +262,20 @@ struct CreateTripCRUD: View {
             .pickerStyle(SegmentedPickerStyle())
             .frame(width: 300, height: 35)
             .padding()
-        }}
+            
+            
+        }
+    }
 
     private var startTrip: some View {
         VStack(alignment: .trailing){
             Text("بداية الرحلة")
+                .frame(width: 300, height: 35 , alignment: .trailing)
+                .padding(.trailing)
             HStack{
                 DatePicker("", selection: $vm.startDate, displayedComponents: [.date, .hourAndMinute])
-                    .labelsHidden().frame(
-                        width: 300,
-                        alignment:.center)
+                    .labelsHidden()
+                    .frame(width: 300, height: 35)
                     .datePickerStyle(CompactDatePickerStyle())
                     .padding()
             }
@@ -278,11 +286,12 @@ struct CreateTripCRUD: View {
     private var endTrip: some View {
         VStack(alignment: .trailing){
             Text("نهاية الرحلة")
+                .frame(width: 300, height: 35 , alignment: .trailing)
+                .padding(.trailing)
             HStack{
                 DatePicker("", selection: $vm.endDate, displayedComponents: [.date, .hourAndMinute])
-                    .labelsHidden().frame(
-                        width: 300,
-                        alignment:.center)
+                    .labelsHidden()
+                    .frame( width: 300, height: 35)
                     .datePickerStyle(CompactDatePickerStyle())
                     .padding()
             }

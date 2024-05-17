@@ -58,9 +58,7 @@ extension CreateTrip {
         VStack(alignment: .trailing){
             Text("اسم الرحلة")
             TextField("", text: $name)
-            
                 .frame(width: 300, height: 35)
-            
                 .background(Color("WhiteA700"))
                 .overlay(
                     RoundedRectangle(cornerRadius: 4)

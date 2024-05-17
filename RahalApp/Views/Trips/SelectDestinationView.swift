@@ -117,6 +117,7 @@ struct SelectDestinationView: View {
                         .padding(.top)
                     }
                     .background(Color.white)
+                    
                 }
                 
                 
@@ -152,6 +153,7 @@ struct SelectDestinationView: View {
                         .padding(.top)
                     }
                     .background(Color.white)
+                   
                 }
                 
                 
@@ -210,7 +212,7 @@ struct SelectDestinationView: View {
                 self.mapDataDestenation.searchQuery()
             }
         }
-    })
+    })  .navigationTitle("معلومات الموقع")
 }
 }
 

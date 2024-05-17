@@ -18,6 +18,7 @@ struct RahalAppApp: App {
     var body: some Scene {
         WindowGroup {
             SplashView(isOnboarding: $isOnboarding)
+         
         }
     }
 }
