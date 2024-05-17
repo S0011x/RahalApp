@@ -38,14 +38,16 @@ class TripCRUDViewModel: ObservableObject {
     init() {
         // Initialize if needed
     }
+    
+    //       guard text.isEmpty, tripDetailsText.isEmpty,  phoneNumberText == 10  else {
+    ////           if !text.isEmpty {}
+    //          // , endDate >= startDate
+    //            return "Please fill all fields and ensure end date is after start date"
+    //        }
   //  Int(phoneNumberText)
     func addButtonPressed() -> String {
         print("Hi function")
-//       guard text.isEmpty, tripDetailsText.isEmpty,  phoneNumberText == 10  else {
-////           if !text.isEmpty {}
-//          // , endDate >= startDate
-//            return "Please fill all fields and ensure end date is after start date"
-//        }
+
         
         let uniqueCode = generateUniqueCode()
         let newTrip = addItem(TripName: text, code: uniqueCode, tripDetails: tripDetailsText, phoneNumber: phoneNumberText, level: level, startDate: startDate, endDate: endDate)
@@ -55,6 +57,31 @@ class TripCRUDViewModel: ObservableObject {
         
         return "Trip created!!"
     }
+    
+    
+    func validateFields() -> [String: String] {
+        var errors = [String: String]()
+
+        if text.isEmpty {
+            errors["tripName"] = "الرجاء ادخال اسم الرحلة!"
+        }
+        if tripDetailsText.isEmpty {
+            errors["tripDetails"] = "الرجاء ادخال تفاصيل الرحلة!"
+        }
+        if String(phoneNumberText).count != 10 || String(phoneNumberText).first == "0" {
+            errors["phoneNumber"] = "الرجاء ادخال رقم هاتف صحيح (يجب أن يكون 10 أرقام ولا يبدأ بصفر)!"
+        }
+        if startDate > endDate {
+            errors["date"] = "تاريخ نهاية الرحلة يجب ان يكون بعد تاريخ بداية الرحلة"
+        }
+
+        return errors
+    }
+
+
+
+    
+    
 
     private func generateUniqueCode() -> String {
         String(format: "%06d", Int.random(in: 100000...999999))
@@ -125,6 +152,8 @@ struct CreateTripCRUD: View {
     @StateObject private var vm = TripCRUDViewModel()
     @State private var navigateToTrip = false
     @State private var navigateToSelectDestinationView = false
+    @State private var showErrorAlert = false
+    @State private var errorMessage = ""
 
     let levels = ["سهل", "متوسط", "صعب"]
 
@@ -153,7 +182,8 @@ struct CreateTripCRUD: View {
             }
             .frame(width: 1000)
             .background(Color("background"))
-            .navigationTitle("معلومات الرحلة")
+        }.alert(isPresented: $showErrorAlert) {
+            Alert(title: Text("Validation Error"), message: Text(errorMessage), dismissButton: .default(Text("OK")))
         }
     }
     private var TripNameView: some View {
@@ -263,27 +293,21 @@ struct CreateTripCRUD: View {
 
     private var addButton: some View {
         Button(action: {
-            let result = vm.addButtonPressed()
-            print(result)
-            navigateToSelectDestinationView.toggle()
-            DispatchQueue.main.async {
-                if vm.newTripCode != "" {
-                    vm.fetchTrip(withCode: vm.newTripCode) { tripModel in
-                        if let tripModel = tripModel {
-                            vm.trips.append(tripModel)
-                            
-                        } else {
-                            print("Not Found")
-                        }
-                    }
-                }
+            let errors = vm.validateFields()
+            if errors.isEmpty {
+                let result = vm.addButtonPressed()
+                print(result)
+                navigateToSelectDestinationView.toggle()
+            } else {
+                // Construct a message from all errors
+                errorMessage = errors.map { "\($0.key): \($0.value)" }.joined(separator: "\n")
+                showErrorAlert = true
             }
         }, label: {
-           // NavigationLink(destination: SelectDestinationView()) {
-                ButtonWidget(text: "التالي")
-            //}
+            ButtonWidget(text: "التالي")
         })
     }
+
 }
 
 // Preview Provider
