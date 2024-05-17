@@ -16,6 +16,7 @@
 		189B6AD42BF0AAB600AC3578 /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 189B6ACD2BF0AAB600AC3578 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		18BE9E492BF6897900204231 /* MembersMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BE9E482BF6897900204231 /* MembersMapView.swift */; };
 		18BE9E4B2BF6BF9F00204231 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BE9E4A2BF6BF9F00204231 /* NotificationViewModel.swift */; };
+		18BE9E4E2BF6D11500204231 /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = 18BE9E4D2BF6D11500204231 /* SwiftUIX */; };
 		6F21C9652BE8BF3200CF9FD0 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F21C9642BE8BF3200CF9FD0 /* UserAccount.swift */; };
 		6F21C9672BE8C40B00CF9FD0 /* UserInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F21C9662BE8C40B00CF9FD0 /* UserInformationView.swift */; };
 		6F21C9692BE8C44D00CF9FD0 /* SavedTripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F21C9682BE8C44D00CF9FD0 /* SavedTripsView.swift */; };
@@ -151,6 +152,7 @@
 				178B5A1D2BF6078800C367EE /* OneSignalInAppMessages in Frameworks */,
 				178B5A1F2BF6078800C367EE /* OneSignalLocation in Frameworks */,
 				178B5A1B2BF6078800C367EE /* OneSignalFramework in Frameworks */,
+				18BE9E4E2BF6D11500204231 /* SwiftUIX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +385,7 @@
 				178B5A1A2BF6078800C367EE /* OneSignalFramework */,
 				178B5A1C2BF6078800C367EE /* OneSignalInAppMessages */,
 				178B5A1E2BF6078800C367EE /* OneSignalLocation */,
+				18BE9E4D2BF6D11500204231 /* SwiftUIX */,
 			);
 			productName = RahalApp;
 			productReference = 6F9E5A042BDE4C49005BBECC /* RahalApp.app */;
@@ -417,6 +420,7 @@
 			mainGroup = 6F9E59FB2BDE4C49005BBECC;
 			packageReferences = (
 				178B5A172BF6078800C367EE /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */,
+				18BE9E4C2BF6D11500204231 /* XCRemoteSwiftPackageReference "SwiftUIX" */,
 			);
 			productRefGroup = 6F9E5A052BDE4C49005BBECC /* Products */;
 			projectDirPath = "";
@@ -803,6 +807,14 @@
 				minimumVersion = 5.2.0;
 			};
 		};
+		18BE9E4C2BF6D11500204231 /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -825,6 +837,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 178B5A172BF6078800C367EE /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
 			productName = OneSignalLocation;
+		};
+		18BE9E4D2BF6D11500204231 /* SwiftUIX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18BE9E4C2BF6D11500204231 /* XCRemoteSwiftPackageReference "SwiftUIX" */;
+			productName = SwiftUIX;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

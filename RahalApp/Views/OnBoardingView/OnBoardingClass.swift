@@ -9,12 +9,16 @@ struct OnBoardingClass: View {
     @AppStorage("isOnboarding") var isOnboarding: Bool?
 
     var body: some View {
-            VStack {
+            ZStack {
+                
+                
+                
                 ZStack(alignment: .top) {
                     Image("img_rectangle_369")
                         .resizable()
-                        .frame(width: UIScreen.main.bounds.width, height: getRelativeHeight(396.0),
+                        .frame(width: UIScreen.main.bounds.width, height: getRelativeHeight(450),
                                alignment: .center)
+                        .ignoresSafeArea(.all)
                     
                     
                     VStack {
@@ -38,8 +42,8 @@ struct OnBoardingClass: View {
                                     .multilineTextAlignment(.leading)
                                     .frame(width: getRelativeWidth(54.0), height: getRelativeHeight(32.0),
                                            alignment: .topLeading)
-                                    .padding(.bottom, getRelativeHeight(381.4))
-                                    .padding(.leading, getRelativeWidth(303.0))
+                                    .padding(.bottom, getRelativeHeight(415))
+                                    .padding(.trailing, getRelativeWidth(303.0))
                                     .padding(.horizontal)
                                 })
 

@@ -1,5 +1,5 @@
 {
-  "originHash" : "fe10aafbaf409842f476e8822e8d586ae13fa97ca251345350315549123c6d78",
+  "originHash" : "cf39039955275ac816c58a9384745f7321517f9943e4fe415bb47ee26326edf1",
   "pins" : [
     {
       "identity" : "onesignal-xcframework",
@@ -8,6 +8,15 @@
       "state" : {
         "revision" : "37c0c6ebfe4aad85be13f6e6ba079282302533fc",
         "version" : "5.2.0"
+      }
+    },
+    {
+      "identity" : "swiftuix",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwiftUIX/SwiftUIX.git",
+      "state" : {
+        "revision" : "ff1176d8c06c2ac81db3dfd36c63ec8a9c2ccbca",
+        "version" : "0.2.1"
       }
     }
   ],
