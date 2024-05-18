@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CloudKit
 
 struct UserInformationView: View {
     
@@ -22,6 +23,9 @@ struct UserInformationView: View {
         @State  var email = loginViewModel.email
         @State  var firstName = loginViewModel.firstName
         @State  var lastName = loginViewModel.lastName
+        let emailAddress = "saharbintyousef@gmail.com"
+        
+
         
         ZStack{
             Color(.background).ignoresSafeArea()
@@ -31,20 +35,28 @@ struct UserInformationView: View {
                 LastNameView(lastName: lastName)
                 EmailView(email: email)
                 
-                NavigationLink(destination: RestPasswordView(), label: {
+                Button(action: {
+                    if let emailURL = URL(string: "mailto:\(emailAddress)") {
+                        UIApplication.shared.open(emailURL)
+                    }
+                }) {
                     Text("تواصل معنا")
                         .foregroundColor(.blue).frame(width: 300, alignment: .trailing).padding(.top)
-                })
-                NavigationLink(destination: RestPasswordView(), label: {
-                    Text("حذف الحساب")
-                        .foregroundColor(.blue).frame(width: 300, alignment: .trailing).padding(.top)
-                })
+                }
                 
                 
-//                NavigationLink(destination: RestPasswordView(), label: {
-//                    Text("اعادة تعيين كلمة المرور؟").foregroundColor(.blue).frame(width: 300, alignment: .trailing).padding(.top)
-//                })
-//
+
+                
+                
+//                Button(action: deleteAccountFromCloudKit(TripName: String, completion: <#T##((any Error)?) -> Void#>) ) {
+//                    Text("تواصل معنا")
+//                        .foregroundColor(.blue).frame(width: 300, alignment: .trailing).padding(.top)
+//                }
+                
+                
+
+                
+
                
                 Spacer()
 //                ButtonWidget(text: "حفظ")
@@ -57,6 +69,54 @@ struct UserInformationView: View {
 #Preview {
     UserInformationView()
 }
+
+
+
+//Delete
+//func deleteAccountFromCloudKit(TripName: String, completion: @escaping (Error?) -> Void) {
+//    let container =  CKContainer.init(identifier: "iCloud.com.macrochallange.test.TripManagement")
+//    let publicCloudDatabase = container.publicCloudDatabase
+//    
+//    let recordID = CKRecord.ID(recordName: TripName)
+//    publicCloudDatabase.delete(withRecordID: recordID) { (recordID, error) in
+//        if let error = error {
+//            completion(error)
+//            
+//        } else {
+//            completion(nil)
+//            print ("MAMMAMMAMMAMAMAM")
+//        }
+//    }
+//}
+
+
+func deleteDataFromRecord(recordID: CKRecord.ID, fieldName: String, completion: @escaping (Error?) -> Void) {
+    let container =  CKContainer.init(identifier: "iCloud.com.macrochallange.test.TripManagement")
+    let publicCloudDatabase = container.publicCloudDatabase
+    
+    publicCloudDatabase.fetch(withRecordID: recordID) { (record, error) in
+        guard let record = record else {
+            completion(error)
+            return
+        }
+        
+        record.setObject(nil, forKey: fieldName)
+        
+        let modifyOperation = CKModifyRecordsOperation(recordsToSave: [record], recordIDsToDelete: nil)
+        modifyOperation.savePolicy = .changedKeys
+        
+        modifyOperation.modifyRecordsCompletionBlock = { (savedRecords, _, error) in
+            completion(error)
+        }
+        
+        publicCloudDatabase.add(modifyOperation)
+    }
+}
+
+
+
+
+
 
 extension UserInformationView {
     private var HeaderView: some View{

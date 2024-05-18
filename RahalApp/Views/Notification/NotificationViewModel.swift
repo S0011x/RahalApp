@@ -21,9 +21,11 @@ class NotificationViewModel: ObservableObject {
             print ("Record: \(String(describing: returnedRecord)) Meaw")
             print ("Error: \(returnedError) Hohoo")
             
-            DispatchQueue.main.async {
-                self?.msg = ""
-            }
+            
+            
+//            DispatchQueue.main.async {
+//                self?.msg = ""
+//            }
             
         }
     }
@@ -32,19 +34,27 @@ class NotificationViewModel: ObservableObject {
     
     //Send Notification
     func addItem ( name: String ) {
+        
         let newMsg = CKRecord(recordType: "MSGS")
-        newMsg["name"] = ""
+        
+        newMsg["MSG"] = name
         newMsg["Creator"] =  ""
+        
         saveItem(record: newMsg)
+        SubscribtoNoti(name: name)
         print ("NOTIFIACATION   IS  CREATED")
-      
         
         
-    //        let msg = VM.Themsg
-    //        var themsge = CRUD.themsge
+        
+        //        let msg = VM.Themsg
+        //        var themsge = CRUD.themsge
         //var Date = Date.distantPast
-    //         fitchnoti()
-        
+        //         fitchnoti()
+    }
+    
+    
+    func SubscribtoNoti(name: String ) {
+
         let predicate = NSPredicate(value: true)
         let subscrpition = CKQuerySubscription(recordType:"MSGS", predicate: predicate, subscriptionID: "Msg_Added", options: .firesOnRecordCreation)
         let noti = CKSubscription.NotificationInfo()
@@ -57,7 +67,7 @@ class NotificationViewModel: ObservableObject {
         CKContainer.default().publicCloudDatabase.save(subscrpition) {returnedsubscrpition, returnedError in
             
             if let error = returnedError {
-                print(error)
+                print("❌🤬💢 \(error)")
             } else {
                 print ("Subscribed")
             }

@@ -128,7 +128,7 @@ struct MembersMapView: View {
     
     
     
-    func widgetBox(text: String) -> some View{
+    func widgetBox(text: String) -> some View {
         
         var text = text
         
@@ -162,29 +162,29 @@ struct MembersMapView: View {
     }
     
     
-    func imageBox(image: String) -> some View{
-        return  HStack(spacing: 0) {
-            Image(image)
-                .resizable()
-                .frame(width: getRelativeWidth(21.0),
-                       height: getRelativeWidth(21.0), alignment: .center)
-                .scaledToFit()
-                .padding(.horizontal, getRelativeWidth(8.0))
-                .padding(.vertical, getRelativeHeight(7.0))
-                 .background(RoundedCorners(topLeft: 18.0, topRight: 18.0,
-                                           bottomLeft: 18.0, bottomRight: 18.0)
-                    .fill(ColorConstants.WhiteA700))
+            func imageBox(image: String) -> some View{
+                return  HStack(spacing: 0) {
+                    Image(image)
+                        .resizable()
+                        .frame(width: getRelativeWidth(21.0),
+                               height: getRelativeWidth(21.0), alignment: .center)
+                        .scaledToFit()
+                        .padding(.horizontal, getRelativeWidth(8.0))
+                        .padding(.vertical, getRelativeHeight(7.0))
+                         .background(RoundedCorners(topLeft: 18.0, topRight: 18.0,
+                                                   bottomLeft: 18.0, bottomRight: 18.0)
+                            .fill(ColorConstants.WhiteA700))
+                }
+            }
+            
+            
         }
-    }
-    
-    
-}
 
-struct MembersMapView_Previews: PreviewProvider {
-    static var previews: some View {
-        MembersMapView(pickupLocation:  CLLocationCoordinate2D(latitude: 42.6619, longitude: 21.1501), dropOffLocation: CLLocationCoordinate2D(latitude: 42.6619, longitude: 21.1701), meetSpots: [ CLLocationCoordinate2D(latitude: 42.6619, longitude: 21.1701)])
-    }
-}
+        struct MembersMapView_Previews: PreviewProvider {
+            static var previews: some View {
+                MembersMapView(pickupLocation:  CLLocationCoordinate2D(latitude: 42.6619, longitude: 21.1501), dropOffLocation: CLLocationCoordinate2D(latitude: 42.6619, longitude: 21.1701), meetSpots: [ CLLocationCoordinate2D(latitude: 42.6619, longitude: 21.1701)])
+            }
+        }
 
 
 extension MembersMapView {
