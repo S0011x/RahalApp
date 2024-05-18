@@ -205,3 +205,34 @@ extension UserInformationView {
 }
 
 
+
+
+
+
+
+
+/*import SwiftUI
+import CloudKit
+
+struct TheTripView: View {
+    var trip: TripsModel?
+
+    var body: some View {
+        VStack {
+            if let trip = trip {
+                Text("Trip Name: \(trip.name)")
+                    .font(.largeTitle)
+                Text("Trip Code: \(trip.code)")
+                    .font(.title)
+            } else {
+                Text("No trip selected")
+                    .font(.largeTitle)
+            }
+        }
+    }
+}
+
+#Preview {
+    TheTrip()
+        
+}*/

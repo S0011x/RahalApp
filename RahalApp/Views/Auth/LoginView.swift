@@ -47,7 +47,7 @@ struct LoginView: View {
                         Spacer(minLength: 30)
                         ButtonWidget(text: "تسجيل الدخول")
                         Spacer(minLength: 20)
-                        NavigationLink(destination: RegisterView(), label: {
+                        NavigationLink(destination: UserSignUp(), label: {
                             HStack{
                                 Text("سجل معنا").underline(color : Color("tivany"))
                                     .foregroundColor(Color("tivany"))

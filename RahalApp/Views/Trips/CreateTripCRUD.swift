@@ -47,8 +47,6 @@ class TripCRUDViewModel: ObservableObject {
   //  Int(phoneNumberText)
     func addButtonPressed() -> String {
         print("Hi function")
-
-        
         let uniqueCode = generateUniqueCode()
         let newTrip = addItem(TripName: text, code: uniqueCode, tripDetails: tripDetailsText, phoneNumber: phoneNumberText, level: level, startDate: startDate, endDate: endDate)
         print(newTrip["TripName"],"🚗")
