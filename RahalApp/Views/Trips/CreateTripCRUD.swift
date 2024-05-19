@@ -158,7 +158,7 @@ struct CreateTripCRUD: View {
     var body: some View {
         NavigationStack{
             ScrollView{
-                VStack(alignment:.center ){
+                VStack(alignment:.trailing ){
                     TripNameView
                     Spacer(minLength: 20)
                     tripDetailsView
@@ -173,17 +173,18 @@ struct CreateTripCRUD: View {
                     Spacer(minLength: 20)
                     addButton
                     
-                }
+                }.padding(.horizontal,20)
                 .navigationDestination(isPresented: $navigateToSelectDestinationView) {
                     SelectDestinationView()
                 }
             }
             .frame(width: 1000)
             .background(Color("background"))
-            .navigationTitle("معلومات الرحلة")
         }.alert(isPresented: $showErrorAlert) {
             Alert(title: Text("Validation Error"), message: Text(errorMessage), dismissButton: .default(Text("OK")))
-        }
+        }  
+        .navigationTitle("معلومات الرحلة")
+
     }
     
     
