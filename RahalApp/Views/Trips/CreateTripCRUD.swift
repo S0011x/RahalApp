@@ -67,7 +67,7 @@ class TripCRUDViewModel: ObservableObject {
         if tripDetailsText.isEmpty {
             errors["tripDetails"] = "الرجاء ادخال تفاصيل الرحلة!"
         }
-        if String(phoneNumberText).count != 9 || String(phoneNumberText).first == "0" {
+        if String(phoneNumberText).count == 9 || String(phoneNumberText).first == "0" {
             errors["phoneNumber"] = "الرجاء ادخال رقم هاتف صحيح (يجب أن يكون 10 أرقام ولا يبدأ بصفر)!"
         }
         if startDate > endDate {
