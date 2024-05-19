@@ -17,11 +17,16 @@ struct HomeViews: View {
     
     @ObservedObject var loginViewModel = LoginViewModel()
     
+    @StateObject var vmm = LoginViewModel()
+    
     var body: some View {
         @State  var isSigninigIn = loginViewModel.isSigninigIn
 //        Text("\(isSigninigIn)")
         
         NavigationStack{
+            
+      
+            
             VStack {
                 ZStack{
                     

@@ -12,6 +12,7 @@
 		17499F002BF8EF9F002F2EF0 /* OneSignalFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 17499EFF2BF8EF9F002F2EF0 /* OneSignalFramework */; };
 		17499F022BF8EF9F002F2EF0 /* OneSignalInAppMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 17499F012BF8EF9F002F2EF0 /* OneSignalInAppMessages */; };
 		17499F042BF8EF9F002F2EF0 /* OneSignalLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 17499F032BF8EF9F002F2EF0 /* OneSignalLocation */; };
+		17499F062BF9FD7F002F2EF0 /* UserInform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17499F052BF9FD7F002F2EF0 /* UserInform.swift */; };
 		185299852BF4ABA600D02939 /* CreateTripCRUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185299842BF4ABA600D02939 /* CreateTripCRUD.swift */; };
 		189B6AD02BF0AAB600AC3578 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B6ACF2BF0AAB600AC3578 /* NotificationService.swift */; };
 		189B6AD42BF0AAB600AC3578 /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 189B6ACD2BF0AAB600AC3578 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -85,6 +86,7 @@
 
 /* Begin PBXFileReference section */
 		17499EF12BF7D924002F2EF0 /* UserSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignUp.swift; sourceTree = "<group>"; };
+		17499F052BF9FD7F002F2EF0 /* UserInform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInform.swift; sourceTree = "<group>"; };
 		185299842BF4ABA600D02939 /* CreateTripCRUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTripCRUD.swift; sourceTree = "<group>"; };
 		189B6AC72BF0AA7B00AC3578 /* RahalApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RahalApp.entitlements; sourceTree = "<group>"; };
 		189B6AC82BF0AA8500AC3578 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 			children = (
 				6F21C9642BE8BF3200CF9FD0 /* UserAccount.swift */,
 				6F21C9662BE8C40B00CF9FD0 /* UserInformationView.swift */,
+				17499F052BF9FD7F002F2EF0 /* UserInform.swift */,
 				6F21C9682BE8C44D00CF9FD0 /* SavedTripsView.swift */,
 				6F21C96A2BE8C45F00CF9FD0 /* FutureTripsView.swift */,
 				6F21C96C2BE8C47300CF9FD0 /* ContactUsView.swift */,
@@ -465,6 +468,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F21C9692BE8C44D00CF9FD0 /* SavedTripsView.swift in Sources */,
+				17499F062BF9FD7F002F2EF0 /* UserInform.swift in Sources */,
 				6F21C9732BE8CDE900CF9FD0 /* HomeViews.swift in Sources */,
 				6F8AD19D2BE77BCF00191C20 /* SelectMeetSpotView.swift in Sources */,
 				18BE9E492BF6897900204231 /* MembersMapView.swift in Sources */,

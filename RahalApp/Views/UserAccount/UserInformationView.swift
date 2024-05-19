@@ -1,238 +1,203 @@
 //
-//  UserInformationView.swift
+//  UserInfo.swift
 //  RahalApp
 //
-//  Created by Juman Dhaher on 27/10/1445 AH.
+//  Created by suha alrajhi on 11/11/1445 AH.
 //
-
 import SwiftUI
 import CloudKit
 
 struct UserInformationView: View {
-    
-    @State var loginViewModel = LoginViewModel()
-    
-//    @State  var firstName = ""
-//    @State  var lastName = ""
-//    @State  var email = ""
-   
+    @StateObject var vm = UserInformationModel1()
+    @State private var navigateToTrip = false
+    @State private var navigateToSelectDestinationView = false
     
     var body: some View {
-        
-        
-        @State  var email = loginViewModel.email
-        @State  var firstName = loginViewModel.firstName
-        @State  var lastName = loginViewModel.lastName
-        let emailAddress = "saharbintyousef@gmail.com"
-        
-
-        
-        ZStack{
-            Color(.background).ignoresSafeArea()
-            VStack{
+        ZStack {
+            Color(.background).ignoresSafeArea() // Adjust the background color as needed
+            VStack {
                 HeaderView
-                FirstNameView(firstName: firstName)
-                LastNameView(lastName: lastName)
-                EmailView(email: email)
+                FirstNameView
+                LastNameView
+                EmailView
                 
                 Button(action: {
-                    if let emailURL = URL(string: "mailto:\(emailAddress)") {
+                    if let emailURL = URL(string: "mailto:\(vm.emailAddress)") {
                         UIApplication.shared.open(emailURL)
                     }
                 }) {
                     Text("تواصل معنا")
-                        .foregroundColor(.blue).frame(width: 300, alignment: .trailing).padding(.top)
+                        .foregroundColor(.blue)
+                        .frame(width: 300, alignment: .trailing)
+                        .padding(.top)
                 }
                 
+                Button(action: {
+                    // Add the delete account action here
+                    vm.deleteAccount()
+                }) {
+                    Text("حذف الحساب")
+                        .foregroundColor(.red)
+                        .frame(width: 300, alignment: .trailing)
+                        .padding(.top)
+                }
                 
-
-                
-                
-//                Button(action: deleteAccountFromCloudKit(TripName: String, completion: <#T##((any Error)?) -> Void#>) ) {
-//                    Text("تواصل معنا")
-//                        .foregroundColor(.blue).frame(width: 300, alignment: .trailing).padding(.top)
-//                }
-                
-                
-
-                
-
-               
                 Spacer()
-//                ButtonWidget(text: "حفظ")
-                
-            }.padding(.top,30)
-        }.navigationTitle("معلومات الحساب")
+            }.padding(.top, 30)
+        }
+        .navigationTitle("معلومات الحساب")
+        .onAppear {
+            vm.fetchUserInfo()
+        }
     }
-}
-
-#Preview {
-    UserInformationView()
-}
-
-
-
-//Delete
-//func deleteAccountFromCloudKit(TripName: String, completion: @escaping (Error?) -> Void) {
-//    let container =  CKContainer.init(identifier: "iCloud.com.macrochallange.test.TripManagement")
-//    let publicCloudDatabase = container.publicCloudDatabase
-//    
-//    let recordID = CKRecord.ID(recordName: TripName)
-//    publicCloudDatabase.delete(withRecordID: recordID) { (recordID, error) in
-//        if let error = error {
-//            completion(error)
-//            
-//        } else {
-//            completion(nil)
-//            print ("MAMMAMMAMMAMAMAM")
-//        }
-//    }
-//}
-
-
-func deleteDataFromRecord(recordID: CKRecord.ID, fieldName: String, completion: @escaping (Error?) -> Void) {
-    let container =  CKContainer.init(identifier: "iCloud.com.macrochallange.test.TripManagement")
-    let publicCloudDatabase = container.publicCloudDatabase
     
-    publicCloudDatabase.fetch(withRecordID: recordID) { (record, error) in
-        guard let record = record else {
-            completion(error)
-            return
-        }
-        
-        record.setObject(nil, forKey: fieldName)
-        
-        let modifyOperation = CKModifyRecordsOperation(recordsToSave: [record], recordIDsToDelete: nil)
-        modifyOperation.savePolicy = .changedKeys
-        
-        modifyOperation.modifyRecordsCompletionBlock = { (savedRecords, _, error) in
-            completion(error)
-        }
-        
-        publicCloudDatabase.add(modifyOperation)
-    }
-}
-
-
-
-
-
-
-extension UserInformationView {
-    private var HeaderView: some View{
-        HStack{
-            Text("جمان يوسف").fontWeight(.bold)
+    var HeaderView: some View {
+        HStack {
+            Text("\(vm.firstName) \(vm.lastName)")
+                .fontWeight(.bold)
                 .font(FontScheme.kSFArabicBold(size: 24.0))
-                
-                
+            
             Image(systemName: "person.crop.circle")
                 .resizable()
                 .foregroundColor(ColorConstants.IconColor)
                 .frame(width: 55.0, height: 55.0)
-            
-            
-        }.frame(width: 340,height:100, alignment: .trailing)
-            .padding(.trailing , 35)
-    }
-    
-    func FirstNameView (firstName: String) -> some View {
-        
-        @State var firstName = firstName
-        
-        return VStack(alignment: .trailing){
-            Text("الأسم الأول").foregroundColor( Color(.black900))
-            TextField("", text: $firstName)
-                .disabled(true)
-                .multilineTextAlignment(.trailing)
-                    .padding()
-                .frame(width: 300, height: 35)
-            
-            .background(Color("WhiteA700"))
-                .overlay(
-                    RoundedRectangle(cornerRadius: 4)
-                        .stroke(
-                            Color("WhiteA700"))
-                        .frame(width: 300, height: 35))
         }
+        .frame(width: 340, height: 100, alignment: .trailing)
+        .padding(.trailing, 35)
     }
     
-    func LastNameView (lastName:String) -> some View {
-       
-        @State var lastName = lastName
-
-        return VStack(alignment: .trailing){
-            Text("الأسم الأخير").foregroundColor( Color(.black900))
-            
-            TextField("", text: $lastName)
-                .disabled(true)
-                .multilineTextAlignment(.trailing)
-                    .padding()
-            
-                .frame(width: 300, height: 35)
-            
-                .background(Color("WhiteA700"))
-                .overlay(
-                    RoundedRectangle(cornerRadius: 4)
-                        .stroke(
-                            Color("WhiteA700"))
-                        .frame(width: 300, height: 35))
-        }
-    }
-    
-    
-    func EmailView (email: String) -> some View{
-
-       @State var email = email
-    
-        return VStack(alignment: .trailing){
-            Text("البريد الالكتروني").foregroundColor( Color(.black900))
-            
-            TextField("", text: $email)
+    var FirstNameView: some View {
+        VStack(alignment: .trailing) {
+            Text("الأسم الأول").foregroundColor(Color(.black900))
+            TextField("", text: $vm.firstName)
                 .disabled(true)
                 .multilineTextAlignment(.trailing)
                 .padding()
-                .frame(width: 300, height: 35,alignment: .trailing)
-            
+                .frame(width: 300, height: 35)
                 .background(Color("WhiteA700"))
                 .overlay(
                     RoundedRectangle(cornerRadius: 4)
-                        .stroke(
-                            Color("WhiteA700"))
-                        .frame(width: 300, height: 35))
+                        .stroke(Color("WhiteA700"))
+                        .frame(width: 300, height: 35)
+                )
         }
     }
     
+    var LastNameView: some View {
+        VStack(alignment: .trailing) {
+            Text("الأسم الأخير").foregroundColor(Color(.black900))
+            TextField("", text: $vm.lastName)
+                .disabled(true)
+                .multilineTextAlignment(.trailing)
+                .padding()
+                .frame(width: 300, height: 35)
+                .background(Color("WhiteA700"))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 4)
+                        .stroke(Color("WhiteA700"))
+                        .frame(width: 300, height: 35)
+                )
+        }
+    }
+    
+    var EmailView: some View {
+        VStack(alignment: .trailing) {
+            Text("البريد الالكتروني").foregroundColor(Color(.black900))
+            TextField("", text: $vm.email)
+                .disabled(true)
+                .multilineTextAlignment(.trailing)
+                .padding()
+                .frame(width: 300, height: 35, alignment: .trailing)
+                .background(Color("WhiteA700"))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 4)
+                        .stroke(Color("WhiteA700"))
+                        .frame(width: 300, height: 35)
+                )
+        }
+    }
 }
 
+class UserInformationModel1: ObservableObject {
+    @Published var userInfo: UserInfo?
+    @Published var firstName: String = ""
+    @Published var lastName: String = ""
+    @Published var email: String = ""
+    
+    let emailAddress = "saharbintyousef@gmail.com"
 
-
-
-
-
-
-
-/*import SwiftUI
-import CloudKit
-
-struct TheTripView: View {
-    var trip: TripsModel?
-
-    var body: some View {
-        VStack {
-            if let trip = trip {
-                Text("Trip Name: \(trip.name)")
-                    .font(.largeTitle)
-                Text("Trip Code: \(trip.code)")
-                    .font(.title)
+    func fetchUserInfo() {
+        let container = CKContainer(identifier: "iCloud.com.macrochallange.test.TripManagement")
+        let publicCloudDatabase = container.publicCloudDatabase
+        
+        let predicate = NSPredicate(value: true) // Adjust this predicate as needed
+        let query = CKQuery(recordType: "UserRecords", predicate: predicate)
+        
+        publicCloudDatabase.perform(query, inZoneWith: nil) { (records, error) in
+            if let error = error {
+                print("Error fetching user info: \(error.localizedDescription)")
+                return
+            }
+            
+            guard let records = records, let record = records.first else {
+                print("No user info record found")
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.userInfo = UserInfo(
+                    idUser: record["idUser"] as? String ?? "",
+                    firstName: record["firstName"] as? String ?? "",
+                    lastName: record["lastName"] as? String ?? "",
+                    Email: record["email"] as? String ?? "",
+                    confirmEmail: record["confirmEmail"] as? String ?? "",
+                    encryptedPass: record["encryptedPass"] as? String ?? "",
+                    confirmPassword: record["confirmPassword"] as? String ?? "",
+                    comingTrips: record["comingTrips"] as? String ?? "",
+                    onTrip: record["onTrip"] as? Bool ?? false,
+                    record: record
+                )
+                
+                self.firstName = record["firstName"] as? String ?? ""
+                self.lastName = record["lastName"] as? String ?? ""
+                self.email = record["email"] as? String ?? ""
+                
+                print("Fetched user info:")
+                print("First Name: \(self.firstName)")
+                print("Last Name: \(self.lastName)")
+                print("Email: \(self.email)")
+            }
+        }
+    }
+    
+    func deleteAccount() {
+        guard let userInfo = userInfo else { return }
+        
+        deleteAccountFromCloudKit(user: userInfo.idUser) { error in
+            if let error = error {
+                print("Error deleting account: \(error.localizedDescription)")
             } else {
-                Text("No trip selected")
-                    .font(.largeTitle)
+                print("Account deleted successfully")
+            }
+        }
+    }
+    
+    func deleteAccountFromCloudKit(user: String, completion: @escaping (Error?) -> Void) {
+        let container = CKContainer(identifier: "iCloud.com.macrochallange.test.TripManagement")
+        let publicCloudDatabase = container.publicCloudDatabase
+        
+        let recordID = CKRecord.ID(recordName: user)
+        publicCloudDatabase.delete(withRecordID: recordID) { (recordID, error) in
+            if let error = error {
+                completion(error)
+            } else {
+                completion(nil)
+                print("Account deleted")
             }
         }
     }
 }
 
 #Preview {
-    TheTrip()
-        
-}*/
+    UserInformationView()
+}

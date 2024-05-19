@@ -5,6 +5,8 @@ import CloudKit
 struct LoginView: View {
     @ObservedObject var loginViewModel = LoginViewModel()
     var User: UserInfo?
+    @State private var navigateToSelectDestinationView = false
+
     var body: some View {
         NavigationStack {
             ZStack {
@@ -17,6 +19,7 @@ struct LoginView: View {
 
                         Spacer(minLength: 30)
                         Button(action: {
+                            navigateToSelectDestinationView = true
                             loginViewModel.fetchUserByEmailAndPassword(email: loginViewModel.email, password: loginViewModel.password) { userInfo in
                                 if let userInfo = userInfo {
                                     // User was found and returned
@@ -38,6 +41,8 @@ struct LoginView: View {
                                 Text("ليس لديك حساب؟").foregroundColor(Color("WhiteA7001")).fontWeight(.heavy)
                             }
                         }
+                    }                .navigationDestination(isPresented: $navigateToSelectDestinationView) {
+                        UserInformationView()
                     }
                 }.safeAreaPadding(.top, 180)
             }
@@ -52,6 +57,7 @@ struct LoginView: View {
                 .multilineTextAlignment(.trailing)
                 .padding()
                 .frame(width: 300, height: 35)
+                .foregroundColor(Color.black)
                 .background(Color("WhiteA7001"))
                 .overlay(RoundedRectangle(cornerRadius: 4).stroke(Color("WhiteA7001")).frame(width: 300, height: 35))
         }
@@ -61,6 +67,7 @@ struct LoginView: View {
         VStack(alignment: .trailing) {
             Text("كلمة المرور").foregroundColor(Color("WhiteA7001")).fontWeight(.heavy)
             SecureField("", text: password)
+                .foregroundColor(Color.black)
                 .multilineTextAlignment(.trailing)
                 .padding()
                 .frame(width: 300, height: 35)
