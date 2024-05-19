@@ -6,6 +6,7 @@
 //
 import SwiftUI
 import CloudKit
+import iPhoneNumberField
 
 struct CreateTrip1: Hashable {
     let TripName: String
@@ -25,7 +26,7 @@ struct CreateTrip1: Hashable {
 class TripCRUDViewModel: ObservableObject {
     @Published var text: String = ""
     @Published var tripDetailsText: String = ""
-    @Published var phoneNumberText: Int = 0
+    @Published var phoneNumberText: String = ""
     @Published var level: String = "متوسط"  // Default level
     @Published var startDate: Date = Date()
     @Published var endDate: Date = Date()
@@ -48,7 +49,7 @@ class TripCRUDViewModel: ObservableObject {
     func addButtonPressed() -> String {
         print("Hi function")
         let uniqueCode = generateUniqueCode()
-        let newTrip = addItem(TripName: text, code: uniqueCode, tripDetails: tripDetailsText, phoneNumber: phoneNumberText, level: level, startDate: startDate, endDate: endDate)
+        let newTrip = addItem(TripName: text, code: uniqueCode, tripDetails: tripDetailsText, phoneNumber: Int(phoneNumberText) ?? 0, level: level, startDate: startDate, endDate: endDate)
         print(newTrip["TripName"],"🚗")
         
         newTripCode = uniqueCode
@@ -66,7 +67,7 @@ class TripCRUDViewModel: ObservableObject {
         if tripDetailsText.isEmpty {
             errors["tripDetails"] = "الرجاء ادخال تفاصيل الرحلة!"
         }
-        if String(phoneNumberText).count != 10 || String(phoneNumberText).first == "0" {
+        if String(phoneNumberText).count != 9 || String(phoneNumberText).first == "0" {
             errors["phoneNumber"] = "الرجاء ادخال رقم هاتف صحيح (يجب أن يكون 10 أرقام ولا يبدأ بصفر)!"
         }
         if startDate > endDate {
@@ -232,8 +233,10 @@ struct CreateTripCRUD: View {
     private var phoneNumberView: some View {
         VStack(alignment: .trailing){
             Text("رقم الهاتف للتواصل")
-            TextField("", value: $vm.phoneNumberText, format: .number)
-                .keyboardType(.numberPad)
+            iPhoneNumberField("50-000-0000",text: $vm.phoneNumberText)
+                       .flagHidden(false)
+                       .flagSelectable(true)
+                       .maximumDigits(9)
                 .frame(width: 300, height: 35)
                 .background(Color("WhiteA700"))
                 .overlay(
