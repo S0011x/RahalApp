@@ -41,6 +41,30 @@ struct LoginView: View {
                                 Text("ليس لديك حساب؟").foregroundColor(Color("WhiteA7001")).fontWeight(.heavy)
                             }
                         }
+                        
+                        
+                        HStack{
+                            line
+                            Text("أو").foregroundColor(.whiteA7001)
+                            line
+                        }.frame(width: 300)
+                        
+                        
+                        
+                        
+                        
+                        SignInWithAppleButton(
+                            
+                            .signUp,
+                            onRequest: configureAppleSignInRequest,
+                            onCompletion: handleAppleSignInResult
+                        )
+                        .signInWithAppleButtonStyle(.white) // Set the button style to white
+                        .frame(width: 300, height: 40)
+                        .padding()
+                        .environment(\.locale, .init(identifier: "ar"))
+                        
+                        
                     }                .navigationDestination(isPresented: $navigateToSelectDestinationView) {
                         UserInformationView()
                     }
@@ -50,6 +74,28 @@ struct LoginView: View {
         }
     }
 
+    var line: some View {
+        VStack { Divider().background(.whiteA7001) }.padding(10)
+    }
+    
+    private func configureAppleSignInRequest(request: ASAuthorizationAppleIDRequest) {
+        request.requestedScopes = [.fullName, .email]
+    }
+
+    private func handleAppleSignInResult(result: Result<ASAuthorization, Error>) {
+        switch result {
+        case .success(let authResults):
+            guard let _ = authResults.credential as? ASAuthorizationAppleIDCredential else {
+                return
+            }
+
+            navigateToSelectDestinationView = true
+        case .failure(let error):
+            print("Authentication error: \(error.localizedDescription)")
+        }
+    }
+    
+    
     private func emailView(email: Binding<String>) -> some View {
         VStack(alignment: .trailing) {
             Text("البريد الالكتروني").foregroundColor(Color("WhiteA7001")).fontWeight(.heavy)

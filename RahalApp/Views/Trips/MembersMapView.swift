@@ -329,9 +329,9 @@ extension MembersMapView {
             //info
             .sheet(isPresented:  $isShowingSheet) {
                 VStack {
-                    Text("Information")
+                    Text("Macro Review")
                         .font(.title)
-                    Text("This is some information.")
+                    Text("Give us a five stars please")
                 }
             
             }

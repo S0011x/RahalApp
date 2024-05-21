@@ -243,7 +243,7 @@ extension PrepardLocationView {
                         
 
                             Menu {
-                                NavigationLink(destination: CreateTrip(), tag: "Option 1", selection: $selectedOption) {
+                                NavigationLink(destination: CreateTripCRUD(), tag: "Option 1", selection: $selectedOption) {
                                      Label("تعديل", systemImage: "pencil") .accentColor(ColorConstants.IconColor)
                                  }
                                  
