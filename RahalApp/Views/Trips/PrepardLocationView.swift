@@ -57,7 +57,7 @@ struct PrepardLocationView: View {
     var body: some View {
             ZStack(alignment: .center) {
                 
-                MyMapView(requestLocation: $pickupLocation, destinationLocation: $dropOffLocation,meetSpots: $meetSpots).edgesIgnoringSafeArea(.all)
+                MyMapView(requestLocation: $pickupLocation, destinationLocation: $dropOffLocation,meetSpots: $meetSpots,stopSelectMeetSpots: false).edgesIgnoringSafeArea(.all)
                 
                 
                 if !hideElements {

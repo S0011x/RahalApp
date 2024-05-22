@@ -13,6 +13,7 @@ struct MyMapView: UIViewRepresentable {
     @Binding var requestLocation: CLLocationCoordinate2D
     @Binding var destinationLocation: CLLocationCoordinate2D
     @Binding var meetSpots: [CLLocationCoordinate2D] // Add meet spots
+    var stopSelectMeetSpots: Bool // Add meet spots
 
     private let mapView = WrappableMapView()
     
@@ -27,44 +28,41 @@ struct MyMapView: UIViewRepresentable {
         // Update existing annotations (pickup, dropoff, and meet spots)
         updateAnnotations(uiView)
         
-        // Set the region to focus on the pickup location with a closer zoom level
-        let region = MKCoordinateRegion(
-            center: requestLocation,
-            latitudinalMeters: 22000, // Adjust as needed for zoom level
-            longitudinalMeters: 22000  // Adjust as needed for zoom level
-        )
-        uiView.setRegion(region, animated: true)
-        
-        // Draw Path
+        // Create a region that fits both the pickup and dropoff locations
+        var zoomRect = MKMapRect.null
+        for location in [requestLocation, destinationLocation] {
+            let point = MKMapPoint(location)
+            let rect = MKMapRect(x: point.x, y: point.y, width: 0, height: 0)
+            zoomRect = zoomRect.union(rect)
+        }
+
+        // Adjust the map's visible region to include both annotations with padding
+        uiView.setVisibleMapRect(zoomRect, edgePadding: .init(top: 20, left: 50, bottom: 50, right: 50), animated: true)
+
+        // Create and calculate directions
         let requestPlacemark = MKPlacemark(coordinate: requestLocation)
         let destinationPlacemark = MKPlacemark(coordinate: destinationLocation)
-        
+
         let directionRequest = MKDirections.Request()
         directionRequest.source = MKMapItem(placemark: requestPlacemark)
         directionRequest.destination = MKMapItem(placemark: destinationPlacemark)
         directionRequest.transportType = .automobile
-        
+
         let directions = MKDirections(request: directionRequest)
-        
+
         directions.calculate { response, error in
             guard let response = response, let route = response.routes.first else {
                 print("Error calculating directions: \(String(describing: error))")
                 return
             }
-            
+
             // Add route overlay to map
             uiView.addOverlay(route.polyline, level: .aboveRoads)
-            
-            // Calculate a region that fits both annotations and the route
-            var zoomRect = MKMapRect.null
-            for annotation in uiView.annotations {
-                let annotationPoint = MKMapPoint(annotation.coordinate)
-                let pointRect = MKMapRect(x: annotationPoint.x, y: annotationPoint.y, width: 0, height: 0)
-                zoomRect = zoomRect.union(pointRect)
-            }
+
+            // Union the route's bounding map rect with the zoomRect to include the route
             zoomRect = zoomRect.union(route.polyline.boundingMapRect)
-            
-            // Set the visible map rect with padding
+
+            // Set the visible map rect with padding again to ensure the route is also included
             uiView.setVisibleMapRect(zoomRect, edgePadding: .init(top: 20, left: 50, bottom: 50, right: 50), animated: true)
         }
     }
@@ -75,16 +73,17 @@ struct MyMapView: UIViewRepresentable {
         addAnnotation(coordinate: requestLocation, title: "pickup", mapView: uiView)
         addAnnotation(coordinate: destinationLocation, title: "dropoff", mapView: uiView)
         
-        var uniqueMeetSpots = [CLLocationCoordinate2D]()
-        for meetSpot in meetSpots {
-            if !uniqueMeetSpots.contains(where: { $0.latitude == meetSpot.latitude && $0.longitude == meetSpot.longitude }) {
-                uniqueMeetSpots.append(meetSpot)
+            var uniqueMeetSpots = [CLLocationCoordinate2D]()
+            for meetSpot in meetSpots {
+                if !uniqueMeetSpots.contains(where: { $0.latitude == meetSpot.latitude && $0.longitude == meetSpot.longitude }) {
+                    uniqueMeetSpots.append(meetSpot)
+                }
             }
-        }
-        
-        uniqueMeetSpots.prefix(3).enumerated().forEach { index, meetSpot in
-            addAnnotation(coordinate: meetSpot, title: "meetSpot", mapView: uiView)
-        }
+            
+            uniqueMeetSpots.prefix(3).enumerated().forEach { index, meetSpot in
+                addAnnotation(coordinate: meetSpot, title: "meetSpot", mapView: uiView)
+            }
+
     }
     
     func addAnnotation(coordinate: CLLocationCoordinate2D, title: String, mapView: MKMapView) {
@@ -105,12 +104,15 @@ struct MyMapView: UIViewRepresentable {
             self.parent = parent
         }
 
+        
         @objc func handleTap(_ gestureRecognizer: UITapGestureRecognizer) {
             guard parent.meetSpots.count < 3 else { return }
-            let mapView = parent.mapView
-            let location = gestureRecognizer.location(in: mapView)
-            let coordinate = mapView.convert(location, toCoordinateFrom: mapView)
-            parent.meetSpots.append(coordinate)
+            if(parent.stopSelectMeetSpots){
+                let mapView = parent.mapView
+                let location = gestureRecognizer.location(in: mapView)
+                let coordinate = mapView.convert(location, toCoordinateFrom: mapView)
+                parent.meetSpots.append(coordinate)
+            }
         }
 
         func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {

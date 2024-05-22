@@ -28,7 +28,6 @@
 		6F295F792BE39BA2004FE416 /* createTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F295F782BE39BA2004FE416 /* createTrip.swift */; };
 		6F3A09372BF20A83006F42B3 /* MyMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3A09362BF20A83006F42B3 /* MyMapView.swift */; };
 		6F3A09392BF20AB4006F42B3 /* MapDrawingBath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3A09382BF20AB4006F42B3 /* MapDrawingBath.swift */; };
-		6F3A093F2BF49A8D006F42B3 /* meetSpotsSelectNewClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3A093E2BF49A8D006F42B3 /* meetSpotsSelectNewClass.swift */; };
 		6F82C3C42BF0A525000B8164 /* PageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F82C3C32BF0A525000B8164 /* PageIndicator.swift */; };
 		6F8AD1902BE7664E00191C20 /* AppleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8AD18F2BE7664E00191C20 /* AppleButtonView.swift */; };
 		6F8AD1922BE7667000191C20 /* AppleButtonLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8AD1912BE7667000191C20 /* AppleButtonLogic.swift */; };
@@ -106,7 +105,6 @@
 		6F295F782BE39BA2004FE416 /* createTrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createTrip.swift; sourceTree = "<group>"; };
 		6F3A09362BF20A83006F42B3 /* MyMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMapView.swift; sourceTree = "<group>"; };
 		6F3A09382BF20AB4006F42B3 /* MapDrawingBath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDrawingBath.swift; sourceTree = "<group>"; };
-		6F3A093E2BF49A8D006F42B3 /* meetSpotsSelectNewClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meetSpotsSelectNewClass.swift; sourceTree = "<group>"; };
 		6F82C3C32BF0A525000B8164 /* PageIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageIndicator.swift; sourceTree = "<group>"; };
 		6F8AD18F2BE7664E00191C20 /* AppleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleButtonView.swift; sourceTree = "<group>"; };
 		6F8AD1912BE7667000191C20 /* AppleButtonLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleButtonLogic.swift; sourceTree = "<group>"; };
@@ -212,7 +210,6 @@
 				6FE409D72BEB65010054B08E /* MaoViewForSearch.swift */,
 				6F3A09362BF20A83006F42B3 /* MyMapView.swift */,
 				6F3A09382BF20AB4006F42B3 /* MapDrawingBath.swift */,
-				6F3A093E2BF49A8D006F42B3 /* meetSpotsSelectNewClass.swift */,
 				18BE9E482BF6897900204231 /* MembersMapView.swift */,
 			);
 			path = Trips;
@@ -499,7 +496,6 @@
 				6F9E5A402BDE502A005BBECC /* RoundedCornersView.swift in Sources */,
 				6FBA78D02BDF98270028D7B1 /* LoginView.swift in Sources */,
 				6F8AD1972BE76E2B00191C20 /* ForgetPassword.swift in Sources */,
-				6F3A093F2BF49A8D006F42B3 /* meetSpotsSelectNewClass.swift in Sources */,
 				6F9E5A3D2BDE4FC0005BBECC /* FontScheme.swift in Sources */,
 				6F9E5A422BDE5054005BBECC /* ViewExtension.swift in Sources */,
 				6FBA78C92BDF89950028D7B1 /* OnBoardingView.swift in Sources */,

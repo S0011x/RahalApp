@@ -22,7 +22,7 @@ struct SelectMeetSpotView: View {
     
     var body: some View {
         ZStack{
-            MyMapView(requestLocation: $pickupLocation, destinationLocation: $dropOffLocation,meetSpots: $meetSpots).edgesIgnoringSafeArea(.all)
+            MyMapView(requestLocation: $pickupLocation, destinationLocation: $dropOffLocation,meetSpots: $meetSpots,stopSelectMeetSpots: true).edgesIgnoringSafeArea(.all)
             
             
             VStack{

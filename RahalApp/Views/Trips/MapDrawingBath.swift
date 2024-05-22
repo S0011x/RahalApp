@@ -29,56 +29,53 @@ struct MapView: UIViewRepresentable {
         // Clear existing annotations and overlays
         uiView.removeAnnotations(uiView.annotations)
         uiView.removeOverlays(uiView.overlays)
-        
+
         // Add pickup and dropoff annotations
         let pickupAnnotation = MKPointAnnotation()
         pickupAnnotation.coordinate = pickupLocation
         pickupAnnotation.title = "pickup"
-        
+
         let dropOffAnnotation = MKPointAnnotation()
         dropOffAnnotation.coordinate = dropOffLocation
         dropOffAnnotation.title = "dropoff"
-        
+
         uiView.addAnnotations([pickupAnnotation, dropOffAnnotation])
-        
-        // Set the region to focus on the pickup location with a closer zoom level
-        let region = MKCoordinateRegion(
-            center: pickupLocation,
-            latitudinalMeters: 22000, // Adjust as needed for zoom level
-            longitudinalMeters: 22000  // Adjust as needed for zoom level
-        )
-        uiView.setRegion(region, animated: true)
-        
+
+        // Create a region that fits both the pickup and dropoff locations
+        var zoomRect = MKMapRect.null
+        for location in [pickupLocation, dropOffLocation] {
+            let point = MKMapPoint(location)
+            let rect = MKMapRect(x: point.x, y: point.y, width: 0, height: 0)
+            zoomRect = zoomRect.union(rect)
+        }
+
+        // Adjust the map's visible region to include both annotations with padding
+        uiView.setVisibleMapRect(zoomRect, edgePadding: .init(top: 20, left: 50, bottom: 50, right: 50), animated: true)
+
         // Create and calculate directions
         let requestPlacemark = MKPlacemark(coordinate: pickupLocation)
         let destinationPlacemark = MKPlacemark(coordinate: dropOffLocation)
-        
+
         let directionRequest = MKDirections.Request()
         directionRequest.source = MKMapItem(placemark: requestPlacemark)
         directionRequest.destination = MKMapItem(placemark: destinationPlacemark)
         directionRequest.transportType = .automobile
-        
+
         let directions = MKDirections(request: directionRequest)
-        
+
         directions.calculate { response, error in
             guard let response = response, let route = response.routes.first else {
                 print("Error calculating directions: \(String(describing: error))")
                 return
             }
-            
+
             // Add route overlay to map
             uiView.addOverlay(route.polyline, level: .aboveRoads)
-            
-            // Calculate a region that fits both annotations and the route
-            var zoomRect = MKMapRect.null
-            for annotation in uiView.annotations {
-                let annotationPoint = MKMapPoint(annotation.coordinate)
-                let pointRect = MKMapRect(x: annotationPoint.x, y: annotationPoint.y, width: 0, height: 0)
-                zoomRect = zoomRect.union(pointRect)
-            }
+
+            // Union the route's bounding map rect with the zoomRect to include the route
             zoomRect = zoomRect.union(route.polyline.boundingMapRect)
-            
-            // Set the visible map rect with padding
+
+            // Set the visible map rect with padding again to ensure the route is also included
             uiView.setVisibleMapRect(zoomRect, edgePadding: .init(top: 20, left: 50, bottom: 50, right: 50), animated: true)
         }
     }
