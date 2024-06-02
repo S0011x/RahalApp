@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		17499EF22BF7D924002F2EF0 /* UserSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17499EF12BF7D924002F2EF0 /* UserSignUp.swift */; };
 		17499F062BF9FD7F002F2EF0 /* UserInform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17499F052BF9FD7F002F2EF0 /* UserInform.swift */; };
+		17C6D1E62BFF2989004A669E /* OneSignalExtension in Frameworks */ = {isa = PBXBuildFile; productRef = 17C6D1E52BFF2989004A669E /* OneSignalExtension */; };
+		17C6D1E82BFF2989004A669E /* OneSignalFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 17C6D1E72BFF2989004A669E /* OneSignalFramework */; };
+		17C6D1EA2BFF2989004A669E /* OneSignalInAppMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 17C6D1E92BFF2989004A669E /* OneSignalInAppMessages */; };
+		17C6D1EC2BFF2989004A669E /* OneSignalLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 17C6D1EB2BFF2989004A669E /* OneSignalLocation */; };
+		17C6D1EF2BFF2AD3004A669E /* iPhoneNumberField in Frameworks */ = {isa = PBXBuildFile; productRef = 17C6D1EE2BFF2AD3004A669E /* iPhoneNumberField */; };
+		17C6D1F12BFF4115004A669E /* joinTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C6D1F02BFF4115004A669E /* joinTrip.swift */; };
+		17C6D1F32C05016C004A669E /* testt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C6D1F22C05016C004A669E /* testt.swift */; };
 		185299852BF4ABA600D02939 /* CreateTripCRUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185299842BF4ABA600D02939 /* CreateTripCRUD.swift */; };
 		189B6AD02BF0AAB600AC3578 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B6ACF2BF0AAB600AC3578 /* NotificationService.swift */; };
 		189B6AD42BF0AAB600AC3578 /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 189B6ACD2BF0AAB600AC3578 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		18A610392BFB190500E5121F /* OneSignalExtension in Frameworks */ = {isa = PBXBuildFile; productRef = 18A610382BFB190500E5121F /* OneSignalExtension */; };
-		18A6103B2BFB190500E5121F /* OneSignalFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 18A6103A2BFB190500E5121F /* OneSignalFramework */; };
-		18A6103D2BFB190500E5121F /* OneSignalInAppMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 18A6103C2BFB190500E5121F /* OneSignalInAppMessages */; };
-		18A6103F2BFB190500E5121F /* OneSignalLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 18A6103E2BFB190500E5121F /* OneSignalLocation */; };
 		18BE9E492BF6897900204231 /* MembersMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BE9E482BF6897900204231 /* MembersMapView.swift */; };
 		18BE9E4B2BF6BF9F00204231 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BE9E4A2BF6BF9F00204231 /* NotificationViewModel.swift */; };
 		6F21C9652BE8BF3200CF9FD0 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F21C9642BE8BF3200CF9FD0 /* UserAccount.swift */; };
@@ -35,7 +38,6 @@
 		6F8AD1972BE76E2B00191C20 /* ForgetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8AD1962BE76E2B00191C20 /* ForgetPassword.swift */; };
 		6F8AD19B2BE77BBD00191C20 /* SelectDestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8AD19A2BE77BBD00191C20 /* SelectDestinationView.swift */; };
 		6F8AD19D2BE77BCF00191C20 /* SelectMeetSpotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8AD19C2BE77BCF00191C20 /* SelectMeetSpotView.swift */; };
-		6F8BB2752BF9DFF700F0F9CC /* iPhoneNumberField in Frameworks */ = {isa = PBXBuildFile; productRef = 6F8BB2742BF9DFF700F0F9CC /* iPhoneNumberField */; };
 		6F9E5A082BDE4C49005BBECC /* RahalAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9E5A072BDE4C49005BBECC /* RahalAppApp.swift */; };
 		6F9E5A0F2BDE4C49005BBECC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F9E5A0E2BDE4C49005BBECC /* Preview Assets.xcassets */; };
 		6F9E5A232BDE4DF0005BBECC /* PrepardLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9E5A222BDE4DF0005BBECC /* PrepardLocationView.swift */; };
@@ -86,6 +88,8 @@
 /* Begin PBXFileReference section */
 		17499EF12BF7D924002F2EF0 /* UserSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignUp.swift; sourceTree = "<group>"; };
 		17499F052BF9FD7F002F2EF0 /* UserInform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInform.swift; sourceTree = "<group>"; };
+		17C6D1F02BFF4115004A669E /* joinTrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = joinTrip.swift; sourceTree = "<group>"; };
+		17C6D1F22C05016C004A669E /* testt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testt.swift; sourceTree = "<group>"; };
 		185299842BF4ABA600D02939 /* CreateTripCRUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTripCRUD.swift; sourceTree = "<group>"; };
 		189B6AC72BF0AA7B00AC3578 /* RahalApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RahalApp.entitlements; sourceTree = "<group>"; };
 		189B6AC82BF0AA8500AC3578 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -141,7 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18A610392BFB190500E5121F /* OneSignalExtension in Frameworks */,
+				17C6D1E62BFF2989004A669E /* OneSignalExtension in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,10 +153,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18A6103D2BFB190500E5121F /* OneSignalInAppMessages in Frameworks */,
-				18A6103B2BFB190500E5121F /* OneSignalFramework in Frameworks */,
-				18A6103F2BFB190500E5121F /* OneSignalLocation in Frameworks */,
-				6F8BB2752BF9DFF700F0F9CC /* iPhoneNumberField in Frameworks */,
+				17C6D1EA2BFF2989004A669E /* OneSignalInAppMessages in Frameworks */,
+				17C6D1EF2BFF2AD3004A669E /* iPhoneNumberField in Frameworks */,
+				17C6D1E82BFF2989004A669E /* OneSignalFramework in Frameworks */,
+				17C6D1EC2BFF2989004A669E /* OneSignalLocation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +215,8 @@
 				6F3A09362BF20A83006F42B3 /* MyMapView.swift */,
 				6F3A09382BF20AB4006F42B3 /* MapDrawingBath.swift */,
 				18BE9E482BF6897900204231 /* MembersMapView.swift */,
+				17C6D1F02BFF4115004A669E /* joinTrip.swift */,
+				17C6D1F22C05016C004A669E /* testt.swift */,
 			);
 			path = Trips;
 			sourceTree = "<group>";
@@ -360,7 +366,7 @@
 			);
 			name = OneSignalNotificationServiceExtension;
 			packageProductDependencies = (
-				18A610382BFB190500E5121F /* OneSignalExtension */,
+				17C6D1E52BFF2989004A669E /* OneSignalExtension */,
 			);
 			productName = OneSignalNotificationServiceExtension;
 			productReference = 189B6ACD2BF0AAB600AC3578 /* OneSignalNotificationServiceExtension.appex */;
@@ -382,10 +388,10 @@
 			);
 			name = Masier;
 			packageProductDependencies = (
-				6F8BB2742BF9DFF700F0F9CC /* iPhoneNumberField */,
-				18A6103A2BFB190500E5121F /* OneSignalFramework */,
-				18A6103C2BFB190500E5121F /* OneSignalInAppMessages */,
-				18A6103E2BFB190500E5121F /* OneSignalLocation */,
+				17C6D1E72BFF2989004A669E /* OneSignalFramework */,
+				17C6D1E92BFF2989004A669E /* OneSignalInAppMessages */,
+				17C6D1EB2BFF2989004A669E /* OneSignalLocation */,
+				17C6D1EE2BFF2AD3004A669E /* iPhoneNumberField */,
 			);
 			productName = RahalApp;
 			productReference = 6F9E5A042BDE4C49005BBECC /* Masier.app */;
@@ -419,8 +425,8 @@
 			);
 			mainGroup = 6F9E59FB2BDE4C49005BBECC;
 			packageReferences = (
-				6F8BB2732BF9DF3E00F0F9CC /* XCRemoteSwiftPackageReference "iPhoneNumberField" */,
-				18A610372BFB190500E5121F /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */,
+				17C6D1E42BFF2989004A669E /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */,
+				17C6D1ED2BFF2AD3004A669E /* XCRemoteSwiftPackageReference "iPhoneNumberField" */,
 			);
 			productRefGroup = 6F9E5A052BDE4C49005BBECC /* Products */;
 			projectDirPath = "";
@@ -482,6 +488,7 @@
 				6F8AD19B2BE77BBD00191C20 /* SelectDestinationView.swift in Sources */,
 				6F8AD1952BE76D4100191C20 /* NotificationView.swift in Sources */,
 				6FBA78CD2BDF955B0028D7B1 /* ButtonWidget.swift in Sources */,
+				17C6D1F12BFF4115004A669E /* joinTrip.swift in Sources */,
 				6FE409D62BEB64AB0054B08E /* SearchViewModel.swift in Sources */,
 				6F82C3C42BF0A525000B8164 /* PageIndicator.swift in Sources */,
 				6F9E5A342BDE4F89005BBECC /* Utilities.swift in Sources */,
@@ -498,6 +505,7 @@
 				6F8AD1972BE76E2B00191C20 /* ForgetPassword.swift in Sources */,
 				6F9E5A3D2BDE4FC0005BBECC /* FontScheme.swift in Sources */,
 				6F9E5A422BDE5054005BBECC /* ViewExtension.swift in Sources */,
+				17C6D1F32C05016C004A669E /* testt.swift in Sources */,
 				6FBA78C92BDF89950028D7B1 /* OnBoardingView.swift in Sources */,
 				6F21C9672BE8C40B00CF9FD0 /* UserInformationView.swift in Sources */,
 				6F9E5A232BDE4DF0005BBECC /* PrepardLocationView.swift in Sources */,
@@ -537,7 +545,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = twq.RahalAppSuha.OneSignalNotificationServiceExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = App.Masier.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -564,7 +572,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = twq.RahalAppSuha.OneSignalNotificationServiceExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = App.Masier.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -707,6 +715,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RahalApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "مسير";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "نحتاج الوصول الى موقعك";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "نحتاج الوصول الى موقعك ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -720,12 +730,16 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = twq.RahalAppSuha;
+				PRODUCT_BUNDLE_IDENTIFIER = App.Masier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -744,6 +758,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RahalApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "مسير";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "نحتاج الوصول الى موقعك";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "نحتاج الوصول الى موقعك ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -757,12 +773,16 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = twq.RahalAppSuha;
+				PRODUCT_BUNDLE_IDENTIFIER = App.Masier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -799,7 +819,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		18A610372BFB190500E5121F /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */ = {
+		17C6D1E42BFF2989004A669E /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/OneSignal/OneSignal-XCFramework";
 			requirement = {
@@ -807,40 +827,40 @@
 				minimumVersion = 5.2.0;
 			};
 		};
-		6F8BB2732BF9DF3E00F0F9CC /* XCRemoteSwiftPackageReference "iPhoneNumberField" */ = {
+		17C6D1ED2BFF2AD3004A669E /* XCRemoteSwiftPackageReference "iPhoneNumberField" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/MojtabaHs/iPhoneNumberField";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.10.1;
+				minimumVersion = 0.10.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		18A610382BFB190500E5121F /* OneSignalExtension */ = {
+		17C6D1E52BFF2989004A669E /* OneSignalExtension */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 18A610372BFB190500E5121F /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			package = 17C6D1E42BFF2989004A669E /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
 			productName = OneSignalExtension;
 		};
-		18A6103A2BFB190500E5121F /* OneSignalFramework */ = {
+		17C6D1E72BFF2989004A669E /* OneSignalFramework */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 18A610372BFB190500E5121F /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			package = 17C6D1E42BFF2989004A669E /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
 			productName = OneSignalFramework;
 		};
-		18A6103C2BFB190500E5121F /* OneSignalInAppMessages */ = {
+		17C6D1E92BFF2989004A669E /* OneSignalInAppMessages */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 18A610372BFB190500E5121F /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			package = 17C6D1E42BFF2989004A669E /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
 			productName = OneSignalInAppMessages;
 		};
-		18A6103E2BFB190500E5121F /* OneSignalLocation */ = {
+		17C6D1EB2BFF2989004A669E /* OneSignalLocation */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 18A610372BFB190500E5121F /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			package = 17C6D1E42BFF2989004A669E /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
 			productName = OneSignalLocation;
 		};
-		6F8BB2742BF9DFF700F0F9CC /* iPhoneNumberField */ = {
+		17C6D1EE2BFF2AD3004A669E /* iPhoneNumberField */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 6F8BB2732BF9DF3E00F0F9CC /* XCRemoteSwiftPackageReference "iPhoneNumberField" */;
+			package = 17C6D1ED2BFF2AD3004A669E /* XCRemoteSwiftPackageReference "iPhoneNumberField" */;
 			productName = iPhoneNumberField;
 		};
 /* End XCSwiftPackageProductDependency section */

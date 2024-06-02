@@ -193,7 +193,7 @@ struct CreateTripCRUD: View {
     private var TripNameView: some View {
         VStack(alignment: .trailing){
             Text("اسم الرحلة")
-            TextField("", text: $vm.text)
+            TextField("", text: $vm.text).multilineTextAlignment(.trailing)
                 .frame(width: 300, height: 35)
                 .background(Color("WhiteA700"))
 //                .overlay(
@@ -201,7 +201,7 @@ struct CreateTripCRUD: View {
 //                        .stroke(
 //                             Color("WhiteA700"))
 //                        .frame(width: 300, height: 35))
-            }
+        }.padding(.horizontal)
             
     }
     
@@ -213,7 +213,7 @@ struct CreateTripCRUD: View {
         VStack(alignment: .trailing){
             Text("شرح تفاصيل الرحلة")
             ZStack {
-                TextEditor(text: $vm.tripDetailsText)
+                TextEditor(text: $vm.tripDetailsText).multilineTextAlignment(.trailing)
                     .textEditorStyle(.plain)
                     .padding()
             }.overlay(
@@ -221,7 +221,7 @@ struct CreateTripCRUD: View {
                     .stroke(Color("WhiteA700"))
             ).frame(width: 300, height: 150)
                 .background(Color("WhiteA700"))
-        }
+        }.padding(.horizontal)
             
     }
     
@@ -243,9 +243,8 @@ struct CreateTripCRUD: View {
                     RoundedRectangle(cornerRadius: 4)
                         .stroke(
                             Color("WhiteA700"))
-                        .frame(width: 300, height: 35)
             )
-        }
+        }.padding(.horizontal)
             
     }
     
@@ -263,7 +262,7 @@ struct CreateTripCRUD: View {
             }
             .pickerStyle(SegmentedPickerStyle())
             .frame(width: 300, height: 35)
-            .padding()
+            .padding(.horizontal)
             
             
         }
@@ -279,7 +278,7 @@ struct CreateTripCRUD: View {
                     .labelsHidden()
                     .frame(width: 300, height: 35)
                     .datePickerStyle(CompactDatePickerStyle())
-                    .padding()
+                    .padding(.horizontal)
             }
         }
     }
@@ -295,7 +294,7 @@ struct CreateTripCRUD: View {
                     .labelsHidden()
                     .frame( width: 300, height: 35)
                     .datePickerStyle(CompactDatePickerStyle())
-                    .padding()
+                    .padding(.horizontal)
             }
         }
     }
@@ -316,7 +315,7 @@ struct CreateTripCRUD: View {
             }
         }, label: {
             ButtonWidget(text: "التالي")
-        })
+        }).padding(.trailing)
     }
 
 }

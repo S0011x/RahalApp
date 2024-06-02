@@ -9,17 +9,18 @@ import CloudKit
 
 struct UserInformationView: View {
     @StateObject var vm = UserInformationModel1()
-    @State private var navigateToTrip = false
-    @State private var navigateToSelectDestinationView = false
+    @State private var showDeleteAlert = false
     
     var body: some View {
         ZStack {
             Color(.background).ignoresSafeArea() // Adjust the background color as needed
             VStack {
-                HeaderView
-                FirstNameView
-                LastNameView
-                EmailView
+                if !vm.isAccountDeleted {
+                    HeaderView
+                    FirstNameView
+                    LastNameView
+                    EmailView
+                }
                 
                 Button(action: {
                     if let emailURL = URL(string: "mailto:\(vm.emailAddress)") {
@@ -33,8 +34,9 @@ struct UserInformationView: View {
                 }
                 
                 Button(action: {
-                    // Add the delete account action here
-                    vm.deleteAccount()
+                    vm.deleteAccount {
+                        showDeleteAlert = true
+                    }
                 }) {
                     Text("حذف الحساب")
                         .foregroundColor(.red)
@@ -47,7 +49,12 @@ struct UserInformationView: View {
         }
         .navigationTitle("معلومات الحساب")
         .onAppear {
-            vm.fetchUserInfo()
+            if !vm.isAccountDeleted {
+                vm.fetchUserInfo()
+            }
+        }
+        .alert(isPresented: $showDeleteAlert) {
+            Alert(title: Text("تم حذف حسابك بنجاح!"))
         }
     }
     
@@ -123,6 +130,7 @@ class UserInformationModel1: ObservableObject {
     @Published var firstName: String = ""
     @Published var lastName: String = ""
     @Published var email: String = ""
+    @Published var isAccountDeleted: Bool = false
     
     let emailAddress = "saharbintyousef@gmail.com"
 
@@ -170,14 +178,21 @@ class UserInformationModel1: ObservableObject {
         }
     }
     
-    func deleteAccount() {
-        guard let userInfo = userInfo else { return }
+    func deleteAccount(completion: @escaping () -> Void) {
+        guard let userInfo = userInfo else {
+            print("No user info available to delete")
+            return
+        }
         
         deleteAccountFromCloudKit(user: userInfo.idUser) { error in
             if let error = error {
                 print("Error deleting account: \(error.localizedDescription)")
             } else {
                 print("Account deleted successfully")
+                DispatchQueue.main.async {
+                    self.isAccountDeleted = true
+                    completion()
+                }
             }
         }
     }
@@ -189,14 +204,16 @@ class UserInformationModel1: ObservableObject {
         let recordID = CKRecord.ID(recordName: user)
         publicCloudDatabase.delete(withRecordID: recordID) { (recordID, error) in
             if let error = error {
+                print("Error during CloudKit deletion: \(error.localizedDescription)")
                 completion(error)
             } else {
+                print("CloudKit record deleted: \(String(describing: recordID))")
                 completion(nil)
-                print("Account deleted")
             }
         }
     }
 }
+
 
 #Preview {
     UserInformationView()

@@ -5,18 +5,12 @@ import AuthenticationServices
 struct HomeViews: View {
     //Home
     @StateObject var viewModel = HomeViewsModel()
-
     @State private var showingAlert = false
     @State private var code = ""
-    
-    
     @State private var isShowingAlert = false
     @State private var isShowingAlert2 = false
     @State private var navigateToSelectDestinationView = false
-    
-    
     @ObservedObject var loginViewModel = LoginViewModel()
-    
     @StateObject var vmm = LoginViewModel()
     
     var body: some View {
