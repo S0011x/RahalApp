@@ -36,19 +36,19 @@ struct HomeViews: View {
                             ZStack{
                                 Color(.whiteA700)
                                 VStack {
-                                    NavigationLink(
-                                        destination: isSigninigIn ? AnyView(UserInformationView()) : AnyView(LoginView()),
-                                        label: {
-                                            Image(systemName: "person.crop.circle")
-                                                .resizable()
-                                                .frame(width: getRelativeWidth(34.0), height: getRelativeWidth(34.0),
-                                                       alignment: .center)
-                                                .foregroundColor(ColorConstants.IconColor)
-                                                .scaledToFit()
-                                                .clipped()
-                                                .padding(.top, getRelativeHeight(4.0))
-                                        
-                                    })
+//                                    NavigationLink(
+//                                        destination: isSigninigIn ? AnyView(UserInformationView()) : AnyView(LoginView()),
+//                                        label: {
+//                                            Image(systemName: "person.crop.circle")
+//                                                .resizable()
+//                                                .frame(width: getRelativeWidth(34.0), height: getRelativeWidth(34.0),
+//                                                       alignment: .center)
+//                                                .foregroundColor(ColorConstants.IconColor)
+//                                                .scaledToFit()
+//                                                .clipped()
+//                                                .padding(.top, getRelativeHeight(4.0))
+//                                        
+//                                    })
                                     
                                     NavigationLink(destination: NotificationView() , label: {
                                         

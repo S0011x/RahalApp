@@ -1,0 +1,33 @@
+{
+  "originHash" : "19101ae4fab0202756b6b1c70fbd3b947989b0f289d6b8492cfaa6ae0fcb6a5e",
+  "pins" : [
+    {
+      "identity" : "iphonenumberfield",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/MojtabaHs/iPhoneNumberField",
+      "state" : {
+        "revision" : "081c1bde0bcb4b9102694076c02fa9dd9cb1f520",
+        "version" : "0.10.3"
+      }
+    },
+    {
+      "identity" : "onesignal-xcframework",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/OneSignal/OneSignal-XCFramework",
+      "state" : {
+        "revision" : "37c0c6ebfe4aad85be13f6e6ba079282302533fc",
+        "version" : "5.2.0"
+      }
+    },
+    {
+      "identity" : "phonenumberkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/marmelroy/PhoneNumberKit",
+      "state" : {
+        "revision" : "ee5d7114934e60812c9b47c333f01b67d002be2d",
+        "version" : "3.7.10"
+      }
+    }
+  ],
+  "version" : 3
+}

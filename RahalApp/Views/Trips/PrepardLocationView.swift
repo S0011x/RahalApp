@@ -211,14 +211,14 @@ extension PrepardLocationView {
                 ZStack{
                     Color(.whiteA700)
                     VStack {
-                        NavigationLink(destination: UserInformationView(), label: {
-                            
-                            Image(systemName: "person.crop.circle")
-                                .resizable()
-                                .frame(width: getRelativeWidth(34.0), height: getRelativeWidth(34.0),
-                                       alignment: .center)
-                                .foregroundColor(ColorConstants.IconColor)
-                        })
+//                        NavigationLink(destination: UserInformationView(), label: {
+//                            
+//                            Image(systemName: "person.crop.circle")
+//                                .resizable()
+//                                .frame(width: getRelativeWidth(34.0), height: getRelativeWidth(34.0),
+//                                       alignment: .center)
+//                                .foregroundColor(ColorConstants.IconColor)
+//                        })
                         
                         NavigationLink(destination: NotificationView() , label: {
                            

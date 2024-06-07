@@ -66,8 +66,8 @@ struct OnBoardingClass: View {
                                 isOnboarding = false
 
                             }, label: {
-                                NavigationLink(destination: RegisterView(), label:{
-                                    ButtonWidget(text: StringConstants.login)
+                                NavigationLink(destination: HomeViews()/*RegisterView()*/, label:{
+                                    //ButtonWidget(text: StringConstants.login)
                                 }
                                 )
                             })
@@ -76,8 +76,9 @@ struct OnBoardingClass: View {
 
                             }, label: {
                                 
-                                NavigationLink(destination: LoginView(), label:{
-                                    ButtonWidget(text: StringConstants.register)
+                                NavigationLink(destination: HomeViews()/*LoginView()*/, label:{
+                                    //ButtonWidget(text: StringConstants.register)
+                                    ButtonWidget(text: "لنبدأ" )
                                 })
                             })
                             Text("")
